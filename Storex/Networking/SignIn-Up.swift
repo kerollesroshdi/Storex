@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-func signIn(email: String, password: String, completionHandler: @escaping (CustomerRegister?, Error?) -> Void){
+func signIn(email: String, password: String, completionHandler: @escaping (CustomerRegister?, ApiError?) -> Void){
     Alamofire.request("https://mobilebackend.turing.com/customers/login", method: .post, parameters: ["email" : email, "password" : password ]).responseJSON { (response) in
         
         response.result.ifSuccess {
@@ -30,7 +30,7 @@ func signIn(email: String, password: String, completionHandler: @escaping (Custo
             } else if response.response?.statusCode == 400 {
                 do {
                     guard let data = response.data else { return }
-                    let error = try decoder.decode(Error.self, from: data)
+                    let error = try decoder.decode(ApiError.self, from: data)
                     print("Error: \(error)")
                     completionHandler(nil, error)
                 } catch let err {

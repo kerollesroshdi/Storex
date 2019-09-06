@@ -9,9 +9,17 @@
 import UIKit
 
 class AlertVC: UIViewController {
+    @IBOutlet weak var alertHeaderLabel: UILabel!
+    @IBOutlet weak var alertMessageLabel: UILabel!
+    
+    var header: String?
+    var message: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.alertHeaderLabel.text = "Error code: \(header ?? "N/A")"
+        self.alertMessageLabel.text = message
         
         // Do any additional setup after loading the view.
     }

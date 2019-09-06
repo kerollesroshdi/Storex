@@ -30,11 +30,25 @@ class SignInVC: UIViewController {
         if emailTextField.text != "" &&
             passwordTextField.text != "" {
             guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-            signIn(email: email, password: password) { (CustomerRegister, Error) in
+            signIn(email: email, password: password) { (customer, error) in
                 //
+                if let error = error {
+                    
+                    let alertVC = AlertVC(nibName: "AlertVC", bundle: nil)
+                    alertVC.modalTransitionStyle = .coverVertical
+                    alertVC.modalPresentationStyle = .overCurrentContext
+                    
+                    alertVC.header = error.error.code
+                    alertVC.message = error.error.message
+                    
+                    self.present(alertVC, animated: true, completion: {
+                        print("Alert ...")
+                    })
+                    
+                }
                 
-                let alertVC = UIViewController(nibName: "AlertVC", bundle: nil)
-                self.present(alertVC, animated: true, completion: nil)
+
+                
                 
             }
         }
