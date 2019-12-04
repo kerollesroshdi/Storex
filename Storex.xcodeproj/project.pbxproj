@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD782397DA3400B21CC9 /* CustomersService.swift */; };
+		8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */; };
+		8452DD7E2397E4D600B21CC9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7D2397E4D600B21CC9 /* State.swift */; };
+		8452DD802397F41000B21CC9 /* UIButtonLoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */; };
+		8452DD822397F46400B21CC9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD812397F46400B21CC9 /* Validation.swift */; };
 		C54DE5052294DFF400EDE7FD /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54DE5032294DFF400EDE7FD /* AlertVC.swift */; };
 		C54DE5062294DFF400EDE7FD /* AlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54DE5042294DFF400EDE7FD /* AlertVC.xib */; };
 		C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA00342291DF41008B2E6B /* ShopViewController.swift */; };
@@ -16,7 +21,6 @@
 		C5DBEF3C2294499C00CFA2EF /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBEF3B2294499C00CFA2EF /* SignInVC.swift */; };
 		C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBEF3D22944F5900CFA2EF /* KeyboardModifications.swift */; };
 		C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBEF4022944FE600CFA2EF /* SignUpVC.swift */; };
-		C5DBEF442294623200CFA2EF /* SignIn-Up.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBEF432294623200CFA2EF /* SignIn-Up.swift */; };
 		C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBEF4622946A9200CFA2EF /* Customer.swift */; };
 		C5DBEF4922946F3800CFA2EF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DBEF4822946F3800CFA2EF /* Error.swift */; };
 		C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FE31ED228CB0DF00A3E0DC /* AppDelegate.swift */; };
@@ -31,6 +35,11 @@
 /* Begin PBXFileReference section */
 		2F587A5B1A2DA48334AB0EDC /* Pods-Storex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storex/Pods-Storex.debug.xcconfig"; sourceTree = "<group>"; };
 		4955C5397AE60F03C0F7D92D /* Pods_Storex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8452DD782397DA3400B21CC9 /* CustomersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersService.swift; sourceTree = "<group>"; };
+		8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		8452DD7D2397E4D600B21CC9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLoadingExtension.swift; sourceTree = "<group>"; };
+		8452DD812397F46400B21CC9 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		C54DE5032294DFF400EDE7FD /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		C54DE5042294DFF400EDE7FD /* AlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertVC.xib; sourceTree = "<group>"; };
 		C5AA00342291DF41008B2E6B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +49,6 @@
 		C5DBEF3B2294499C00CFA2EF /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		C5DBEF3D22944F5900CFA2EF /* KeyboardModifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardModifications.swift; sourceTree = "<group>"; };
 		C5DBEF4022944FE600CFA2EF /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		C5DBEF432294623200CFA2EF /* SignIn-Up.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignIn-Up.swift"; sourceTree = "<group>"; };
 		C5DBEF4622946A9200CFA2EF /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		C5DBEF4822946F3800CFA2EF /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		C5FE31EA228CB0DF00A3E0DC /* Storex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Storex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +80,14 @@
 				4955C5397AE60F03C0F7D92D /* Pods_Storex.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8452DD7C2397E46800B21CC9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		9AC40E0DF48000C62AC6EDA9 /* Pods */ = {
@@ -137,6 +153,8 @@
 			children = (
 				C5DBEF38229447C200CFA2EF /* UIView-Customize.swift */,
 				C5DBEF3D22944F5900CFA2EF /* KeyboardModifications.swift */,
+				8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */,
+				8452DD812397F46400B21CC9 /* Validation.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -145,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DBEF3B2294499C00CFA2EF /* SignInVC.swift */,
+				8452DD7C2397E46800B21CC9 /* ViewModel */,
 			);
 			path = "Sign in";
 			sourceTree = "<group>";
@@ -160,7 +179,7 @@
 		C5DBEF422294621000CFA2EF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C5DBEF432294623200CFA2EF /* SignIn-Up.swift */,
+				8452DD782397DA3400B21CC9 /* CustomersService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -170,6 +189,7 @@
 			children = (
 				C5DBEF4622946A9200CFA2EF /* Customer.swift */,
 				C5DBEF4822946F3800CFA2EF /* Error.swift */,
+				8452DD7D2397E4D600B21CC9 /* State.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +269,7 @@
 				TargetAttributes = {
 					C5FE31E9228CB0DF00A3E0DC = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -290,17 +311,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Storex/Pods-Storex-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Storex/Pods-Storex-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Storex/Pods-Storex-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Storex/Pods-Storex-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Storex/Pods-Storex-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B5A1E8853897F0BB447BAAE /* [CP] Check Pods Manifest.lock */ = {
@@ -332,13 +352,17 @@
 				C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */,
 				C5DBEF3C2294499C00CFA2EF /* SignInVC.swift in Sources */,
 				C5DBEF4922946F3800CFA2EF /* Error.swift in Sources */,
+				8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */,
+				8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */,
 				C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */,
 				C5AA00392291DF65008B2E6B /* StoresViewController.swift in Sources */,
+				8452DD802397F41000B21CC9 /* UIButtonLoadingExtension.swift in Sources */,
 				C5FE31F2228CB0DF00A3E0DC /* BagViewController.swift in Sources */,
 				C5DBEF39229447C200CFA2EF /* UIView-Customize.swift in Sources */,
-				C5DBEF442294623200CFA2EF /* SignIn-Up.swift in Sources */,
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
+				8452DD822397F46400B21CC9 /* Validation.swift in Sources */,
 				C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */,
+				8452DD7E2397E4D600B21CC9 /* State.swift in Sources */,
 				C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */,
 				C5FE31F0228CB0DF00A3E0DC /* MoreViewController.swift in Sources */,
 				C54DE5052294DFF400EDE7FD /* AlertVC.swift in Sources */,
@@ -497,7 +521,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KerollesRoshdi.Storex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -516,7 +540,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KerollesRoshdi.Storex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

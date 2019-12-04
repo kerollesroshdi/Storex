@@ -6,5 +6,8 @@ target 'Storex' do
   use_frameworks!
 
   # Pods for Storex
-    pod 'Alamofire'
+    pod 'Moya'
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
+    pod 'NotificationBannerSwift'
 end
