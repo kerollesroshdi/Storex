@@ -11,6 +11,7 @@ import Moya
 
 enum CustomersService {
     case login(email: String, password: String)
+    case register(name: String, email: String, password: String)
 }
 
 extension CustomersService: TargetType {
@@ -22,12 +23,14 @@ extension CustomersService: TargetType {
         switch self {
         case .login:
             return "/login"
+        case .register:
+            return ""
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .login:
+        case .login, .register:
             return .post
         }
     }
@@ -40,6 +43,8 @@ extension CustomersService: TargetType {
         switch self {
         case let .login(email, password):
             return .requestParameters(parameters: ["email" : email, "password" : password], encoding: JSONEncoding.default)
+        case .register(let name, let email, let password):
+            return .requestParameters(parameters: ["name" : name, "email" : email, "password" : password], encoding: JSONEncoding.default)
         }
     }
     

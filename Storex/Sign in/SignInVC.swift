@@ -16,6 +16,9 @@ class SignInVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var toSignUpButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var twitterLoginButton: UIButton!
     
     lazy var viewModel: SignInViewModel = {
        return SignInViewModel()
@@ -56,9 +59,21 @@ class SignInVC: UIViewController {
             .disposed(by: disposeBag)
         
         signInButton.rx.tap
+            .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 if let self = self {
                     self.viewModel.signIn(email: self.emailTextField.text!, password: self.passwordTextField.text!)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        toSignUpButton.rx.tap
+            .throttle(.seconds(3), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                if let signUpVC = self?.storyboard?.instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC {
+                    self?.navigationController?.pushViewController(signUpVC, animated: true)
+                } else {
+                    print("cannot instantiate sign up VC")
                 }
             })
             .disposed(by: disposeBag)
@@ -87,6 +102,7 @@ class SignInVC: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
     }
     
     func showAlert(title: String, message: String) {
@@ -102,7 +118,7 @@ extension SignInVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .next {
             let nextTag = textField.tag + 1
-            if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+            if let nextResponder = textField.superview?.superview?.viewWithTag(88)?.viewWithTag(nextTag) {
                 nextResponder.becomeFirstResponder()
             }
         } else if textField.returnKeyType == .done {

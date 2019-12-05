@@ -9,8 +9,8 @@
 import Foundation
 
 
-struct CustomerRegister: Codable{
-    let user: Customer
+struct ApiCustomer: Codable{
+    let customer: Customer
     let accessToken: String
     let expires_in: String
 }
@@ -29,5 +29,6 @@ struct Customer: Codable {
     let day_phone: String?
     let eve_phone: String?
     let mob_phone: String?
+    let credit_card: String?
 }
 

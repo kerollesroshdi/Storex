@@ -12,6 +12,8 @@
 		8452DD7E2397E4D600B21CC9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7D2397E4D600B21CC9 /* State.swift */; };
 		8452DD802397F41000B21CC9 /* UIButtonLoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */; };
 		8452DD822397F46400B21CC9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD812397F46400B21CC9 /* Validation.swift */; };
+		84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36AE2399122100E5C099 /* SignUpViewModel.swift */; };
+		84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */; };
 		C54DE5052294DFF400EDE7FD /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54DE5032294DFF400EDE7FD /* AlertVC.swift */; };
 		C54DE5062294DFF400EDE7FD /* AlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54DE5042294DFF400EDE7FD /* AlertVC.xib */; };
 		C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA00342291DF41008B2E6B /* ShopViewController.swift */; };
@@ -40,6 +42,8 @@
 		8452DD7D2397E4D600B21CC9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLoadingExtension.swift; sourceTree = "<group>"; };
 		8452DD812397F46400B21CC9 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		84AB36AE2399122100E5C099 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerManager.swift; sourceTree = "<group>"; };
 		C54DE5032294DFF400EDE7FD /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		C54DE5042294DFF400EDE7FD /* AlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertVC.xib; sourceTree = "<group>"; };
 		C5AA00342291DF41008B2E6B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 			isa = PBXGroup;
 			children = (
 				8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84AB36AD2399120400E5C099 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84AB36AE2399122100E5C099 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -155,6 +167,7 @@
 				C5DBEF3D22944F5900CFA2EF /* KeyboardModifications.swift */,
 				8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */,
 				8452DD812397F46400B21CC9 /* Validation.swift */,
+				84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -172,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				C5DBEF4022944FE600CFA2EF /* SignUpVC.swift */,
+				84AB36AD2399120400E5C099 /* ViewModel */,
 			);
 			path = "Sign up";
 			sourceTree = "<group>";
@@ -353,6 +367,7 @@
 				C5DBEF3C2294499C00CFA2EF /* SignInVC.swift in Sources */,
 				C5DBEF4922946F3800CFA2EF /* Error.swift in Sources */,
 				8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */,
+				84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */,
 				8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */,
 				C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */,
 				C5AA00392291DF65008B2E6B /* StoresViewController.swift in Sources */,
@@ -362,6 +377,7 @@
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
 				8452DD822397F46400B21CC9 /* Validation.swift in Sources */,
 				C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */,
+				84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */,
 				8452DD7E2397E4D600B21CC9 /* State.swift in Sources */,
 				C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */,
 				C5FE31F0228CB0DF00A3E0DC /* MoreViewController.swift in Sources */,
