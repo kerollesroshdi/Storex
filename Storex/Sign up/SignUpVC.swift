@@ -79,11 +79,7 @@ class SignUpVC: UIViewController {
         toSignInButton.rx.tap
             .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
-                if let signInVC = self?.storyboard?.instantiateViewController(withIdentifier: "SignInVC") as? SignInVC {
-                    self?.navigationController?.pushViewController(signInVC, animated: true)
-                } else {
-                    print("cannot instantiate sign in VC")
-                }
+                self?.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
         

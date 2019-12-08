@@ -84,7 +84,7 @@ class SignInVC: UIViewController {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { message in
-                self.showAlert(title: "Login Error!", message: message)
+                NotificationBannerManager.show(title: "Login Error!", message: message)
             })
         .disposed(by: disposeBag)
         
@@ -104,12 +104,6 @@ class SignInVC: UIViewController {
             .disposed(by: disposeBag)
         
     }
-    
-    func showAlert(title: String, message: String) {
-        let banner = NotificationBanner(title: title, subtitle: message, style: .warning)
-        banner.show()
-    }
-    
     
 }
 

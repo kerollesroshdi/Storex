@@ -14,6 +14,9 @@
 		8452DD822397F46400B21CC9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD812397F46400B21CC9 /* Validation.swift */; };
 		84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36AE2399122100E5C099 /* SignUpViewModel.swift */; };
 		84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */; };
+		84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */; };
+		84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */; };
+		84AB36B823993D7600E5C099 /* OnBoardingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */; };
 		C54DE5052294DFF400EDE7FD /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54DE5032294DFF400EDE7FD /* AlertVC.swift */; };
 		C54DE5062294DFF400EDE7FD /* AlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54DE5042294DFF400EDE7FD /* AlertVC.xib */; };
 		C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA00342291DF41008B2E6B /* ShopViewController.swift */; };
@@ -44,6 +47,9 @@
 		8452DD812397F46400B21CC9 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		84AB36AE2399122100E5C099 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerManager.swift; sourceTree = "<group>"; };
+		84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
+		84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageVC.swift; sourceTree = "<group>"; };
+		84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreenVC.swift; sourceTree = "<group>"; };
 		C54DE5032294DFF400EDE7FD /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		C54DE5042294DFF400EDE7FD /* AlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertVC.xib; sourceTree = "<group>"; };
 		C5AA00342291DF41008B2E6B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,16 @@
 				84AB36AE2399122100E5C099 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84AB36B223993CE800E5C099 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */,
+				84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */,
+				84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		9AC40E0DF48000C62AC6EDA9 /* Pods */ = {
@@ -229,6 +245,7 @@
 		C5FE31EC228CB0DF00A3E0DC /* Storex */ = {
 			isa = PBXGroup;
 			children = (
+				84AB36B223993CE800E5C099 /* OnBoarding */,
 				C54DE5022294DFD300EDE7FD /* Alert */,
 				C5DBEF4522946A8300CFA2EF /* Model */,
 				C5DBEF422294621000CFA2EF /* Networking */,
@@ -370,13 +387,16 @@
 				84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */,
 				8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */,
 				C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */,
+				84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */,
 				C5AA00392291DF65008B2E6B /* StoresViewController.swift in Sources */,
 				8452DD802397F41000B21CC9 /* UIButtonLoadingExtension.swift in Sources */,
 				C5FE31F2228CB0DF00A3E0DC /* BagViewController.swift in Sources */,
 				C5DBEF39229447C200CFA2EF /* UIView-Customize.swift in Sources */,
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
 				8452DD822397F46400B21CC9 /* Validation.swift in Sources */,
+				84AB36B823993D7600E5C099 /* OnBoardingScreenVC.swift in Sources */,
 				C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */,
+				84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */,
 				84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */,
 				8452DD7E2397E4D600B21CC9 /* State.swift in Sources */,
 				C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */,
