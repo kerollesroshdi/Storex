@@ -23,6 +23,11 @@ class SignInVC: UIViewController {
     lazy var viewModel: SignInViewModel = {
        return SignInViewModel()
     }()
+    
+    lazy var viewModelFb: SignInWithFBViewModel = {
+        return SignInWithFBViewModel()
+    }()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -33,7 +38,7 @@ class SignInVC: UIViewController {
         
         initView()
         initVM()
-        
+        initVMfb()
     }
     
     func initView() {
@@ -58,6 +63,8 @@ class SignInVC: UIViewController {
             .bind(to: signInButton.rx.alpha)
             .disposed(by: disposeBag)
         
+        
+        // MARK:- Sign In:
         signInButton.rx.tap
             .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
@@ -67,6 +74,27 @@ class SignInVC: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        // twitter signin
+        twitterLoginButton.rx.tap
+            .throttle(.seconds(5), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                NotificationBannerManager.show(title: "Unavailable", message: "sorry!, sign in with twitter is currently unavailable")
+            })
+            .disposed(by: disposeBag)
+        
+        // facebook signin
+        facebookLoginButton.rx.tap
+            .throttle(.seconds(3), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                if let self = self {
+                    // viewmodel facebook login
+                    self.viewModelFb.signInWithFb()
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        
+        // MARK:- To Sign Up:
         toSignUpButton.rx.tap
             .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
@@ -102,6 +130,9 @@ class SignInVC: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+    }
+    
+    func initVMfb() {
         
     }
     

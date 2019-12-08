@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */; };
 		8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD782397DA3400B21CC9 /* CustomersService.swift */; };
 		8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */; };
 		8452DD7E2397E4D600B21CC9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7D2397E4D600B21CC9 /* State.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		2F587A5B1A2DA48334AB0EDC /* Pods-Storex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storex/Pods-Storex.debug.xcconfig"; sourceTree = "<group>"; };
 		4955C5397AE60F03C0F7D92D /* Pods_Storex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithFBViewModel.swift; sourceTree = "<group>"; };
 		8452DD782397DA3400B21CC9 /* CustomersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersService.swift; sourceTree = "<group>"; };
 		8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		8452DD7D2397E4D600B21CC9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */,
+				8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				C5FE31F2228CB0DF00A3E0DC /* BagViewController.swift in Sources */,
 				C5DBEF39229447C200CFA2EF /* UIView-Customize.swift in Sources */,
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
+				8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */,
 				8452DD822397F46400B21CC9 /* Validation.swift in Sources */,
 				84AB36B823993D7600E5C099 /* OnBoardingScreenVC.swift in Sources */,
 				C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */,

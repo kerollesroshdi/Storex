@@ -32,6 +32,7 @@ class SignInViewModel {
                     print("Logged in successfully")
                     do {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
+                        // pass token
                         print(response)
                         self?.state.onNext(.success)
                     } catch {
@@ -48,6 +49,7 @@ class SignInViewModel {
                 
             case .failure(let error):
                 self?.errorMessage.onNext(error.localizedDescription)
+                
             }
         }
     }

@@ -1,5 +1,25 @@
 PODS:
   - Alamofire (4.8.2)
+  - FacebookCore (0.8.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookLogin (0.8.0):
+    - FacebookCore (~> 0.8.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKLoginKit (~> 5.0)
+  - FacebookShare (0.8.0):
+    - FacebookCore (~> 0.8.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKShareKit (~> 5.0)
+  - FBSDKCoreKit (5.4.1):
+    - FBSDKCoreKit/Basics (= 5.4.1)
+    - FBSDKCoreKit/Core (= 5.4.1)
+  - FBSDKCoreKit/Basics (5.4.1)
+  - FBSDKCoreKit/Core (5.4.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.4.1):
+    - FBSDKCoreKit (~> 5.0)
+  - FBSDKShareKit (5.4.1):
+    - FBSDKCoreKit (~> 5.0)
   - MarqueeLabel/Swift (3.2.1)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -19,6 +39,9 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
+  - FacebookCore
+  - FacebookLogin
+  - FacebookShare
   - Moya
   - NotificationBannerSwift
   - RxCocoa (~> 5)
@@ -27,6 +50,12 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FacebookCore
+    - FacebookLogin
+    - FacebookShare
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - FBSDKShareKit
     - MarqueeLabel
     - Moya
     - NotificationBannerSwift
@@ -38,6 +67,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  FacebookCore: 563bb4cbcd7dd86cf89f3729252140bf256aacaa
+  FacebookLogin: 8b966ae661e95e7dba837d7cc49cc464ce003dba
+  FacebookShare: e75d5e81ef7bd7aab2f865446c4c27015b43bae6
+  FBSDKCoreKit: 5144671077d67f07d7d243dbc7fd57a171f73954
+  FBSDKLoginKit: ff38b353b6843353f090028eb1b895c78aa82796
+  FBSDKShareKit: dfea6d7a3683672fd8e50f453eaa754f922bf2b8
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   NotificationBannerSwift: 4483919639202bec56d6bfe8f106ebc352d38bc7
@@ -47,6 +82,6 @@ SPEC CHECKSUMS:
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: c3412d51a7ac9c9e4552c44337ac48856a5b2873
+PODFILE CHECKSUM: a7d1f4b050954a09beb089e346ca6348fc80398a
 
 COCOAPODS: 1.7.5

@@ -11,6 +11,7 @@ import Moya
 
 enum CustomersService {
     case login(email: String, password: String)
+    case loginWithFb(token: String)
     case register(name: String, email: String, password: String)
 }
 
@@ -23,6 +24,8 @@ extension CustomersService: TargetType {
         switch self {
         case .login:
             return "/login"
+        case .loginWithFb:
+            return "/facebook"
         case .register:
             return ""
         }
@@ -30,7 +33,7 @@ extension CustomersService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .login, .register:
+        case .login, .loginWithFb, .register:
             return .post
         }
     }
@@ -43,6 +46,8 @@ extension CustomersService: TargetType {
         switch self {
         case let .login(email, password):
             return .requestParameters(parameters: ["email" : email, "password" : password], encoding: JSONEncoding.default)
+        case .loginWithFb(let token):
+            return .requestParameters(parameters: ["access_token" : token], encoding: JSONEncoding.default)
         case .register(let name, let email, let password):
             return .requestParameters(parameters: ["name" : name, "email" : email, "password" : password], encoding: JSONEncoding.default)
         }
