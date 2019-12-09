@@ -116,6 +116,13 @@ class SignInVC: UIViewController {
             })
         .disposed(by: disposeBag)
         
+        viewModel.accessToken
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { token in
+                // save token to keychain
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.state
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] state in
@@ -138,6 +145,13 @@ class SignInVC: UIViewController {
             .subscribe(onNext: { message in
                 NotificationBannerManager.show(title: "Facebook Login Error!", message: message, style: .warning)
             })
+        .disposed(by: disposeBag)
+        
+        viewModelFb.accessToken
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: { token in
+            // save token to keychain
+        })
         .disposed(by: disposeBag)
         
         viewModelFb.state

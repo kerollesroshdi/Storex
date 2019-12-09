@@ -16,7 +16,7 @@ class SignInWithFBViewModel {
     
     let state: PublishSubject<State> = PublishSubject()
     let errorMessage: PublishSubject<String> = PublishSubject()
-    let token: PublishSubject<String> = PublishSubject()
+    let accessToken: PublishSubject<String> = PublishSubject()
     
     let customersProvider: MoyaProvider<CustomersService>
     
@@ -56,6 +56,7 @@ class SignInWithFBViewModel {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
                         // pass token :
                         print("response: \(response)")
+                        self?.accessToken.onNext(response.accessToken)
                         self?.state.onNext(.success)
                     } catch {
                         print("Error decoding response")

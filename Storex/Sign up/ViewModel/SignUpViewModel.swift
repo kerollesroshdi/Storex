@@ -14,10 +14,11 @@ class SignUpViewModel {
     
     let state: PublishSubject<State> = PublishSubject()
     let errorMessage: PublishSubject<String> = PublishSubject()
+    let accessToken: PublishSubject<String> = PublishSubject()
     
     let customersProvider: MoyaProvider<CustomersService>
     
-    init(customersProvider: MoyaProvider<CustomersService> = MoyaProvider<CustomersService>()) {
+    init(customersProvider: MoyaProvider<CustomersService> = MoyaProvider<CustomersService>(/*plugins: [NetworkLoggerPlugin(verbose: true)]*/)) {
         self.customersProvider = customersProvider
     }
     
@@ -32,6 +33,7 @@ class SignUpViewModel {
                     do {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
                         print(response)
+                        self?.accessToken.onNext(response.accessToken)
                         self?.state.onNext(.success)
                     } catch {
                         print("response decoding error: \(error)")
@@ -39,9 +41,9 @@ class SignUpViewModel {
                     }
                 } else if response.statusCode == 400 {
                     print("Sign up Error")
+                    self?.state.onNext(.error)
                     guard let error = try? decoder.decode(ApiError.self, from: response.data) else { return }
                     print(error)
-                    self?.state.onNext(.error)
                     self?.errorMessage.onNext(error.error.message)
                 }
             case .failure(let error):

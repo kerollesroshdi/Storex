@@ -94,6 +94,13 @@ class SignUpVC: UIViewController {
             })
         .disposed(by: disposeBag)
         
+        viewModel.accessToken
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { token in
+                // save token to keychain & navigate to main tab
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.state
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] state in

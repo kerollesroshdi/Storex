@@ -14,6 +14,7 @@ class SignInViewModel {
     
     let state: PublishSubject<State> = PublishSubject()
     let errorMessage: PublishSubject<String> = PublishSubject()
+    let accessToken: PublishSubject<String> = PublishSubject()
     
     let customersProvider: MoyaProvider<CustomersService>
     
@@ -34,6 +35,7 @@ class SignInViewModel {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
                         // pass token
                         print(response)
+                        self?.accessToken.onNext(response.accessToken)
                         self?.state.onNext(.success)
                     } catch {
                         print("response decoding error: \(error)")
