@@ -78,7 +78,7 @@ class SignInVC: UIViewController {
         twitterLoginButton.rx.tap
             .throttle(.seconds(5), scheduler: MainScheduler.instance)
             .subscribe(onNext: { _ in
-                NotificationBannerManager.show(title: "Unavailable", message: "sorry!, sign in with twitter is currently unavailable")
+                NotificationBannerManager.show(title: "Unavailable", message: "sorry!, sign in with twitter is currently unavailable", style: .info)
             })
             .disposed(by: disposeBag)
         
@@ -112,7 +112,7 @@ class SignInVC: UIViewController {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { message in
-                NotificationBannerManager.show(title: "Login Error!", message: message)
+                NotificationBannerManager.show(title: "Login Error!", message: message, style: .warning)
             })
         .disposed(by: disposeBag)
         
@@ -126,14 +126,34 @@ class SignInVC: UIViewController {
                     self?.signInButton.loadingIndicator(false)
                 case .success:
                     self?.signInButton.loadingIndicator(false)
-                    // navigate to main screen
+                    // navigate to main app screen
                 }
             })
             .disposed(by: disposeBag)
     }
     
     func initVMfb() {
+        viewModelFb.errorMessage
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { message in
+                NotificationBannerManager.show(title: "Facebook Login Error!", message: message, style: .warning)
+            })
+        .disposed(by: disposeBag)
         
+        viewModelFb.state
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] state in
+                switch state {
+                case .loading:
+                    self?.facebookLoginButton.loadingIndicator(true)
+                case .error:
+                    self?.facebookLoginButton.loadingIndicator(false)
+                case .success:
+                    self?.facebookLoginButton.loadingIndicator(false)
+                    // LOL - navigate to main app screen
+                }
+            })
+        .disposed(by: disposeBag)
     }
     
 }

@@ -16,3 +16,13 @@ struct ErrorClass: Codable {
     let status: Int
     let code, message, field: String
 }
+
+
+struct ServerError: Codable {
+    let error: InternalError
+}
+
+struct InternalError: Codable {
+    let code: Int
+    let message, type: String
+}

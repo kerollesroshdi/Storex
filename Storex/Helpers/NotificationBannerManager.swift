@@ -11,8 +11,8 @@ import NotificationBannerSwift
 
 class NotificationBannerManager {
     
-    class func show(title: String, message: String) {
-        let banner = NotificationBanner(title: title, subtitle: message, style: .warning)
+    class func show(title: String, message: String, style: BannerStyle) {
+        let banner = NotificationBanner(title: title, subtitle: message, style: style)
         banner.show()
     }
 }

@@ -34,7 +34,7 @@ class SignInWithFBViewModel {
             case .success( _, _, let token):
                 // call api signin with facebook token
                 self?.signInWithFbAPI(token: token.tokenString)
-                print("Logged in with FaceBook - Token: \(token.tokenString)")
+                print("Logged in with FaceBook - Token: \(token)")
             case .cancelled:
                 self?.state.onNext(.error)
                 self?.errorMessage.onNext("Login Cancelled")
@@ -67,11 +67,18 @@ class SignInWithFBViewModel {
                         self?.state.onNext(.error)
                         self?.errorMessage.onNext(error.error.message)
                     } catch {
-                        print("Erro decoding Error")
+                        print("Error decoding Error")
                         self?.state.onNext(.error)
                     }
                 } else {
-                    print("Internal server Error Status Code: \(response.statusCode)")
+                    do {
+                        let error = try decoder.decode(ServerError.self, from: response.data)
+                        self?.state.onNext(.error)
+                        self?.errorMessage.onNext(error.error.message)
+                    } catch {
+                        print("Error decoding Error")
+                        self?.state.onNext(.error)
+                    }
                 }
             case .failure(let error):
                 self?.errorMessage.onNext(error.localizedDescription)

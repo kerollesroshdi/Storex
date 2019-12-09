@@ -90,7 +90,7 @@ class SignUpVC: UIViewController {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { message in
-                NotificationBannerManager.show(title: "Signup Error!", message: message)
+                NotificationBannerManager.show(title: "Signup Error!", message: message, style: .warning)
             })
         .disposed(by: disposeBag)
         

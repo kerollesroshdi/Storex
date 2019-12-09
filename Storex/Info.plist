@@ -69,5 +69,12 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
+    
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <false/>
+    
+    <key>FacebookAdvertiserIDCollectionEnabled</key>
+    <false/>
+    
 </dict>
 </plist>
