@@ -97,7 +97,8 @@ class SignUpVC: UIViewController {
         viewModel.accessToken
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { token in
-                // save token to keychain & navigate to main tab
+                // save token to keychain / UserDefaults
+                Switcher.loggedWith(token: token)
             })
             .disposed(by: disposeBag)
         
@@ -112,6 +113,7 @@ class SignUpVC: UIViewController {
                 case .success:
                     self?.signUpButton.loadingIndicator(false)
                     // navigate to main screen
+                    Switcher.updateRootVC()
                 }
             })
             .disposed(by: disposeBag)

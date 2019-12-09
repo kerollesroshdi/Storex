@@ -13,13 +13,14 @@
 		8452DD7E2397E4D600B21CC9 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7D2397E4D600B21CC9 /* State.swift */; };
 		8452DD802397F41000B21CC9 /* UIButtonLoadingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */; };
 		8452DD822397F46400B21CC9 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD812397F46400B21CC9 /* Validation.swift */; };
+		84651159239E769D00FDAB31 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84651158239E769D00FDAB31 /* Switcher.swift */; };
+		8465115C239E77E300FDAB31 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465115B239E77E300FDAB31 /* MainTabBarVC.swift */; };
+		8465115E239E7B4F00FDAB31 /* OnBoardingNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465115D239E7B4F00FDAB31 /* OnBoardingNavigation.swift */; };
 		84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36AE2399122100E5C099 /* SignUpViewModel.swift */; };
 		84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */; };
 		84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */; };
 		84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */; };
 		84AB36B823993D7600E5C099 /* OnBoardingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */; };
-		C54DE5052294DFF400EDE7FD /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54DE5032294DFF400EDE7FD /* AlertVC.swift */; };
-		C54DE5062294DFF400EDE7FD /* AlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54DE5042294DFF400EDE7FD /* AlertVC.xib */; };
 		C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA00342291DF41008B2E6B /* ShopViewController.swift */; };
 		C5AA00372291DF52008B2E6B /* InspirationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA00362291DF52008B2E6B /* InspirationViewController.swift */; };
 		C5AA00392291DF65008B2E6B /* StoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA00382291DF65008B2E6B /* StoresViewController.swift */; };
@@ -47,13 +48,14 @@
 		8452DD7D2397E4D600B21CC9 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		8452DD7F2397F41000B21CC9 /* UIButtonLoadingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLoadingExtension.swift; sourceTree = "<group>"; };
 		8452DD812397F46400B21CC9 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		84651158239E769D00FDAB31 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		8465115B239E77E300FDAB31 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		8465115D239E7B4F00FDAB31 /* OnBoardingNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingNavigation.swift; sourceTree = "<group>"; };
 		84AB36AE2399122100E5C099 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerManager.swift; sourceTree = "<group>"; };
 		84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageVC.swift; sourceTree = "<group>"; };
 		84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreenVC.swift; sourceTree = "<group>"; };
-		C54DE5032294DFF400EDE7FD /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
-		C54DE5042294DFF400EDE7FD /* AlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertVC.xib; sourceTree = "<group>"; };
 		C5AA00342291DF41008B2E6B /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		C5AA00362291DF52008B2E6B /* InspirationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationViewController.swift; sourceTree = "<group>"; };
 		C5AA00382291DF65008B2E6B /* StoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84651157239E766700FDAB31 /* Switcher */ = {
+			isa = PBXGroup;
+			children = (
+				84651158239E769D00FDAB31 /* Switcher.swift */,
+			);
+			path = Switcher;
+			sourceTree = "<group>";
+		};
+		8465115A239E77AE00FDAB31 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8465115B239E77E300FDAB31 /* MainTabBarVC.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
 		84AB36AD2399120400E5C099 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,7 @@
 				84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */,
 				84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */,
 				84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */,
+				8465115D239E7B4F00FDAB31 /* OnBoardingNavigation.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -128,15 +147,6 @@
 				FB85F373E6119FC119E9A78C /* Pods-Storex.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		C54DE5022294DFD300EDE7FD /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				C54DE5032294DFF400EDE7FD /* AlertVC.swift */,
-				C54DE5042294DFF400EDE7FD /* AlertVC.xib */,
-			);
-			path = Alert;
 			sourceTree = "<group>";
 		};
 		C5AA003A2291DFBA008B2E6B /* Shop */ = {
@@ -248,8 +258,9 @@
 		C5FE31EC228CB0DF00A3E0DC /* Storex */ = {
 			isa = PBXGroup;
 			children = (
+				8465115A239E77AE00FDAB31 /* MainTabBar */,
+				84651157239E766700FDAB31 /* Switcher */,
 				84AB36B223993CE800E5C099 /* OnBoarding */,
-				C54DE5022294DFD300EDE7FD /* Alert */,
 				C5DBEF4522946A8300CFA2EF /* Model */,
 				C5DBEF422294621000CFA2EF /* Networking */,
 				C5DBEF3F22944FD100CFA2EF /* Sign up */,
@@ -331,7 +342,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5FE31FA228CB0E000A3E0DC /* LaunchScreen.storyboard in Resources */,
-				C54DE5062294DFF400EDE7FD /* AlertVC.xib in Resources */,
 				C5FE31F7228CB0E000A3E0DC /* Assets.xcassets in Resources */,
 				C5FE31F5228CB0DF00A3E0DC /* Main.storyboard in Resources */,
 			);
@@ -384,11 +394,13 @@
 			files = (
 				C5AA00372291DF52008B2E6B /* InspirationViewController.swift in Sources */,
 				C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */,
+				84651159239E769D00FDAB31 /* Switcher.swift in Sources */,
 				C5DBEF3C2294499C00CFA2EF /* SignInVC.swift in Sources */,
 				C5DBEF4922946F3800CFA2EF /* Error.swift in Sources */,
 				8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */,
 				84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */,
 				8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */,
+				8465115E239E7B4F00FDAB31 /* OnBoardingNavigation.swift in Sources */,
 				C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */,
 				84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */,
 				C5AA00392291DF65008B2E6B /* StoresViewController.swift in Sources */,
@@ -402,10 +414,10 @@
 				C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */,
 				84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */,
 				84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */,
+				8465115C239E77E300FDAB31 /* MainTabBarVC.swift in Sources */,
 				8452DD7E2397E4D600B21CC9 /* State.swift in Sources */,
 				C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */,
 				C5FE31F0228CB0DF00A3E0DC /* MoreViewController.swift in Sources */,
-				C54DE5052294DFF400EDE7FD /* AlertVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

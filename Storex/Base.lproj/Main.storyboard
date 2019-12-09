@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="695.20000000000005" y="-1688.4557721139431"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab BarVC-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarVC" id="49e-Tb-3d3" customClass="MainTabBarVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -736,10 +736,10 @@
             </objects>
             <point key="canvasLocation" x="2456.8000000000002" y="-833.43328335832086"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--On Boarding Navigation-->
         <scene sceneID="oUq-mt-KrU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wU7-Di-Vs3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="OnBoardingNavigation" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wU7-Di-Vs3" customClass="OnBoardingNavigation" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WLv-F1-gMU">
                         <autoresizingMask key="autoresizingMask"/>

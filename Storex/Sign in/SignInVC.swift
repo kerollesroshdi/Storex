@@ -119,7 +119,8 @@ class SignInVC: UIViewController {
         viewModel.accessToken
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { token in
-                // save token to keychain
+                // save token to keychain / UserDefaults
+                Switcher.loggedWith(token: token)
             })
             .disposed(by: disposeBag)
         
@@ -134,6 +135,7 @@ class SignInVC: UIViewController {
                 case .success:
                     self?.signInButton.loadingIndicator(false)
                     // navigate to main app screen
+                    Switcher.updateRootVC()
                 }
             })
             .disposed(by: disposeBag)
@@ -150,7 +152,8 @@ class SignInVC: UIViewController {
         viewModelFb.accessToken
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: { token in
-            // save token to keychain
+            // save token to keychain / UserDefaults
+            Switcher.loggedWith(token: token)
         })
         .disposed(by: disposeBag)
         
@@ -165,6 +168,7 @@ class SignInVC: UIViewController {
                 case .success:
                     self?.facebookLoginButton.loadingIndicator(false)
                     // LOL - navigate to main app screen
+                    Switcher.updateRootVC()
                 }
             })
         .disposed(by: disposeBag)
