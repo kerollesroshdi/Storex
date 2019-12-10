@@ -16,6 +16,7 @@
 		8443073D239FB00700FCBBFB /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443073C239FB00700FCBBFB /* ShopViewModel.swift */; };
 		8443073F239FB02200FCBBFB /* DepartmentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443073E239FB02200FCBBFB /* DepartmentCellViewModel.swift */; };
 		84430741239FB1B000FCBBFB /* DepartmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84430740239FB1B000FCBBFB /* DepartmentsService.swift */; };
+		84430745239FD5E600FCBBFB /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84430744239FD5E600FCBBFB /* DepartmentViewController.swift */; };
 		8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */; };
 		8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD782397DA3400B21CC9 /* CustomersService.swift */; };
 		8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */; };
@@ -60,6 +61,7 @@
 		8443073C239FB00700FCBBFB /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		8443073E239FB02200FCBBFB /* DepartmentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCellViewModel.swift; sourceTree = "<group>"; };
 		84430740239FB1B000FCBBFB /* DepartmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsService.swift; sourceTree = "<group>"; };
+		84430744239FD5E600FCBBFB /* DepartmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithFBViewModel.swift; sourceTree = "<group>"; };
 		8452DD782397DA3400B21CC9 /* CustomersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersService.swift; sourceTree = "<group>"; };
 		8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +144,14 @@
 			path = Departments;
 			sourceTree = "<group>";
 		};
+		84430743239FD5B500FCBBFB /* Department */ = {
+			isa = PBXGroup;
+			children = (
+				84430744239FD5E600FCBBFB /* DepartmentViewController.swift */,
+			);
+			path = Department;
+			sourceTree = "<group>";
+		};
 		8452DD7C2397E46800B21CC9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				84430742239FD4E200FCBBFB /* Departments */,
+				84430743239FD5B500FCBBFB /* Department */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -474,6 +485,7 @@
 				84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */,
 				84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */,
 				8465115C239E77E300FDAB31 /* MainTabBarVC.swift in Sources */,
+				84430745239FD5E600FCBBFB /* DepartmentViewController.swift in Sources */,
 				8452DD7E2397E4D600B21CC9 /* State.swift in Sources */,
 				C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */,
 				8443073F239FB02200FCBBFB /* DepartmentCellViewModel.swift in Sources */,
@@ -634,7 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.KerollesRoshdi.Storex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -653,7 +665,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.KerollesRoshdi.Storex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

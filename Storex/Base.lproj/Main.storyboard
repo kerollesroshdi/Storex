@@ -131,17 +131,46 @@
                         <viewLayoutGuide key="safeArea" id="XTl-rd-fYB"/>
                     </view>
                     <navigationItem key="navigationItem" id="OlT-p7-LWd">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ooO-p6-OF6"/>
                         <barButtonItem key="leftBarButtonItem" image="icon-nav" style="plain" id="zQi-zu-bX8"/>
-                        <barButtonItem key="rightBarButtonItem" image="icon-filter" id="4zG-Cq-Ccm"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="31i-eE-eEw" id="fAH-Rh-Htt"/>
                         <outlet property="tableview" destination="tcY-Cv-0Kh" id="0P4-K0-rCp"/>
+                        <segue destination="LYX-aT-2Bz" kind="show" id="zFW-aG-rtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N02-79-433" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1530.4000000000001" y="1789.6551724137933"/>
+        </scene>
+        <!--Department View Controller-->
+        <scene sceneID="aaU-O5-veR">
+            <objects>
+                <viewController storyboardIdentifier="DepartmentViewController" id="LYX-aT-2Bz" customClass="DepartmentViewController" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kJw-Bx-9uN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ifr-MV-QAw">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <color key="color" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ifr-MV-QAw" firstAttribute="centerX" secondItem="kJw-Bx-9uN" secondAttribute="centerX" id="ewh-SW-ZGa"/>
+                            <constraint firstItem="Ifr-MV-QAw" firstAttribute="centerY" secondItem="kJw-Bx-9uN" secondAttribute="centerY" id="r6O-9k-hIa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="asa-kx-vOa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KLT-kH-gUu">
+                        <barButtonItem key="rightBarButtonItem" image="icon-filter" id="j57-gX-gen"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="glR-BA-V3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1530" y="2559"/>
         </scene>
         <!--Stores-->
         <scene sceneID="JMw-yj-t5o">
@@ -784,7 +813,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="61I-z9-OH1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shop" image="Shop" selectedImage="ShopSelected" id="5jb-C9-lml"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mek-RA-csP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="icon-back" id="Mek-RA-csP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -817,6 +846,7 @@
         <image name="Stores" width="19" height="25"/>
         <image name="StoresSelected" width="19" height="25"/>
         <image name="Twitter" width="142" height="162"/>
+        <image name="icon-back" width="12" height="20"/>
         <image name="icon-filter" width="26" height="22"/>
         <image name="icon-mail" width="32" height="24"/>
         <image name="icon-nav" width="22" height="20"/>

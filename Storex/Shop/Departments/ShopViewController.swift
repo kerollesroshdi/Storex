@@ -22,13 +22,21 @@ class ShopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        addNavigationTitleImage()
+        setNavigationTitleImage()
         tableview.registerCellNib(cellClass: DepartmentCell.self)
-                
+        
+        tableview.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+                guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "DepartmentViewController") else { return }
+                self.navigationController?.pushViewController(categoryVC, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
         initVM()
     }
     
-    func addNavigationTitleImage() {
+    func setNavigationTitleImage() {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "nav-logo")!
