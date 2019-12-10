@@ -26,6 +26,7 @@ class SignUpViewModel {
         
         state.onNext(.loading)
         customersProvider.request(.register(name: name, email: email, password: password)) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .success(let response):
                 let decoder = JSONDecoder()
@@ -33,24 +34,23 @@ class SignUpViewModel {
                     do {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
                         print(response)
-                        self?.accessToken.onNext(response.accessToken)
-                        self?.state.onNext(.success)
+                        self.accessToken.onNext(response.accessToken)
+                        self.state.onNext(.success)
                     } catch {
                         print("response decoding error: \(error)")
-                        self?.state.onNext(.error)
+                        self.state.onNext(.error)
                     }
                 } else if response.statusCode == 400 {
                     print("Sign up Error")
-                    self?.state.onNext(.error)
+                    self.state.onNext(.error)
                     guard let error = try? decoder.decode(ApiError.self, from: response.data) else { return }
                     print(error)
-                    self?.errorMessage.onNext(error.error.message)
+                    self.errorMessage.onNext(error.error.message)
                 }
             case .failure(let error):
-                self?.errorMessage.onNext(error.localizedDescription)
+                self.errorMessage.onNext(error.localizedDescription)
             }
         }
-        
     }
     
 }

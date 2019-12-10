@@ -16,19 +16,33 @@ struct ApiCustomer: Codable{
 }
 
 struct Customer: Codable {
-    let customer_id: Int
+    let customerID: Int
     let name: String
     let email: String
-    let address_1: String?
-    let address_2: String?
+    let address1: String?
+    let address2: String?
     let city: String?
     let region: String?
-    let postal_code: String?
+    let postalCode: String?
     let country: String?
-    let shipping_region_id: Int
-    let day_phone: String?
-    let eve_phone: String?
-    let mob_phone: String?
-    let credit_card: String?
+    let shippingRegionID: Int
+    let dayPhone: String?
+    let evePhone: String?
+    let mobPhone: String?
+    let creditCard: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case customerID = "customer_id"
+        case address1 = "address_1"
+        case address2 = "address_2"
+        case postalCode = "postal_code"
+        case shippingRegionID = "shipping_region_id"
+        case dayPhone = "day_phone"
+        case evePhone = "eve_phone"
+        case mobPhone = "mob_phone"
+        case creditCard = "credit_card"
+        
+        case name, email, city, region, country
+    }
 }
 

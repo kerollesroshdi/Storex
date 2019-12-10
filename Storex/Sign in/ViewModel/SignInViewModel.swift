@@ -25,8 +25,8 @@ class SignInViewModel {
     func signIn(email: String, password: String) {
         state.onNext(.loading)
         customersProvider.request(.login(email: email, password: password)) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
-                
             case .success(let response):
                 let decoder = JSONDecoder()
                 if response.statusCode == 200 {
@@ -35,23 +35,23 @@ class SignInViewModel {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
                         // pass token
                         print(response)
-                        self?.accessToken.onNext(response.accessToken)
-                        self?.state.onNext(.success)
+                        self.accessToken.onNext(response.accessToken)
+                        self.state.onNext(.success)
                     } catch {
                         print("response decoding error: \(error)")
-                        self?.state.onNext(.error)
+                        self.state.onNext(.error)
                     }
                 } else if response.statusCode == 400 {
                     print("Login Error")
                     guard let error = try? decoder.decode(ApiError.self, from: response.data) else { return }
                     print(error)
-                    self?.state.onNext(.error)
-                    self?.errorMessage.onNext(error.error.message)
+                    self.state.onNext(.error)
+                    self.errorMessage.onNext(error.error.message)
                 }
                 
             case .failure(let error):
-                self?.errorMessage.onNext(error.localizedDescription)
-                
+                self.state.onNext(.error)
+                self.errorMessage.onNext(error.localizedDescription)
             }
         }
     }

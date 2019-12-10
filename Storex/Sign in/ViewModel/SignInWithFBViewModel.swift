@@ -47,8 +47,8 @@ class SignInWithFBViewModel {
     
     private func signInWithFbAPI(token: String) {
         customersProvider.request(.loginWithFb(token: token)) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
-                
             case .success(let response):
                 let decoder = JSONDecoder()
                 if response.statusCode == 200 {
@@ -56,34 +56,33 @@ class SignInWithFBViewModel {
                         let response = try decoder.decode(ApiCustomer.self, from: response.data)
                         // pass token :
                         print("response: \(response)")
-                        self?.accessToken.onNext(response.accessToken)
-                        self?.state.onNext(.success)
+                        self.accessToken.onNext(response.accessToken)
+                        self.state.onNext(.success)
                     } catch {
                         print("Error decoding response")
-                        self?.state.onNext(.error)
+                        self.state.onNext(.error)
                     }
                 } else if response.statusCode == 400 {
                     do {
                         let error = try decoder.decode(ApiError.self, from: response.data)
-                        self?.state.onNext(.error)
-                        self?.errorMessage.onNext(error.error.message)
+                        self.state.onNext(.error)
+                        self.errorMessage.onNext(error.error.message)
                     } catch {
                         print("Error decoding Error")
-                        self?.state.onNext(.error)
+                        self.state.onNext(.error)
                     }
                 } else {
                     do {
                         let error = try decoder.decode(ServerError.self, from: response.data)
-                        self?.state.onNext(.error)
-                        self?.errorMessage.onNext(error.error.message)
+                        self.state.onNext(.error)
+                        self.errorMessage.onNext(error.error.message)
                     } catch {
                         print("Error decoding Error")
-                        self?.state.onNext(.error)
+                        self.state.onNext(.error)
                     }
                 }
             case .failure(let error):
-                self?.errorMessage.onNext(error.localizedDescription)
-        
+                self.errorMessage.onNext(error.localizedDescription)
             }
         }
     }
