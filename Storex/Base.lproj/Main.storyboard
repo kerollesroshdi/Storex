@@ -110,6 +110,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="31i-eE-eEw">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <color key="color" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcY-Cv-0Kh">
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -121,6 +125,8 @@
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="bottom" secondItem="XTl-rd-fYB" secondAttribute="bottom" id="8t9-Od-SBn"/>
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="leading" secondItem="XTl-rd-fYB" secondAttribute="leading" id="AWV-IU-faj"/>
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="trailing" secondItem="XTl-rd-fYB" secondAttribute="trailing" id="gfG-jK-zEi"/>
+                            <constraint firstItem="31i-eE-eEw" firstAttribute="centerX" secondItem="HFF-6F-DT4" secondAttribute="centerX" id="h9M-xc-WA3"/>
+                            <constraint firstItem="31i-eE-eEw" firstAttribute="centerY" secondItem="HFF-6F-DT4" secondAttribute="centerY" id="mcX-mf-SU8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XTl-rd-fYB"/>
                     </view>
@@ -129,6 +135,7 @@
                         <barButtonItem key="rightBarButtonItem" image="icon-filter" id="4zG-Cq-Ccm"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="31i-eE-eEw" id="fAH-Rh-Htt"/>
                         <outlet property="tableview" destination="tcY-Cv-0Kh" id="0P4-K0-rCp"/>
                     </connections>
                 </viewController>

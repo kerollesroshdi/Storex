@@ -12,6 +12,7 @@ import RxCocoa
 
 class ShopViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     lazy var viewModel: ShopViewModel = {
         return ShopViewModel()
@@ -49,12 +50,21 @@ class ShopViewController: UIViewController {
                 switch state {
                 case .loading:
                     // tableview loading ...
-                    self.tableview.alpha = 0.0
+                    self.activityIndicator.startAnimating()
+                    UIView.animate(withDuration: 0.2) {
+                        self.tableview.alpha = 0.0
+                    }
                 case .error:
-                    // tableview error!
-                    self.tableview.alpha = 0.0
+                    self.activityIndicator.stopAnimating()
+                    UIView.animate(withDuration: 0.2) {
+                        self.tableview.alpha = 0.0
+                    }
                 case .success:
                     // tableview loaded
+                    self.activityIndicator.stopAnimating()
+                    UIView.animate(withDuration: 0.2) {
+                        self.tableview.alpha = 1.0
+                    }
                     self.tableview.alpha = 1.0
                 }
             })
