@@ -132,12 +132,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="OlT-p7-LWd">
                         <barButtonItem key="backBarButtonItem" title=" " id="ooO-p6-OF6"/>
-                        <barButtonItem key="leftBarButtonItem" image="icon-nav" style="plain" id="zQi-zu-bX8"/>
+                        <barButtonItem key="leftBarButtonItem" image="icon-nav" id="zQi-zu-bX8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="31i-eE-eEw" id="fAH-Rh-Htt"/>
                         <outlet property="tableview" destination="tcY-Cv-0Kh" id="0P4-K0-rCp"/>
-                        <segue destination="LYX-aT-2Bz" kind="show" id="zFW-aG-rtT"/>
+                        <segue destination="LYX-aT-2Bz" kind="show" identifier="toDepartmentViewController" id="zFW-aG-rtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N02-79-433" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,6 +152,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWL-Qh-FOk" userLabel="Department">
+                                <rect key="frame" x="0.0" y="44" width="375" height="116"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aJO-xv-gAF">
+                                        <rect key="frame" x="30" y="15" width="315" height="86"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NATURE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9e-In-Dc7">
+                                                <rect key="frame" x="109.5" y="0.0" width="96" height="34.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find beautiful T-shirts with animals and flowers in our Nature department!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xk5-gk-1Wd">
+                                                <rect key="frame" x="9.5" y="39.5" width="296" height="46.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.45882352939999999" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aJO-xv-gAF" firstAttribute="leading" secondItem="hWL-Qh-FOk" secondAttribute="leading" constant="30" id="1aR-uQ-ciQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="aJO-xv-gAF" secondAttribute="trailing" constant="30" id="ntO-tI-1C6"/>
+                                    <constraint firstItem="aJO-xv-gAF" firstAttribute="top" secondItem="hWL-Qh-FOk" secondAttribute="top" constant="15" id="rzI-aK-qWo"/>
+                                    <constraint firstAttribute="bottom" secondItem="aJO-xv-gAF" secondAttribute="bottom" constant="15" id="wGc-1T-Khf"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fBL-Xa-wVf">
+                                <rect key="frame" x="0.0" y="160" width="375" height="55"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="DmU-yu-skR"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JtA-ou-iCM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MVj-S1-beU">
+                                <rect key="frame" x="0.0" y="215" width="375" height="403"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ifr-MV-QAw">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                                 <color key="color" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -159,18 +206,36 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hWL-Qh-FOk" firstAttribute="leading" secondItem="asa-kx-vOa" secondAttribute="leading" id="BBw-w1-yMg"/>
+                            <constraint firstItem="MVj-S1-beU" firstAttribute="trailing" secondItem="asa-kx-vOa" secondAttribute="trailing" id="Uge-WO-xGr"/>
+                            <constraint firstItem="MVj-S1-beU" firstAttribute="bottom" secondItem="asa-kx-vOa" secondAttribute="bottom" id="X3w-8N-5b3"/>
+                            <constraint firstItem="fBL-Xa-wVf" firstAttribute="leading" secondItem="asa-kx-vOa" secondAttribute="leading" id="XHF-a9-Avc"/>
+                            <constraint firstItem="fBL-Xa-wVf" firstAttribute="top" secondItem="hWL-Qh-FOk" secondAttribute="bottom" id="Yv0-jL-vs6"/>
+                            <constraint firstItem="fBL-Xa-wVf" firstAttribute="trailing" secondItem="asa-kx-vOa" secondAttribute="trailing" id="Yy8-Zq-caT"/>
                             <constraint firstItem="Ifr-MV-QAw" firstAttribute="centerX" secondItem="kJw-Bx-9uN" secondAttribute="centerX" id="ewh-SW-ZGa"/>
+                            <constraint firstItem="hWL-Qh-FOk" firstAttribute="top" secondItem="asa-kx-vOa" secondAttribute="top" id="ggx-RU-cNu"/>
+                            <constraint firstItem="hWL-Qh-FOk" firstAttribute="trailing" secondItem="asa-kx-vOa" secondAttribute="trailing" id="mb9-uu-2Bu"/>
+                            <constraint firstItem="MVj-S1-beU" firstAttribute="leading" secondItem="asa-kx-vOa" secondAttribute="leading" id="oho-Hc-61V"/>
                             <constraint firstItem="Ifr-MV-QAw" firstAttribute="centerY" secondItem="kJw-Bx-9uN" secondAttribute="centerY" id="r6O-9k-hIa"/>
+                            <constraint firstItem="MVj-S1-beU" firstAttribute="top" secondItem="fBL-Xa-wVf" secondAttribute="bottom" id="sZj-G7-J2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="asa-kx-vOa"/>
                     </view>
                     <navigationItem key="navigationItem" id="KLT-kH-gUu">
                         <barButtonItem key="rightBarButtonItem" image="icon-filter" id="j57-gX-gen"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Ifr-MV-QAw" id="ACm-gA-RmG"/>
+                        <outlet property="categoriesCollectionView" destination="fBL-Xa-wVf" id="r4r-xN-2rx"/>
+                        <outlet property="departmentDescriptionLabel" destination="Xk5-gk-1Wd" id="hXv-eY-UOd"/>
+                        <outlet property="departmentNameLabel" destination="h9e-In-Dc7" id="cVN-TJ-KfW"/>
+                        <outlet property="departmentView" destination="hWL-Qh-FOk" id="XeD-6v-vtF"/>
+                        <outlet property="productsTableView" destination="MVj-S1-beU" id="w2L-Yz-FRU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glR-BA-V3E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530" y="2559"/>
+            <point key="canvasLocation" x="-1530.4000000000001" y="2558.7706146926539"/>
         </scene>
         <!--Stores-->
         <scene sceneID="JMw-yj-t5o">
@@ -813,7 +878,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="61I-z9-OH1" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Shop" image="Shop" selectedImage="ShopSelected" id="5jb-C9-lml"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="icon-back" id="Mek-RA-csP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="icon-back" backIndicatorTransitionMaskImage="icon-back" id="Mek-RA-csP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

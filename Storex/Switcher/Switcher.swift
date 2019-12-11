@@ -22,6 +22,7 @@ class Switcher {
             // check for token expire :
             let loginDate = UserDefaults.standard.object(forKey: "loginDate") as! Date
             if isTokenPass24(loginDate: loginDate) {
+                print("token passed 24h - logging out ...")
                 logOut()
                 rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OnBoardingNavigation") as! OnBoardingNavigation
             } else {

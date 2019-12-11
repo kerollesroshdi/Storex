@@ -7,9 +7,10 @@
 //
 
 import Foundation
-import RxSwift
+import UIKit
 
 struct DepartmentCellViewModel {
     let name, description: String
     let color: (red: CGFloat, green: CGFloat, blue: CGFloat)
+    let departmentID: Int
 }

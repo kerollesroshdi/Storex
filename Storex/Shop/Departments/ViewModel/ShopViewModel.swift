@@ -11,9 +11,10 @@ import Moya
 import RxSwift
 
 class ShopViewModel {
-    let departmentCellViewModels: PublishSubject<[DepartmentCellViewModel]> = PublishSubject()
+    
     let state: PublishSubject<State> = PublishSubject()
     let errorMessage: PublishSubject<String> = PublishSubject()
+    let departmentCellViewModels: PublishSubject<[DepartmentCellViewModel]> = PublishSubject()
     
     let departmentsProvider: MoyaProvider<DepartmentsService>
     
@@ -34,7 +35,7 @@ class ShopViewModel {
                         self.processFetchedDepatments(departments: departments)
                         self.state.onNext(.success)
                     } catch {
-                        print("response decoding error: \(error)")
+                        print("response decoding response: \(error)")
                         self.state.onNext(.error)
                     }
                 } else if response.statusCode == 400 {
@@ -65,7 +66,7 @@ class ShopViewModel {
     private func createDepartmentCellViewModel(department: Department) -> DepartmentCellViewModel {
         let colors: [(red: CGFloat, green: CGFloat, blue: CGFloat)] = [(255, 159, 243), (255, 159, 243), (254, 202, 87), (10, 189, 227), (29, 209, 161), (46, 134, 222), (34, 47, 62), (52, 31, 151), (1, 163, 164)]
         
-        return DepartmentCellViewModel(name: department.name.uppercased(), description: department.description, color: colors[department.departmentID])
+        return DepartmentCellViewModel(name: department.name.uppercased(), description: department.description, color: colors[department.departmentID], departmentID: department.departmentID)
     }
     
 }

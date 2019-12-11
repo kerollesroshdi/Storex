@@ -23,16 +23,12 @@ class ShopViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setNavigationTitleImage()
+        
+        // register nibs:
         tableview.registerCellNib(cellClass: DepartmentCell.self)
         
-        tableview.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                guard let self = self else { return }
-                guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "DepartmentViewController") else { return }
-                self.navigationController?.pushViewController(categoryVC, animated: true)
-            })
-            .disposed(by: disposeBag)
-        
+
+        initView()
         initVM()
     }
     
@@ -41,6 +37,17 @@ class ShopViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "nav-logo")!
         self.navigationItem.titleView = imageView
+    }
+    
+    func initView() {
+        tableview.rx.modelSelected(DepartmentCellViewModel.self)
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "DepartmentViewController") as? DepartmentViewController else { return }
+                categoryVC.departmentCellViewModel = model
+                self.navigationController?.pushViewController(categoryVC, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     func initVM() {
@@ -73,7 +80,6 @@ class ShopViewController: UIViewController {
                     UIView.animate(withDuration: 0.2) {
                         self.tableview.alpha = 1.0
                     }
-                    self.tableview.alpha = 1.0
                 }
             })
             .disposed(by: disposeBag)

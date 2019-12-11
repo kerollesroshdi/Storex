@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8439C24223A0D5B10051FB60 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24123A0D5B10051FB60 /* CategoriesService.swift */; };
+		8439C24423A0D6F80051FB60 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24323A0D6F80051FB60 /* Category.swift */; };
+		8439C24723A0D8B40051FB60 /* DepartmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24623A0D8B40051FB60 /* DepartmentViewModel.swift */; };
+		8439C24923A0DAAF0051FB60 /* CategoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24823A0DAAF0051FB60 /* CategoryCellViewModel.swift */; };
+		8439C24B23A0DB290051FB60 /* ProductCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24A23A0DB290051FB60 /* ProductCellViewModel.swift */; };
+		8439C24F23A0EC5A0051FB60 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24D23A0EC5A0051FB60 /* CategoryCell.swift */; };
+		8439C25023A0EC5A0051FB60 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8439C24E23A0EC5A0051FB60 /* CategoryCell.xib */; };
+		8439C25223A0EEE70051FB60 /* UICollectionViewNibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C25123A0EEE70051FB60 /* UICollectionViewNibExtension.swift */; };
+		8439C25423A11C830051FB60 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C25323A11C830051FB60 /* ProductsService.swift */; };
+		8439C25823A127B30051FB60 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C25623A127B30051FB60 /* ProductCell.swift */; };
+		8439C25923A127B30051FB60 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8439C25723A127B30051FB60 /* ProductCell.xib */; };
 		843EA979239F8A570092701D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EA978239F8A570092701D /* Product.swift */; };
 		843EA97B239F8BF00092701D /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EA97A239F8BF00092701D /* Products.swift */; };
 		843EA97D239F8EE80092701D /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EA97C239F8EE80092701D /* Department.swift */; };
@@ -52,6 +63,17 @@
 /* Begin PBXFileReference section */
 		2F587A5B1A2DA48334AB0EDC /* Pods-Storex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storex/Pods-Storex.debug.xcconfig"; sourceTree = "<group>"; };
 		4955C5397AE60F03C0F7D92D /* Pods_Storex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8439C24123A0D5B10051FB60 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
+		8439C24323A0D6F80051FB60 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8439C24623A0D8B40051FB60 /* DepartmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewModel.swift; sourceTree = "<group>"; };
+		8439C24823A0DAAF0051FB60 /* CategoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCellViewModel.swift; sourceTree = "<group>"; };
+		8439C24A23A0DB290051FB60 /* ProductCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellViewModel.swift; sourceTree = "<group>"; };
+		8439C24D23A0EC5A0051FB60 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8439C24E23A0EC5A0051FB60 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		8439C25123A0EEE70051FB60 /* UICollectionViewNibExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewNibExtension.swift; sourceTree = "<group>"; };
+		8439C25323A11C830051FB60 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		8439C25623A127B30051FB60 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		8439C25723A127B30051FB60 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		843EA978239F8A570092701D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		843EA97A239F8BF00092701D /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		843EA97C239F8EE80092701D /* Department.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -116,6 +138,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8439C24523A0D8980051FB60 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8439C24623A0D8B40051FB60 /* DepartmentViewModel.swift */,
+				8439C24823A0DAAF0051FB60 /* CategoryCellViewModel.swift */,
+				8439C24A23A0DB290051FB60 /* ProductCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8439C24C23A0EC3B0051FB60 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				8439C24D23A0EC5A0051FB60 /* CategoryCell.swift */,
+				8439C24E23A0EC5A0051FB60 /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		8439C25523A127920051FB60 /* ProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				8439C25623A127B30051FB60 /* ProductCell.swift */,
+				8439C25723A127B30051FB60 /* ProductCell.xib */,
+			);
+			path = ProductCell;
+			sourceTree = "<group>";
+		};
 		843EA97E239FAB0D0092701D /* DepartmentCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				84430744239FD5E600FCBBFB /* DepartmentViewController.swift */,
+				8439C24C23A0EC3B0051FB60 /* CategoryCell */,
+				8439C25523A127920051FB60 /* ProductCell */,
+				8439C24523A0D8980051FB60 /* ViewModel */,
 			);
 			path = Department;
 			sourceTree = "<group>";
@@ -255,6 +308,7 @@
 				8452DD812397F46400B21CC9 /* Validation.swift */,
 				84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */,
 				843EA983239FACE10092701D /* UITableViewNibExtension.swift */,
+				8439C25123A0EEE70051FB60 /* UICollectionViewNibExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -282,6 +336,8 @@
 			children = (
 				8452DD782397DA3400B21CC9 /* CustomersService.swift */,
 				84430740239FB1B000FCBBFB /* DepartmentsService.swift */,
+				8439C24123A0D5B10051FB60 /* CategoriesService.swift */,
+				8439C25323A11C830051FB60 /* ProductsService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -295,6 +351,7 @@
 				843EA978239F8A570092701D /* Product.swift */,
 				843EA97A239F8BF00092701D /* Products.swift */,
 				843EA97C239F8EE80092701D /* Department.swift */,
+				8439C24323A0D6F80051FB60 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,8 +460,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8439C25023A0EC5A0051FB60 /* CategoryCell.xib in Resources */,
 				C5FE31FA228CB0E000A3E0DC /* LaunchScreen.storyboard in Resources */,
 				C5FE31F7228CB0E000A3E0DC /* Assets.xcassets in Resources */,
+				8439C25923A127B30051FB60 /* ProductCell.xib in Resources */,
 				C5FE31F5228CB0DF00A3E0DC /* Main.storyboard in Resources */,
 				843EA982239FAB410092701D /* DepartmentCell.xib in Resources */,
 			);
@@ -456,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5AA00372291DF52008B2E6B /* InspirationViewController.swift in Sources */,
+				8439C25823A127B30051FB60 /* ProductCell.swift in Sources */,
 				C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */,
 				843EA97D239F8EE80092701D /* Department.swift in Sources */,
 				84651159239E769D00FDAB31 /* Switcher.swift in Sources */,
@@ -466,16 +526,21 @@
 				84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */,
 				8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */,
 				8465115E239E7B4F00FDAB31 /* OnBoardingNavigation.swift in Sources */,
+				8439C25423A11C830051FB60 /* ProductsService.swift in Sources */,
 				C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */,
 				84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */,
 				C5AA00392291DF65008B2E6B /* StoresViewController.swift in Sources */,
 				8452DD802397F41000B21CC9 /* UIButtonLoadingExtension.swift in Sources */,
 				843EA984239FACE10092701D /* UITableViewNibExtension.swift in Sources */,
 				C5FE31F2228CB0DF00A3E0DC /* BagViewController.swift in Sources */,
+				8439C24F23A0EC5A0051FB60 /* CategoryCell.swift in Sources */,
+				8439C24223A0D5B10051FB60 /* CategoriesService.swift in Sources */,
 				C5DBEF39229447C200CFA2EF /* UIView-Customize.swift in Sources */,
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
 				8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */,
 				843EA97B239F8BF00092701D /* Products.swift in Sources */,
+				8439C24923A0DAAF0051FB60 /* CategoryCellViewModel.swift in Sources */,
+				8439C25223A0EEE70051FB60 /* UICollectionViewNibExtension.swift in Sources */,
 				8443073D239FB00700FCBBFB /* ShopViewModel.swift in Sources */,
 				843EA981239FAB410092701D /* DepartmentCell.swift in Sources */,
 				8452DD822397F46400B21CC9 /* Validation.swift in Sources */,
@@ -487,6 +552,9 @@
 				8465115C239E77E300FDAB31 /* MainTabBarVC.swift in Sources */,
 				84430745239FD5E600FCBBFB /* DepartmentViewController.swift in Sources */,
 				8452DD7E2397E4D600B21CC9 /* State.swift in Sources */,
+				8439C24B23A0DB290051FB60 /* ProductCellViewModel.swift in Sources */,
+				8439C24423A0D6F80051FB60 /* Category.swift in Sources */,
+				8439C24723A0D8B40051FB60 /* DepartmentViewModel.swift in Sources */,
 				C5DBEF4122944FE600CFA2EF /* SignUpVC.swift in Sources */,
 				8443073F239FB02200FCBBFB /* DepartmentCellViewModel.swift in Sources */,
 				C5FE31F0228CB0DF00A3E0DC /* MoreViewController.swift in Sources */,
