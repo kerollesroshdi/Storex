@@ -34,6 +34,8 @@
 		8446375A23A26D58002825C2 /* ProductImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446375823A26D58002825C2 /* ProductImageCell.swift */; };
 		8446375B23A26D58002825C2 /* ProductImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446375923A26D58002825C2 /* ProductImageCell.xib */; };
 		8446375D23A26DD5002825C2 /* ProductImageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446375C23A26DD5002825C2 /* ProductImageCellViewModel.swift */; };
+		8446376023A28611002825C2 /* CustomizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446375F23A28611002825C2 /* CustomizeView.swift */; };
+		8446376223A28689002825C2 /* CustomizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446376123A28689002825C2 /* CustomizeView.xib */; };
 		8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */; };
 		8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD782397DA3400B21CC9 /* CustomersService.swift */; };
 		8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */; };
@@ -96,6 +98,8 @@
 		8446375823A26D58002825C2 /* ProductImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCell.swift; sourceTree = "<group>"; };
 		8446375923A26D58002825C2 /* ProductImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductImageCell.xib; sourceTree = "<group>"; };
 		8446375C23A26DD5002825C2 /* ProductImageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCellViewModel.swift; sourceTree = "<group>"; };
+		8446375F23A28611002825C2 /* CustomizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeView.swift; sourceTree = "<group>"; };
+		8446376123A28689002825C2 /* CustomizeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizeView.xib; sourceTree = "<group>"; };
 		8449DCFE239D364D00C3C7A1 /* SignInWithFBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithFBViewModel.swift; sourceTree = "<group>"; };
 		8452DD782397DA3400B21CC9 /* CustomersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomersService.swift; sourceTree = "<group>"; };
 		8452DD7A2397E46300B21CC9 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			children = (
 				8446375023A24E94002825C2 /* ProductDetailsViewController.swift */,
 				8446375723A26D21002825C2 /* ProductImageCell */,
+				8446375E23A2852F002825C2 /* CustomizeView */,
 				8446375223A261B2002825C2 /* ViewModel */,
 			);
 			path = ProductDetails;
@@ -243,6 +248,15 @@
 				8446375923A26D58002825C2 /* ProductImageCell.xib */,
 			);
 			path = ProductImageCell;
+			sourceTree = "<group>";
+		};
+		8446375E23A2852F002825C2 /* CustomizeView */ = {
+			isa = PBXGroup;
+			children = (
+				8446375F23A28611002825C2 /* CustomizeView.swift */,
+				8446376123A28689002825C2 /* CustomizeView.xib */,
+			);
+			path = CustomizeView;
 			sourceTree = "<group>";
 		};
 		8452DD7C2397E46800B21CC9 /* ViewModel */ = {
@@ -502,6 +516,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8446376223A28689002825C2 /* CustomizeView.xib in Resources */,
 				8446375B23A26D58002825C2 /* ProductImageCell.xib in Resources */,
 				8439C25023A0EC5A0051FB60 /* CategoryCell.xib in Resources */,
 				C5FE31FA228CB0E000A3E0DC /* LaunchScreen.storyboard in Resources */,
@@ -589,6 +604,7 @@
 				8439C25223A0EEE70051FB60 /* UICollectionViewNibExtension.swift in Sources */,
 				8443073D239FB00700FCBBFB /* ShopViewModel.swift in Sources */,
 				843EA981239FAB410092701D /* DepartmentCell.swift in Sources */,
+				8446376023A28611002825C2 /* CustomizeView.swift in Sources */,
 				8452DD822397F46400B21CC9 /* Validation.swift in Sources */,
 				84AB36B823993D7600E5C099 /* OnBoardingScreenVC.swift in Sources */,
 				C5FE31EE228CB0DF00A3E0DC /* AppDelegate.swift in Sources */,
