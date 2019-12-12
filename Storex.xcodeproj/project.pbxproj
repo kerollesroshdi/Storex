@@ -184,14 +184,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		84430742239FD4E200FCBBFB /* Departments */ = {
+		84430742239FD4E200FCBBFB /* Shop */ = {
 			isa = PBXGroup;
 			children = (
 				C5AA00342291DF41008B2E6B /* ShopViewController.swift */,
 				843EA97E239FAB0D0092701D /* DepartmentCell */,
 				8443073B239FAFCA00FCBBFB /* ViewModel */,
 			);
-			path = Departments;
+			path = Shop;
 			sourceTree = "<group>";
 		};
 		84430743239FD5B500FCBBFB /* Department */ = {
@@ -261,7 +261,7 @@
 		C5AA003A2291DFBA008B2E6B /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				84430742239FD4E200FCBBFB /* Departments */,
+				84430742239FD4E200FCBBFB /* Shop */,
 				84430743239FD5B500FCBBFB /* Department */,
 			);
 			path = Shop;

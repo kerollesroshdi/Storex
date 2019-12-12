@@ -91,7 +91,6 @@ class DepartmentViewController: UIViewController {
                         self.categoriesCollectionView.alpha = 0.0
                     }
                 case .success:
-                    // tableview & collectionView loaded
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.categoriesCollectionView.alpha = 1.0
