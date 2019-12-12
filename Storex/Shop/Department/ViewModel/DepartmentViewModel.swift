@@ -22,7 +22,7 @@ class DepartmentViewModel {
     let categoriesProvider: MoyaProvider<CategoriesService>
     let productsProvider: MoyaProvider<ProductsService>
     
-    init(categoriesProvider: MoyaProvider<CategoriesService> = MoyaProvider<CategoriesService>(), productsProvider: MoyaProvider<ProductsService> = MoyaProvider<ProductsService>(plugins: [NetworkLoggerPlugin(verbose: true)])) {
+    init(categoriesProvider: MoyaProvider<CategoriesService> = MoyaProvider<CategoriesService>(), productsProvider: MoyaProvider<ProductsService> = MoyaProvider<ProductsService>(/*plugins: [NetworkLoggerPlugin(verbose: true)]*/)) {
         self.categoriesProvider = categoriesProvider
         self.productsProvider = productsProvider
     }
