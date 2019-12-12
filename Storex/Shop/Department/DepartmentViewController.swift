@@ -65,6 +65,16 @@ class DepartmentViewController: UIViewController {
                 }
             })
         .disposed(by: disposeBag)
+        
+        productsTableView.rx.modelSelected(ProductCellViewModel.self)
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                guard let productDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailsViewController") as? ProductDetailsViewController else { return }
+                productDetailsVC.productID = model.productID
+                self.navigationController?.present(productDetailsVC, animated: true)
+            })
+        .disposed(by: disposeBag)
+        
     }
     
     func initVM() {

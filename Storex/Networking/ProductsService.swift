@@ -12,6 +12,7 @@ import Moya
 enum ProductsService {
     case getProductsInDepartment(_ department: Int, page: Int)
     case getProductsInCategory(_ category: Int, page: Int)
+    case getProductDetails(_ productID: Int)
 }
 
 extension ProductsService: TargetType {
@@ -25,12 +26,14 @@ extension ProductsService: TargetType {
             return "/inDepartment/\(department)"
         case .getProductsInCategory(let category, _):
             return "/inCategory/\(category)"
+        case .getProductDetails(let productID):
+            return "/\(productID)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getProductsInDepartment, .getProductsInCategory:
+        case .getProductsInDepartment, .getProductsInCategory, .getProductDetails:
             return .get
         }
     }
@@ -43,6 +46,8 @@ extension ProductsService: TargetType {
         switch self {
         case .getProductsInDepartment(_, let page), .getProductsInCategory(_, let page):
             return .requestParameters(parameters: ["page" : page], encoding: URLEncoding.queryString)
+        case .getProductDetails(_):
+            return .requestPlain
         }
     }
     
