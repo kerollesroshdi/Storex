@@ -33,6 +33,7 @@ class DepartmentViewController: UIViewController {
         
         // register nibs:
         categoriesCollectionView.registerCellNib(cellClass: CategoryCell.self)
+        productsTableView.registerCellNib(cellClass: ProductCell.self)
         
         initView()
         initVM()
@@ -54,8 +55,14 @@ class DepartmentViewController: UIViewController {
         departmentDescriptionLabel.text = departmentCellViewModel.description
         
         categoriesCollectionView.rx.modelSelected(CategoryCellViewModel.self)
-            .subscribe(onNext: { model in
-                print(model)
+            .subscribe(onNext: { [weak self] model in
+                print("model selected: \(model)")
+                guard let self = self else { return }
+                if model.id == 0 {
+                    self.viewModel.productsInDepartmentFetch(departmentID: self.departmentCellViewModel.departmentID, page: 1)
+                } else {
+                    self.viewModel.productsInCategoryFetch(categoryID: model.id, page: 1)
+                }
             })
         .disposed(by: disposeBag)
     }
@@ -68,31 +75,27 @@ class DepartmentViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.state
+        viewModel.categoriesState
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] state in
                 guard let self = self else { return }
                 switch state {
                 case .loading:
-                    // tableView & collectionView loading ...
                     self.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.categoriesCollectionView.alpha = 0.0
-                        self.productsTableView.alpha = 0.0
                     }
                 case .error:
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.categoriesCollectionView.alpha = 0.0
-                        self.productsTableView.alpha = 0.0
                     }
                 case .success:
                     // tableview & collectionView loaded
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.categoriesCollectionView.alpha = 1.0
-                        self.categoriesCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: UICollectionView.ScrollPosition.left)
-                        self.productsTableView.alpha = 1.0
+                        self.categoriesCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
                     }
                 }
             })
@@ -119,6 +122,30 @@ class DepartmentViewController: UIViewController {
                 cell.categoryCellViewModel = cellViewModel
         }.disposed(by: disposeBag)
         
+        viewModel.productsState
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    self.activityIndicator.startAnimating()
+                    UIView.animate(withDuration: 0.2) {
+                        self.productsTableView.alpha = 0.0
+                    }
+                case .error:
+                    self.activityIndicator.stopAnimating()
+                    UIView.animate(withDuration: 0.2) {
+                        self.productsTableView.alpha = 0.0
+                    }
+                case .success:
+                    self.activityIndicator.stopAnimating()
+                    UIView.animate(withDuration: 0.2) {
+                        self.productsTableView.alpha = 1.0
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.productCellViewModels
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
@@ -130,7 +157,7 @@ class DepartmentViewController: UIViewController {
         viewModel.productCellViewModels
             .bind(to: productsTableView.rx.items(cellIdentifier: "ProductCell")) {
                 (row, cellViewModel, cell: ProductCell) in
-                    
+                cell.productCellViewModel = cellViewModel
         }.disposed(by: disposeBag)
         
         viewModel.categoriesFetch(departmentID: departmentCellViewModel.departmentID)

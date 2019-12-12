@@ -20,7 +20,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="cvc-kD-ViG">
                         <rect key="frame" x="20" y="10" width="314" height="81"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shape" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-cH-d9r">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shape" translatesAutoresizingMaskIntoConstraints="NO" id="i5l-cH-d9r">
                                 <rect key="frame" x="0.0" y="0.5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="5q9-ya-vws"/>
@@ -96,6 +96,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="discountedPriceLabel" destination="okf-5X-FgR" id="6jD-db-wEi"/>
+                <outlet property="nameLabel" destination="ZQR-FF-Ceh" id="riM-Ti-oGR"/>
+                <outlet property="priceLabel" destination="P9K-GS-poG" id="VIP-GB-m1p"/>
+                <outlet property="productImageView" destination="i5l-cH-d9r" id="eq1-7l-ndv"/>
+                <outlet property="saleView" destination="HDB-wV-ZaE" id="KBW-M1-poJ"/>
+            </connections>
             <point key="canvasLocation" x="155.07246376811597" y="130.24553571428572"/>
         </tableViewCell>
     </objects>

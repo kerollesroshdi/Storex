@@ -42,7 +42,7 @@ extension ProductsService: TargetType {
     var task: Task {
         switch self {
         case .getProductsInDepartment(_, let page), .getProductsInCategory(_, let page):
-            return .requestParameters(parameters: ["page" : page], encoding: URLEncoding.default)
+            return .requestParameters(parameters: ["page" : page], encoding: URLEncoding.queryString)
         }
     }
     
