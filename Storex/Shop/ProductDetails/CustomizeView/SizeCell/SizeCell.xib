@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SizeCell" customModule="Storex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attribute-polygon" translatesAutoresizingMaskIntoConstraints="NO" id="EXg-cq-8lr">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attribute-polygon-selected-size" translatesAutoresizingMaskIntoConstraints="NO" id="ZdB-7L-RZH">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxX-xy-lXU">
+                        <rect key="frame" x="14.5" y="14" width="21" height="22"/>
+                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
+                        <color key="textColor" red="0.35294117650000001" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ZdB-7L-RZH" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="5Iy-km-9Pw"/>
+                <constraint firstItem="ZdB-7L-RZH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Kc2-Qn-YwC"/>
+                <constraint firstItem="ZdB-7L-RZH" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="Uec-7e-h9N"/>
+                <constraint firstItem="uxX-xy-lXU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="WIm-h3-L4T"/>
+                <constraint firstItem="EXg-cq-8lr" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="YtZ-CZ-jBs"/>
+                <constraint firstItem="EXg-cq-8lr" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="gCX-Js-bQ6"/>
+                <constraint firstItem="EXg-cq-8lr" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="ioX-e7-Btx"/>
+                <constraint firstItem="uxX-xy-lXU" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="mFy-nf-5Ol"/>
+                <constraint firstItem="EXg-cq-8lr" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="w67-z7-ih4"/>
+                <constraint firstItem="ZdB-7L-RZH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="wy7-Oz-rYY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="110" height="132"/>
+            <connections>
+                <outlet property="selectedSize" destination="ZdB-7L-RZH" id="3iz-GI-u1P"/>
+                <outlet property="sizeLabel" destination="uxX-xy-lXU" id="zJf-Ou-bvU"/>
+            </connections>
+            <point key="canvasLocation" x="175.36231884057972" y="139.28571428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="attribute-polygon" width="64" height="74"/>
+        <image name="attribute-polygon-selected-size" width="64" height="74"/>
+    </resources>
+</document>

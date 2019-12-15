@@ -276,6 +276,60 @@
                                     <constraint firstAttribute="trailing" secondItem="ZIT-aH-QlR" secondAttribute="trailing" constant="15" id="dzc-k3-l9z"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-5a-CXG" userLabel="DescriptionView">
+                                <rect key="frame" x="25" y="487" width="325" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This down jacket is incredibly lightweight and warm. The simple design looks great on everyone." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLe-W9-rW8">
+                                        <rect key="frame" x="15" y="10" width="295" height="70"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xLe-W9-rW8" firstAttribute="leading" secondItem="Lyk-5a-CXG" secondAttribute="leading" constant="15" id="D02-wg-fha"/>
+                                    <constraint firstAttribute="trailing" secondItem="xLe-W9-rW8" secondAttribute="trailing" constant="15" id="S9S-vE-2fI"/>
+                                    <constraint firstAttribute="bottom" secondItem="xLe-W9-rW8" secondAttribute="bottom" constant="10" id="YHU-Kw-eqZ"/>
+                                    <constraint firstItem="xLe-W9-rW8" firstAttribute="top" secondItem="Lyk-5a-CXG" secondAttribute="top" constant="10" id="h7u-wb-KEn"/>
+                                </constraints>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="aeQ-rz-fek">
+                                <rect key="frame" x="176" y="440" width="23" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F59-9p-esd">
+                                <rect key="frame" x="35" y="95" width="305" height="310"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="U0b-ho-8wB">
+                                    <size key="itemSize" width="300" height="300"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-PP-eJ4" customClass="CustomizeView" customModule="Storex" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="607" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="UpX-kJ-yKz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="-3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.19602597029999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhN-Gp-PT4" userLabel="FooterView">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
@@ -387,47 +441,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-5a-CXG" userLabel="DescriptionView">
-                                <rect key="frame" x="25" y="487" width="325" height="90"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This down jacket is incredibly lightweight and warm. The simple design looks great on everyone." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLe-W9-rW8">
-                                        <rect key="frame" x="15" y="10" width="295" height="70"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="xLe-W9-rW8" firstAttribute="leading" secondItem="Lyk-5a-CXG" secondAttribute="leading" constant="15" id="D02-wg-fha"/>
-                                    <constraint firstAttribute="trailing" secondItem="xLe-W9-rW8" secondAttribute="trailing" constant="15" id="S9S-vE-2fI"/>
-                                    <constraint firstAttribute="bottom" secondItem="xLe-W9-rW8" secondAttribute="bottom" constant="10" id="YHU-Kw-eqZ"/>
-                                    <constraint firstItem="xLe-W9-rW8" firstAttribute="top" secondItem="Lyk-5a-CXG" secondAttribute="top" constant="10" id="h7u-wb-KEn"/>
-                                </constraints>
-                            </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="aeQ-rz-fek">
-                                <rect key="frame" x="176" y="440" width="23" height="37"/>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="currentPageIndicatorTintColor" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </pageControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F59-9p-esd">
-                                <rect key="frame" x="35" y="95" width="305" height="310"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="U0b-ho-8wB">
-                                    <size key="itemSize" width="300" height="300"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-PP-eJ4" customClass="CustomizeView" customModule="Storex" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="417" width="375" height="250"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="UpX-kJ-yKz"/>
-                                </constraints>
-                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d73-x7-k0o">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -440,10 +453,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0Ex-jJ-ZIq" firstAttribute="trailing" secondItem="Lyk-5a-CXG" secondAttribute="trailing" constant="25" id="0wZ-OH-M2m"/>
+                            <constraint firstItem="NhN-Gp-PT4" firstAttribute="top" secondItem="N6c-PP-eJ4" secondAttribute="bottom" constant="-250" id="1kR-hC-9hJ"/>
                             <constraint firstItem="JOs-yQ-8ac" firstAttribute="centerX" secondItem="twz-Eb-h34" secondAttribute="centerX" id="2ng-cT-FZt"/>
                             <constraint firstItem="F59-9p-esd" firstAttribute="top" secondItem="rlp-qL-TaP" secondAttribute="bottom" constant="35" id="2rH-X3-yoc"/>
                             <constraint firstItem="NhN-Gp-PT4" firstAttribute="leading" secondItem="0Ex-jJ-ZIq" secondAttribute="leading" id="3Gw-I0-u1W"/>
-                            <constraint firstItem="N6c-PP-eJ4" firstAttribute="bottom" secondItem="NhN-Gp-PT4" secondAttribute="bottom" id="4Gu-5t-zuT"/>
                             <constraint firstItem="Lyk-5a-CXG" firstAttribute="top" secondItem="aeQ-rz-fek" secondAttribute="bottom" constant="10" id="6rK-UP-9Vp"/>
                             <constraint firstItem="rlp-qL-TaP" firstAttribute="leading" secondItem="0Ex-jJ-ZIq" secondAttribute="leading" id="90a-u5-kl1"/>
                             <constraint firstItem="Lyk-5a-CXG" firstAttribute="leading" secondItem="0Ex-jJ-ZIq" secondAttribute="leading" constant="25" id="BZc-1z-syp"/>
@@ -470,7 +483,9 @@
                         <outlet property="activityIndicator" destination="JOs-yQ-8ac" id="xAV-8b-BgO"/>
                         <outlet property="addToCartButton" destination="AEq-hY-vGu" id="H7R-bR-7Nw"/>
                         <outlet property="closeButton" destination="IMW-61-jYV" id="5b8-OK-mOq"/>
-                        <outlet property="customizeView" destination="KJH-0M-SBT" id="LAP-ug-MQ7"/>
+                        <outlet property="customizeView" destination="N6c-PP-eJ4" id="VqI-sK-ZIa"/>
+                        <outlet property="customizeViewAsButton" destination="KJH-0M-SBT" id="LAP-ug-MQ7"/>
+                        <outlet property="customizeViewConstraint" destination="1kR-hC-9hJ" id="ukn-pl-ydV"/>
                         <outlet property="descriptionLabel" destination="xLe-W9-rW8" id="ZXQ-ck-sve"/>
                         <outlet property="discountedPriceLabel" destination="Sji-RC-h1D" id="JxX-LM-NOp"/>
                         <outlet property="expandIconImageView" destination="PtZ-6r-fJL" id="IxO-Vy-Xho"/>

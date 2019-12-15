@@ -16,7 +16,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var imagesCollectionView: UICollectionView!
     @IBOutlet weak var imagesPageControl: UIPageControl!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var customizeView: UIView!
+    @IBOutlet weak var customizeViewAsButton: UIView!
     @IBOutlet weak var expandIconImageView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var discountedPriceLabel: UILabel!
@@ -24,13 +24,17 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: UIView!
     
+    @IBOutlet weak var customizeView: CustomizeView!
+    @IBOutlet weak var customizeViewConstraint: NSLayoutConstraint!
+    
     lazy var viewModel: ProductDetailsViewModel = {
         return ProductDetailsViewModel()
     }()
     let disposeBag = DisposeBag()
     
     var productID: Int!
-    
+    var customizeOn: Bool = false
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -40,6 +44,7 @@ class ProductDetailsViewController: UIViewController {
         
         initView()
         initVM()
+        customizeView.viewModel.getAttributesInProduct(productID)
     }
     
     func initView() {
@@ -49,6 +54,21 @@ class ProductDetailsViewController: UIViewController {
                 self.dismiss(animated: true)
             })
         .disposed(by: disposeBag)
+        
+        // animate constraint :
+        let tapOnCustomize = UITapGestureRecognizer()
+        customizeViewAsButton.addGestureRecognizer(tapOnCustomize)
+        
+        tapOnCustomize.rx.event.bind { [weak self] (recognizer) in
+            guard let self = self else { return }
+            UIView.animate(withDuration: 0.4) {
+                self.customizeViewConstraint.constant = self.customizeOn ? -250 : 0
+                self.customizeView.alpha = self.customizeOn ? 0 : 1
+                self.expandIconImageView.transform = self.customizeOn ? .identity : CGAffineTransform(rotationAngle:  0.999 * CGFloat.pi)
+                self.customizeOn.toggle()
+                self.view.layoutIfNeeded()
+            }
+        }.disposed(by: disposeBag)
         
         imagesCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         
