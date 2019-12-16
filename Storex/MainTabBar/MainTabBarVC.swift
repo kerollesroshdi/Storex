@@ -12,8 +12,12 @@ class MainTabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        // setting tabBar reference:
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.mainTabBar = self
     }
     
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84174AE723A79B4B007D9162 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84174AE623A79B4B007D9162 /* SideMenuViewController.swift */; };
 		8439C24223A0D5B10051FB60 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24123A0D5B10051FB60 /* CategoriesService.swift */; };
 		8439C24423A0D6F80051FB60 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24323A0D6F80051FB60 /* Category.swift */; };
 		8439C24723A0D8B40051FB60 /* DepartmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439C24623A0D8B40051FB60 /* DepartmentViewModel.swift */; };
@@ -81,6 +82,7 @@
 /* Begin PBXFileReference section */
 		2F587A5B1A2DA48334AB0EDC /* Pods-Storex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Storex/Pods-Storex.debug.xcconfig"; sourceTree = "<group>"; };
 		4955C5397AE60F03C0F7D92D /* Pods_Storex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84174AE623A79B4B007D9162 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		8439C24123A0D5B10051FB60 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		8439C24323A0D6F80051FB60 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8439C24623A0D8B40051FB60 /* DepartmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 				4955C5397AE60F03C0F7D92D /* Pods_Storex.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84174AE523A79B0C007D9162 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				84174AE623A79B4B007D9162 /* SideMenuViewController.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		8439C24523A0D8980051FB60 /* ViewModel */ = {
@@ -491,6 +501,7 @@
 				C5AA003C2291DFCA008B2E6B /* Bag */,
 				C5AA003D2291DFCF008B2E6B /* Stores */,
 				C5AA003E2291DFDB008B2E6B /* More */,
+				84174AE523A79B0C007D9162 /* SideMenu */,
 				C5DBEF37229447C200CFA2EF /* Helpers */,
 				C5FE31ED228CB0DF00A3E0DC /* AppDelegate.swift */,
 				C5FE31F3228CB0DF00A3E0DC /* Main.storyboard */,
@@ -625,6 +636,7 @@
 				C5AA00352291DF41008B2E6B /* ShopViewController.swift in Sources */,
 				843EA97D239F8EE80092701D /* Department.swift in Sources */,
 				84651159239E769D00FDAB31 /* Switcher.swift in Sources */,
+				84174AE723A79B4B007D9162 /* SideMenuViewController.swift in Sources */,
 				8446375A23A26D58002825C2 /* ProductImageCell.swift in Sources */,
 				C5DBEF3C2294499C00CFA2EF /* SignInVC.swift in Sources */,
 				84430741239FB1B000FCBBFB /* DepartmentsService.swift in Sources */,

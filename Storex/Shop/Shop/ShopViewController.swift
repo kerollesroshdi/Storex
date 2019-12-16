@@ -9,10 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SideMenu
 
 class ShopViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     lazy var viewModel: ShopViewModel = {
         return ShopViewModel()
@@ -46,6 +48,17 @@ class ShopViewController: UIViewController {
                 guard let categoryVC = self.storyboard?.instantiateViewController(withIdentifier: "DepartmentViewController") as? DepartmentViewController else { return }
                 categoryVC.departmentCellViewModel = model
                 self.navigationController?.pushViewController(categoryVC, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        menuButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                let menu = self.storyboard?.instantiateViewController(withIdentifier: "LeftSideMenu") as! UISideMenuNavigationController
+                menu.setNavigationBarHidden(true, animated: false)
+                SideMenuManager.default.menuPresentMode = .viewSlideInOut
+                SideMenuManager.default.menuAnimationBackgroundColor = UIColor.clear
+                self.present(menu, animated: true)
             })
             .disposed(by: disposeBag)
     }
