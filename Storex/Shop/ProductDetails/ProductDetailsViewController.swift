@@ -62,7 +62,7 @@ class ProductDetailsViewController: UIViewController {
         tapOnCustomize.rx.event.bind { [weak self] (recognizer) in
             guard let self = self else { return }
             UIView.animate(withDuration: 0.4) {
-                self.customizeViewConstraint.constant = self.customizeOn ? -250 : 0
+                self.customizeViewConstraint.constant = self.customizeOn ? -240 : 0
                 self.customizeView.alpha = self.customizeOn ? 0 : 1
                 self.expandIconImageView.transform = self.customizeOn ? .identity : CGAffineTransform(rotationAngle:  0.999 * CGFloat.pi)
                 self.customizeOn.toggle()

@@ -55,20 +55,24 @@ class CustomizeView: UIView {
             })
             .disposed(by: disposeBag)
 
-//        viewModel.state
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { [weak self] state in
-//                guard let self = self else { return }
-//                switch state {
-//                case .loading:
+        viewModel.state
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
 //                    self.containerView.backgroundColor = .green
-//                case .error:
+                    print("loading Customization")
+                case .error:
 //                    self.containerView.backgroundColor = .red
-//                case .success:
+                    print("loading Customization failed :(")
+                case .success:
 //                    self.containerView.backgroundColor = .white
-//                }
-//            })
-//            .disposed(by: disposeBag)
+                    self.sizeCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
+                    self.colorCollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .left)
+                }
+            })
+            .disposed(by: disposeBag)
 
 
         viewModel.sizeCellViewModels.bind(to: sizeCollectionView.rx.items(cellIdentifier: "SizeCell")) {

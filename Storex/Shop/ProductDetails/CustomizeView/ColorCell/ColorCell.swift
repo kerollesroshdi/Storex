@@ -20,6 +20,12 @@ class ColorCell: UICollectionViewCell {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            selectedColor.isHidden = isSelected ? false : true
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

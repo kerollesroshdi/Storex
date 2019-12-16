@@ -311,9 +311,9 @@
                                 <cells/>
                             </collectionView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6c-PP-eJ4" customClass="CustomizeView" customModule="Storex" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="607" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="607" width="375" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="UpX-kJ-yKz"/>
+                                    <constraint firstAttribute="height" constant="240" id="UpX-kJ-yKz"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -453,7 +453,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0Ex-jJ-ZIq" firstAttribute="trailing" secondItem="Lyk-5a-CXG" secondAttribute="trailing" constant="25" id="0wZ-OH-M2m"/>
-                            <constraint firstItem="NhN-Gp-PT4" firstAttribute="top" secondItem="N6c-PP-eJ4" secondAttribute="bottom" constant="-250" id="1kR-hC-9hJ"/>
+                            <constraint firstItem="NhN-Gp-PT4" firstAttribute="top" secondItem="N6c-PP-eJ4" secondAttribute="bottom" constant="-240" id="1kR-hC-9hJ"/>
                             <constraint firstItem="JOs-yQ-8ac" firstAttribute="centerX" secondItem="twz-Eb-h34" secondAttribute="centerX" id="2ng-cT-FZt"/>
                             <constraint firstItem="F59-9p-esd" firstAttribute="top" secondItem="rlp-qL-TaP" secondAttribute="bottom" constant="35" id="2rH-X3-yoc"/>
                             <constraint firstItem="NhN-Gp-PT4" firstAttribute="leading" secondItem="0Ex-jJ-ZIq" secondAttribute="leading" id="3Gw-I0-u1W"/>
