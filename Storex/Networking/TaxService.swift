@@ -1,33 +1,33 @@
 //
-//  CategoriesService.swift
+//  TaxService.swift
 //  Storex
 //
-//  Created by admin on 12/11/19.
+//  Created by admin on 12/17/19.
 //  Copyright © 2019 KerollesRoshdi. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-enum CategoriesService {
-    case getCategoriesInDepartment(_ department: Int)
+enum TaxService {
+    case getAllTaxes
 }
 
-extension CategoriesService: TargetType {
+extension TaxService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://backendapi.turing.com/categories")!
+        return URL(string: "https://backendapi.turing.com/tax")!
     }
     
     var path: String {
         switch self {
-        case .getCategoriesInDepartment(let department):
-            return "/inDepartment/\(department)"
+        case .getAllTaxes:
+            return ""
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getCategoriesInDepartment:
+        case .getAllTaxes:
             return .get
         }
     }
@@ -38,7 +38,7 @@ extension CategoriesService: TargetType {
     
     var task: Task {
         switch self {
-        case .getCategoriesInDepartment:
+        case .getAllTaxes:
             return .requestPlain
         }
     }
