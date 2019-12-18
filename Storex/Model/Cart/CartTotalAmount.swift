@@ -9,7 +9,7 @@
 import Foundation
 
 struct CartTotalAmount: Codable {
-    let totalAmount: Int
+    let totalAmount: Int?
     
     enum CodingKeys: String, CodingKey {
         case totalAmount = "total_amount"

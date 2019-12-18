@@ -38,7 +38,7 @@ class SignInViewModel {
                         self.accessToken.onNext(response.accessToken)
                         self.state.onNext(.success)
                     } catch {
-                        print("response decoding error: \(error)")
+                        print("response decoding response: \(error)")
                         self.state.onNext(.error)
                     }
                 } else if response.statusCode == 400 {
