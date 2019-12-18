@@ -23,7 +23,7 @@ class CartProductCell: UITableViewCell {
             self.productImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
             self.productImageView.sd_setImage(with: imageURL)
             self.nameLabel.text = cartProductCellViewModel?.name
-            self.priceLabel.text = cartProductCellViewModel?.price
+            self.priceLabel.text = "$\(cartProductCellViewModel?.price ?? "00.00")"
             self.sizeAttribute.text = cartProductCellViewModel?.size
             if let color = cartProductCellViewModel?.color {
                 self.colorAttribute.tintColor = UIColor(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)

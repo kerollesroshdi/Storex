@@ -55,6 +55,8 @@ class ProductDetailsViewController: UIViewController {
             })
         .disposed(by: disposeBag)
         
+        
+        
         // animate constraint :
         let tapOnCustomize = UITapGestureRecognizer()
         customizeViewAsButton.addGestureRecognizer(tapOnCustomize)

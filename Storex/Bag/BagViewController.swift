@@ -126,6 +126,7 @@ class BagViewController: UIViewController {
             .bind(to: productsTableView.rx.items(cellIdentifier: "CartProductCell")) {
                 (row, cellViewModel, cell: CartProductCell) in
                 // configure cell :
+                cell.cartProductCellViewModel = cellViewModel
         }.disposed(by: disposeBag)
         
         viewModel.getProductsInCart()

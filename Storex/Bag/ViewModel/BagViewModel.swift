@@ -78,7 +78,7 @@ class BagViewModel {
                     if response.statusCode == 200 {
                         do {
                             let totalAmount = try decoder.decode(CartTotalAmount.self, from: response.data)
-                            self.totalAmount.onNext("$\(totalAmount.totalAmount ?? 0)")
+                            self.totalAmount.onNext("$\(totalAmount.totalAmount ?? "00.00")")
                         } catch {
                             print("response decoding response: \(error)")
                         }
@@ -107,7 +107,7 @@ class BagViewModel {
     
     private func createCartProductCellViewModel(_ product: CartProduct) -> CartProductCellViewModel {
         let attributes = product.attributes.split(separator: ",")
-        let color = StorexColor(rawValue: String(attributes[1]))?.rgbColor ?? StorexColor.Blue.rgbColor
+        let color = StorexColor(rawValue: String(attributes[1]).trimmingCharacters(in: .whitespacesAndNewlines))?.rgbColor ?? StorexColor.Blue.rgbColor
         let size = String(attributes[0])
         return CartProductCellViewModel(productID: product.productID, imageURL: product.image, name: product.name, price: product.price, color: color, size: size)
     }
