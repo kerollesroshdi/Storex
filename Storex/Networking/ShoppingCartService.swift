@@ -14,6 +14,7 @@ enum ShoppingCartService {
     case addProduct(cartID: String, productID: Int, attributes: String)
     case getProductsInCart(_ cartID: String)
     case getTotalAmountInCart(_ cartID: String)
+    case removeProduct(_ itemID: Int)
 }
 
 extension ShoppingCartService: TargetType {
@@ -31,6 +32,8 @@ extension ShoppingCartService: TargetType {
             return "/\(cartID)"
         case .getTotalAmountInCart(let cartID):
             return "/totalAmount/\(cartID)"
+        case .removeProduct(let itemID):
+            return "removeProduct/\(itemID)"
         }
     }
     
@@ -40,6 +43,8 @@ extension ShoppingCartService: TargetType {
             return .get
         case .addProduct:
             return .post
+        case .removeProduct:
+            return .delete
         }
     }
     
@@ -49,7 +54,7 @@ extension ShoppingCartService: TargetType {
     
     var task: Task {
         switch self {
-        case .generateUniqueID, .getProductsInCart, .getTotalAmountInCart:
+        case .generateUniqueID, .getProductsInCart, .getTotalAmountInCart, .removeProduct:
             return .requestPlain
         case .addProduct(let cartID, let productID, let attributes):
             return .requestParameters(parameters: ["cart_id" : cartID, "product_id" : productID, "attributes" : attributes], encoding: JSONEncoding.default)

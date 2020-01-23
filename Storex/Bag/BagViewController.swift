@@ -67,6 +67,13 @@ class BagViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        
+        productsTableView.rx.modelDeleted(CartProductCellViewModel.self)
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                self.viewModel.removeProduct(itemID: model.itemID)
+            })
+            .disposed(by: disposeBag)
     }
 
     func initVM() {

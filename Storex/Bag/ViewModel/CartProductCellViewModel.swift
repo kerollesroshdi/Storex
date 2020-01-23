@@ -10,6 +10,7 @@ import Foundation
 
 struct CartProductCellViewModel {
     let productID: Int
+    let itemID: Int
     let imageURL: String
     let name: String
     let price: String

@@ -24,7 +24,6 @@ class BagViewModel {
     }
     
     func getProductsInCart() {
-        state.onNext(.loading)
         
         CartManager.cartID { [weak self] (cartID) in
             guard let self = self else { return }
@@ -109,7 +108,21 @@ class BagViewModel {
         let attributes = product.attributes.split(separator: ",")
         let color = StorexColor(rawValue: String(attributes[1]).trimmingCharacters(in: .whitespacesAndNewlines))?.rgbColor ?? StorexColor.Blue.rgbColor
         let size = String(attributes[0])
-        return CartProductCellViewModel(productID: product.productID, imageURL: product.image, name: product.name, price: product.price, color: color, size: size, quantity: product.quantity)
+        return CartProductCellViewModel(productID: product.productID, itemID: product.itemID, imageURL: product.image, name: product.name, price: product.price, color: color, size: size, quantity: product.quantity)
+    }
+    
+    func removeProduct(itemID: Int) {
+        shoppingCartProvider.request(.removeProduct(itemID)) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                print(response.statusCode)
+                self.getProductsInCart()
+                self.getTotalAmountInCart()
+            case .failure(let error):
+                self.errorMessage.onNext(error.localizedDescription)
+            }
+        }
     }
     
 }
