@@ -34,7 +34,7 @@ class ProductDetailsViewController: UIViewController {
     
     var productID: Int!
     var customizeOn: Bool = false
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -53,9 +53,24 @@ class ProductDetailsViewController: UIViewController {
             .subscribe(onNext: { _ in
                 self.dismiss(animated: true)
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
-        
+        #warning ("//TODO: request add to bag")
+        addToCartButton.rx.tap
+            .throttle(.seconds(30), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self ] _ in
+                guard let self = self else { return }
+                self.addToCartButton.setTitle("Loading...     ", for: .normal)
+                self.addToCartButton.loadingIndicator(true)
+                
+                CartManager.cartID { (cartID) in
+                    guard let cartID = cartID else { return }
+                    let attributes = self.customizeView.selectedAttributes["size"]! + "," + self.customizeView.selectedAttributes["color"]!
+                    self.viewModel.addProduct(cartID: cartID, productID: self.productID, attributes: attributes)
+                }
+                
+            })
+            .disposed(by: disposeBag)
         
         // animate constraint :
         let tapOnCustomize = UITapGestureRecognizer()
@@ -80,8 +95,21 @@ class ProductDetailsViewController: UIViewController {
         
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext:{ message in
+            .subscribe(onNext:{ [weak self ] message in
+                guard let self = self else { return }
                 NotificationBannerManager.show(title: "Network Error!", message: message, style: .warning)
+                self.addToCartButton.setTitle("ADD TO CART", for: .normal)
+                self.addToCartButton.loadingIndicator(false)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.successMessage
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{ [weak self ] message in
+                guard let self = self else { return }
+                NotificationBannerManager.show(title: "added successfully", message: message, style: .success)
+                self.addToCartButton.setTitle("ADD TO CART", for: .normal)
+                self.addToCartButton.loadingIndicator(false)
             })
             .disposed(by: disposeBag)
         
@@ -107,7 +135,7 @@ class ProductDetailsViewController: UIViewController {
                     }
                 }
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         viewModel.productDetails
             .observeOn(MainScheduler.instance)
@@ -115,7 +143,7 @@ class ProductDetailsViewController: UIViewController {
                 guard let self = self else { return }
                 self.configureViewWith(productDetails)
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         viewModel.productImageCellViewModels.bind(to: imagesCollectionView.rx.items(cellIdentifier: "ProductImageCell")) {
             (row, cellViewModel, cell: ProductImageCell) in
@@ -139,7 +167,7 @@ class ProductDetailsViewController: UIViewController {
             priceLabel.textColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             priceLabel.attributedText = NSAttributedString(string: "$\(productDetails.price)", attributes: [NSAttributedString.Key.strikethroughStyle : 2])
         }
-
+        
     }
     
 }

@@ -109,7 +109,7 @@ class BagViewModel {
         let attributes = product.attributes.split(separator: ",")
         let color = StorexColor(rawValue: String(attributes[1]).trimmingCharacters(in: .whitespacesAndNewlines))?.rgbColor ?? StorexColor.Blue.rgbColor
         let size = String(attributes[0])
-        return CartProductCellViewModel(productID: product.productID, imageURL: product.image, name: product.name, price: product.price, color: color, size: size)
+        return CartProductCellViewModel(productID: product.productID, imageURL: product.image, name: product.name, price: product.price, color: color, size: size, quantity: product.quantity)
     }
     
 }

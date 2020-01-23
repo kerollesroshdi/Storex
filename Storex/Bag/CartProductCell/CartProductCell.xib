@@ -37,7 +37,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-nb-4j5">
-                                        <rect key="frame" x="0.0" y="28.5" width="118.5" height="15"/>
+                                        <rect key="frame" x="0.0" y="28.5" width="185.5" height="15"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$110.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGh-QI-iZg">
                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="15"/>
@@ -64,6 +64,12 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjB-XH-JFz">
+                                                <rect key="frame" x="143.5" y="0.0" width="42" height="15"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="14"/>
+                                                <color key="textColor" white="0.19602597029999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -105,6 +111,7 @@
                 <outlet property="nameLabel" destination="Tx8-TX-5Uv" id="9BS-Tt-ZHb"/>
                 <outlet property="priceLabel" destination="XGh-QI-iZg" id="9oD-gS-XwJ"/>
                 <outlet property="productImageView" destination="MNx-Id-l3F" id="Ryu-bz-e1N"/>
+                <outlet property="quantityLabel" destination="QjB-XH-JFz" id="2oR-no-gJp"/>
                 <outlet property="sizeAttribute" destination="qLB-y5-MGf" id="Yev-8q-1fX"/>
             </connections>
             <point key="canvasLocation" x="152.89855072463769" y="125.55803571428571"/>

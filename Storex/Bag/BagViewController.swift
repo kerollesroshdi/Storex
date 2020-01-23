@@ -31,6 +31,8 @@ class BagViewController: UIViewController {
         CartManager.cartID { (cartID) in
             print("CartID from BagWillAppear: \(String(describing: cartID))")
         }
+        viewModel.getProductsInCart()
+        viewModel.getTotalAmountInCart()
     }
     
     override func viewDidLoad() {
@@ -128,9 +130,6 @@ class BagViewController: UIViewController {
                 // configure cell :
                 cell.cartProductCellViewModel = cellViewModel
         }.disposed(by: disposeBag)
-        
-        viewModel.getProductsInCart()
-        viewModel.getTotalAmountInCart()
     }
 
 }

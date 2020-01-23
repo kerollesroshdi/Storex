@@ -75,7 +75,7 @@ class CustomizeViewModel {
     }
     
     private func createColorCellViewModel(_ attribute: Attribute) -> ColorCellViewModel {
-        let color = StorexColor(rawValue: attribute.attributeValue)?.rgbColor ?? StorexColor.Orange.rgbColor
+        let color = StorexColor(rawValue: attribute.attributeValue) ?? StorexColor.Orange
         return ColorCellViewModel(color: color, id: attribute.attributeValueID)
     }
     

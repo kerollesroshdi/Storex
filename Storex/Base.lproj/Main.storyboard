@@ -416,7 +416,7 @@
         <!--Product Details View Controller-->
         <scene sceneID="nRb-tO-xeW">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailsViewController" id="cMi-ha-LJ9" customClass="ProductDetailsViewController" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsViewController" modalPresentationStyle="fullScreen" id="cMi-ha-LJ9" customClass="ProductDetailsViewController" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="twz-Eb-h34">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

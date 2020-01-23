@@ -14,7 +14,7 @@ class ColorCell: UICollectionViewCell {
     
     var colorCellViewModel: ColorCellViewModel? {
         didSet {
-            if let color = colorCellViewModel?.color {
+            if let color = colorCellViewModel?.color.rgbColor {
                 self.colorImageView.tintColor = UIColor(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)
             }
         }

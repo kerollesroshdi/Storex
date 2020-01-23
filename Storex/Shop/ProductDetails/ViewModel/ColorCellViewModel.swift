@@ -9,6 +9,6 @@
 import Foundation
 
 struct ColorCellViewModel {
-    let color: rgbColor
+    let color: StorexColor
     let id: Int
 }

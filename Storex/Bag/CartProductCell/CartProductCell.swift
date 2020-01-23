@@ -13,6 +13,7 @@ class CartProductCell: UITableViewCell {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var colorAttribute: UIImageView!
     @IBOutlet weak var sizeAttribute: UILabel!
     @IBOutlet weak var editButton: UIButton!
@@ -24,6 +25,7 @@ class CartProductCell: UITableViewCell {
             self.productImageView.sd_setImage(with: imageURL)
             self.nameLabel.text = cartProductCellViewModel?.name
             self.priceLabel.text = "$\(cartProductCellViewModel?.price ?? "00.00")"
+            self.quantityLabel.text = "Qty: \(cartProductCellViewModel?.quantity ?? 1)"
             self.sizeAttribute.text = cartProductCellViewModel?.size
             if let color = cartProductCellViewModel?.color {
                 self.colorAttribute.tintColor = UIColor(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)

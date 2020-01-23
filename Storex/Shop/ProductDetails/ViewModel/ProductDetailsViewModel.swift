@@ -14,13 +14,16 @@ class ProductDetailsViewModel {
     
     let state: PublishSubject<State> = PublishSubject()
     let errorMessage: PublishSubject<String> = PublishSubject()
+    let successMessage: PublishSubject<String> = PublishSubject()
     let productDetails: PublishSubject<ProductDetails> = PublishSubject()
     let productImageCellViewModels: PublishSubject<[ProductImageCellViewModel]> = PublishSubject()
     
     let productsProvider: MoyaProvider<ProductsService>
+    let shoppingCartProvider: MoyaProvider<ShoppingCartService>
     
-    init(productsProvider: MoyaProvider<ProductsService> = MoyaProvider<ProductsService>(/*plugins: [NetworkLoggerPlugin(verbose: true)]*/)) {
+    init(productsProvider: MoyaProvider<ProductsService> = MoyaProvider<ProductsService>(/*plugins: [NetworkLoggerPlugin(verbose: true)]*/), shoppingCartProvider: MoyaProvider<ShoppingCartService> = MoyaProvider<ShoppingCartService>()) {
         self.productsProvider = productsProvider
+        self.shoppingCartProvider = shoppingCartProvider
     }
     
     func getProductDetails(_ productID: Int) {
@@ -66,5 +69,17 @@ class ProductDetailsViewModel {
     
     private func createProductImageCellViewModel(imageURL: String) -> ProductImageCellViewModel {
         return ProductImageCellViewModel(imageURL: imageURL)
+    }
+    
+    func addProduct(cartID: String, productID: Int, attributes: String) {
+        shoppingCartProvider.request(.addProduct(cartID: cartID, productID: productID, attributes: attributes)) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.successMessage.onNext("product added to Bag")
+            case .failure(let error):
+                self.errorMessage.onNext(error.localizedDescription)
+            }
+        }
     }
 }
