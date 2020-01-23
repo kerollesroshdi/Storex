@@ -16,5 +16,5 @@ struct CartProductCellViewModel {
     let price: String
     let color: rgbColor
     let size: String
-    let quantity: Int
+    var quantity: Int
 }

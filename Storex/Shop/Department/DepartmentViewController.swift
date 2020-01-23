@@ -39,13 +39,6 @@ class DepartmentViewController: UIViewController {
         initVM()
     }
     
-    func setNavigationTitleImage() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "nav-logo")!
-        self.navigationItem.titleView = imageView
-    }
-    
     func initView() {
         
         if let color = departmentCellViewModel?.color {

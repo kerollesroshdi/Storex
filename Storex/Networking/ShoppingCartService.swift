@@ -15,6 +15,7 @@ enum ShoppingCartService {
     case getProductsInCart(_ cartID: String)
     case getTotalAmountInCart(_ cartID: String)
     case removeProduct(_ itemID: Int)
+    case updateProduct(itemID: Int, quantity: Int)
 }
 
 extension ShoppingCartService: TargetType {
@@ -34,6 +35,8 @@ extension ShoppingCartService: TargetType {
             return "/totalAmount/\(cartID)"
         case .removeProduct(let itemID):
             return "removeProduct/\(itemID)"
+        case .updateProduct(let itemID, _):
+            return "update/\(itemID)"
         }
     }
     
@@ -45,6 +48,8 @@ extension ShoppingCartService: TargetType {
             return .post
         case .removeProduct:
             return .delete
+        case .updateProduct:
+            return .put
         }
     }
     
@@ -58,6 +63,8 @@ extension ShoppingCartService: TargetType {
             return .requestPlain
         case .addProduct(let cartID, let productID, let attributes):
             return .requestParameters(parameters: ["cart_id" : cartID, "product_id" : productID, "attributes" : attributes], encoding: JSONEncoding.default)
+        case .updateProduct(_, let quantity):
+            return .requestParameters(parameters: ["quantity" : quantity], encoding: JSONEncoding.default)
         }
     }
     

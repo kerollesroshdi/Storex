@@ -47,13 +47,6 @@ class BagViewController: UIViewController {
         initVM()
     }
     
-    func setNavigationTitleImage() {
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "nav-logo")!
-        self.navigationItem.titleView = imageView
-    }
-    
     func initView() {
         
         menuButton.rx.tap
@@ -67,6 +60,15 @@ class BagViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        productsTableView.rx.modelSelected(CartProductCellViewModel.self)
+            .subscribe(onNext: { [weak self] model in
+                guard let self = self else { return }
+                if let editItem = self.storyboard?.instantiateViewController(withIdentifier: "EditItemViewController") as? EditItemViewController {
+                    editItem.cartProductCellViewModel = model
+                    self.navigationController?.pushViewController(editItem, animated: true)
+                }
+            })
+            .disposed(by: disposeBag)
         
         productsTableView.rx.modelDeleted(CartProductCellViewModel.self)
             .subscribe(onNext: { [weak self] model in
