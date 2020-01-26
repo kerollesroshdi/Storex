@@ -49,6 +49,7 @@ class Switcher {
         UserDefaults.standard.set(false, forKey: "isLoggedin")
         UserDefaults.standard.set(nil, forKey: "token")
         UserDefaults.standard.set(nil, forKey: "loginDate")
+        UserDefaults.standard.set(nil, forKey: "cartID")
     }
     
     private static func isTokenPass24(loginDate: Date) -> Bool {

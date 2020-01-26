@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Order: Codable{
+struct Order: Codable {
     let orderID, productID: Int
     let productName, attributes: String
     let quantity: Int
@@ -21,5 +21,13 @@ struct Order: Codable{
         case unitCost = "unit_cost"
         
         case attributes, quantity, subtotal
+    }
+}
+
+struct OrderID: Codable {
+    let id: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "orderId"
     }
 }

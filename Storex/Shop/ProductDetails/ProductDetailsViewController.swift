@@ -127,6 +127,7 @@ class ProductDetailsViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.loadingView.alpha = 1.0
+                        self.dismiss(animated: true)
                     }
                 case .success:
                     self.activityIndicator.stopAnimating()

@@ -50,15 +50,24 @@ class BagViewController: UIViewController {
     func initView() {
         
         menuButton.rx.tap
-        .subscribe(onNext: { [weak self] _ in
-            guard let self = self else { return }
-            let menu = self.storyboard?.instantiateViewController(withIdentifier: "LeftSideMenu") as! UISideMenuNavigationController
-            menu.setNavigationBarHidden(true, animated: false)
-            SideMenuManager.default.menuPresentMode = .viewSlideInOut
-            SideMenuManager.default.menuAnimationBackgroundColor = UIColor.clear
-            self.present(menu, animated: true)
-        })
-        .disposed(by: disposeBag)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                let menu = self.storyboard?.instantiateViewController(withIdentifier: "LeftSideMenu") as! UISideMenuNavigationController
+                menu.setNavigationBarHidden(true, animated: false)
+                SideMenuManager.default.menuPresentMode = .viewSlideInOut
+                SideMenuManager.default.menuAnimationBackgroundColor = UIColor.clear
+                self.present(menu, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        checkoutButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                if let selectRegionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SelectRegionViewController") {
+                    self.navigationController?.pushViewController(selectRegionViewController, animated: true)
+                }
+            })
+            .disposed(by: disposeBag)
         
         productsTableView.rx.modelSelected(CartProductCellViewModel.self)
             .subscribe(onNext: { [weak self] model in
@@ -101,6 +110,7 @@ class BagViewController: UIViewController {
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.loadingView.alpha = 0.0
+                        self.noItemsView.alpha = 1.0
                     }
                 case .success:
                     self.activityIndicator.stopAnimating()

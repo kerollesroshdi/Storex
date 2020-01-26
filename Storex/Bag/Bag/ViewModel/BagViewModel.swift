@@ -39,6 +39,7 @@ class BagViewModel {
                             print("fetched products: \(products.count)")
                             if products.count == 0 {
                                 self.state.onNext(.error)
+                                self.processFetchedCartProducts([])
                             } else {
                                 self.processFetchedCartProducts(products)
                                 self.state.onNext(.success)
