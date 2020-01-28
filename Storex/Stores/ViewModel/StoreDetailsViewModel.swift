@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct StoreDetailsViewModel {
     let name: String
     let address: String
     let number: String
-    let location: (latitude: Double, longitude: Double)
+    let location: CLLocation
 }

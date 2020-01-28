@@ -27,20 +27,23 @@ class StoresViewController: UIViewController {
     @IBOutlet weak var getDirectionButton: UIButton!
     
     
-    
     lazy var viewModel: StoresViewModel = {
        return StoresViewModel()
     }()
     let disposeBag = DisposeBag()
     
+    let locationManager = CLLocationManager()
     var isFirstRender = true
+    
     var storesDetails = [StoreDetailsViewModel]()
+    var selectedStoreLocation: CLLocation?
     var selectedStore: Int? {
         didSet {
             let details = storesDetails[selectedStore!]
             storeNameLabel.text = details.name
             storeAddressLabel.text = details.address
             storeNumberLabel.text = details.number
+            selectedStoreLocation = details.location
         }
     }
     
@@ -56,7 +59,7 @@ class StoresViewController: UIViewController {
         initVM()
         
         mapView.delegate = self
-        
+        setLocationManager()
     }
     
     func setNavigationItemTitleImage() {
@@ -64,6 +67,20 @@ class StoresViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "nav-logo")!
         self.navItem.titleView = imageView
+    }
+    
+    func setLocationManager() {
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+            locationManager.startUpdatingLocation()
+        }
     }
     
     private func initView() {
@@ -85,19 +102,44 @@ class StoresViewController: UIViewController {
                 guard let self = self else { return }
                 self.selectedStore = indexpath.row
                 self.storeDetailsView.isHidden = false
+                UIView.animate(withDuration: 0.3) {
+                    self.storeDetailsView.alpha = 1
+                }
             }).disposed(by: disposeBag)
         
         closeStoreDetailsButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.storeDetailsView.isHidden = true
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.storeDetailsView.alpha = 0
+                }) { (_) in
+                    self.storeDetailsView.isHidden = true
+                }
                 self.tableView.deselectRow(at: IndexPath(row: self.selectedStore!, section: 0), animated: true)
+            }).disposed(by: disposeBag)
+        
+        getDirectionButton.rx.tap
+            .throttle(.seconds(10), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                guard let location = self.selectedStoreLocation else { return }
+                
+                let regionDistance: CLLocationDistance = 1000
+                let regionSpan = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+                let options = [ MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+                
+                let placeMark = MKPlacemark(coordinate: location.coordinate)
+                let mapItem = MKMapItem(placemark: placeMark)
+                mapItem.name = self.storesDetails[self.selectedStore!].name
+                mapItem.openInMaps(launchOptions: options)
+                
             }).disposed(by: disposeBag)
         
     }
 
     private func initVM() {
         viewModel.storeLocationCellViewModels
+            .throttle(.seconds(30), scheduler: MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: "StoreLocationCell")) {
                 (row, cellViewModel, cell: StoreLocationCell) in
                 cell.storeLocationCellViewModel = cellViewModel
@@ -108,10 +150,10 @@ class StoresViewController: UIViewController {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] locations in
                 guard let self = self else { return }
-                locations.forEach { (location) in
+                locations.forEach { (store) in
                     let annotation = MKPointAnnotation()
-                    annotation.title = location.name
-                    annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                    annotation.title = store.name
+                    annotation.coordinate = store.location.coordinate
                     self.mapView.addAnnotation(annotation)
                 }
             })
@@ -124,7 +166,7 @@ class StoresViewController: UIViewController {
             }).disposed(by: disposeBag)
         
         
-        viewModel.getStoresLocation()
+        viewModel.getStoreInfo()
     }
 }
 
@@ -158,5 +200,12 @@ extension StoresViewController: MKMapViewDelegate {
             mapView.fitAll()
             isFirstRender = false
         }
+    }
+}
+
+extension StoresViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let userLocation = manager.location else { return }
+        viewModel.getStoresLocation(fromLocation: userLocation)
     }
 }

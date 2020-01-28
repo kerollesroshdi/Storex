@@ -69,12 +69,13 @@
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
 	</array>
-    
-    <key>FacebookAutoLogAppEventsEnabled</key>
-    <false/>
-    
-    <key>FacebookAdvertiserIDCollectionEnabled</key>
-    <false/>
-    
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<false/>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<false/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your Location will be used to see how you&apos;re far away from our stores </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your Location will be used to see how you&apos;re far away from our stores </string>
 </dict>
 </plist>
