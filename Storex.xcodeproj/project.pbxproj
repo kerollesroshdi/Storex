@@ -82,6 +82,8 @@
 		84734DE323DEDEC200210FA1 /* StoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734DE223DEDEC200210FA1 /* StoresViewModel.swift */; };
 		84734DE523DF0E3C00210FA1 /* MKMapView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734DE423DF0E3C00210FA1 /* MKMapView-Extension.swift */; };
 		84734DE723DF278300210FA1 /* StoreDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84734DE623DF278300210FA1 /* StoreDetailsViewModel.swift */; };
+		84941F6E23E1707B00586271 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84941F6D23E1707B00586271 /* ContactViewController.swift */; };
+		84941F7323E1795A00586271 /* SendQuestionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84941F7223E1795A00586271 /* SendQuestionTableVC.swift */; };
 		84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36AE2399122100E5C099 /* SignUpViewModel.swift */; };
 		84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */; };
 		84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */; };
@@ -191,6 +193,8 @@
 		84734DE223DEDEC200210FA1 /* StoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresViewModel.swift; sourceTree = "<group>"; };
 		84734DE423DF0E3C00210FA1 /* MKMapView-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView-Extension.swift"; sourceTree = "<group>"; };
 		84734DE623DF278300210FA1 /* StoreDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailsViewModel.swift; sourceTree = "<group>"; };
+		84941F6D23E1707B00586271 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		84941F7223E1795A00586271 /* SendQuestionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendQuestionTableVC.swift; sourceTree = "<group>"; };
 		84AB36AE2399122100E5C099 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBannerManager.swift; sourceTree = "<group>"; };
 		84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
@@ -518,6 +522,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		84941F6C23E16EDA00586271 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				84941F6D23E1707B00586271 /* ContactViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		84941F6F23E1709000586271 /* SendQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				84941F7223E1795A00586271 /* SendQuestionTableVC.swift */,
+			);
+			path = SendQuestion;
+			sourceTree = "<group>";
+		};
 		84AB36AD2399120400E5C099 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +561,8 @@
 			isa = PBXGroup;
 			children = (
 				84C3D9F823E0714500408D54 /* CustomerSupportViewController.swift */,
+				84941F6C23E16EDA00586271 /* Contact */,
+				84941F6F23E1709000586271 /* SendQuestion */,
 				84C3D9FA23E0737600408D54 /* OptionCell */,
 			);
 			path = CustomerSupport;
@@ -887,6 +909,7 @@
 				844FA9A923A8D2FF007E3C6D /* CartTotalAmount.swift in Sources */,
 				844FA9BD23A8DF7E007E3C6D /* ShippingService.swift in Sources */,
 				84734DE323DEDEC200210FA1 /* StoresViewModel.swift in Sources */,
+				84941F6E23E1707B00586271 /* ContactViewController.swift in Sources */,
 				84430741239FB1B000FCBBFB /* DepartmentsService.swift in Sources */,
 				C5DBEF4922946F3800CFA2EF /* Error.swift in Sources */,
 				8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */,
@@ -942,6 +965,7 @@
 				843EA979239F8A570092701D /* Product.swift in Sources */,
 				8446375123A24E94002825C2 /* ProductDetailsViewController.swift in Sources */,
 				844FA9B323A8D70F007E3C6D /* OrderShortDetail.swift in Sources */,
+				84941F7323E1795A00586271 /* SendQuestionTableVC.swift in Sources */,
 				84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */,
 				84AB36B12399150D00E5C099 /* NotificationBannerManager.swift in Sources */,
 				8465115C239E77E300FDAB31 /* MainTabBarVC.swift in Sources */,
