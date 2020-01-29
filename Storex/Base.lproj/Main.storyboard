@@ -645,6 +645,7 @@
                     <connections>
                         <outlet property="tableView" destination="4Za-86-PtA" id="bAH-Kj-6xm"/>
                         <segue destination="PKH-Aw-WYg" kind="show" id="c08-Nh-LJv"/>
+                        <segue destination="p9V-4y-zM0" kind="show" id="dn7-2F-lqN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAa-Jf-F1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -946,6 +947,40 @@ New York, NY 10017</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vB-0u-d26" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1556" y="3293.7031484257873"/>
+        </scene>
+        <!--Customer Service-->
+        <scene sceneID="Rhg-NT-MVa">
+            <objects>
+                <tableViewController storyboardIdentifier="CustomerServiceTableVC" title="Customer Service" id="p9V-4y-zM0" customClass="CustomerServiceTableVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MiC-5P-kJD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4fL-SW-tmm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4fL-SW-tmm" id="kCi-xW-TLj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p9V-4y-zM0" id="1x9-5p-RsH"/>
+                            <outlet property="delegate" destination="p9V-4y-zM0" id="7ni-xz-6he"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CUSTOMER SERVICE" id="P8Y-Li-1yK">
+                        <barButtonItem key="backBarButtonItem" title=" " id="PiC-27-Bkv"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="WXO-Zh-6yD" kind="show" id="A2z-KI-vrO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJJ-VS-chV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2346" y="3294"/>
         </scene>
         <!--OrderComplete-->
         <scene sceneID="Np4-vJ-i5Y">
@@ -1304,6 +1339,69 @@ with the order id below.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXF-bH-G4X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1556" y="4018.7406296851577"/>
+        </scene>
+        <!--Customer Service DetailsVC-->
+        <scene sceneID="y79-h5-jn9">
+            <objects>
+                <viewController storyboardIdentifier="CustomerServiceDetailsVC" id="WXO-Zh-6yD" customClass="CustomerServiceDetailsVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B3X-Y1-5A3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZP-VT-BAQ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LKk-pi-seR">
+                                        <rect key="frame" x="20" y="20" width="335" height="939.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How to ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ui-AQ-oKg">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="26"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQU-mS-NwK">
+                                                <rect key="frame" x="0.0" y="31" width="335" height="908.5"/>
+                                                <mutableString key="text">Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ullamcorper dolor pulvinar sit amet. Sed quis tincidunt nunc. Pellentesque eget turpis quam. Vivamus faucibus quam enim. Vestibulum gravida mauris at sollicitudin blandit. 
+Donec urna nibh, vulputate commodo mauris et, porttitor porttitor mauris. Integer sit amet arcu sit amet massa efficitur vestibulum. 
+Curabitur aliquet tellus ut libero posuere, ut maximus ipsum fermentum.
+Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ullamcorper dolor pulvinar sit amet. Sed quis tincidunt nunc. Pellentesque eget turpis quam. Vivamus faucibus quam enim. Vestibulum gravida mauris at sollicitudin blandit. 
+Donec urna nibh, vulputate commodo mauris et, porttitor porttitor mauris. Integer sit amet arcu sit amet massa efficitur vestibulum. 
+Curabitur aliquet tellus ut libero posuere, ut maximus ipsum fermentum.
+Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ullamcorper dolor pulvinar sit amet. Sed quis tincidunt nunc. Pellentesque eget turpis quam. Vivamus faucibus quam enim. Vestibulum gravida mauris at sollicitudin blandit. </mutableString>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LKk-pi-seR" firstAttribute="top" secondItem="sZP-VT-BAQ" secondAttribute="top" constant="20" id="CZ5-cb-WSa"/>
+                                    <constraint firstAttribute="bottom" secondItem="LKk-pi-seR" secondAttribute="bottom" constant="20" id="DLk-s1-U6U"/>
+                                    <constraint firstItem="LKk-pi-seR" firstAttribute="leading" secondItem="sZP-VT-BAQ" secondAttribute="leading" constant="20" id="UQi-Se-GGE"/>
+                                    <constraint firstItem="LKk-pi-seR" firstAttribute="width" secondItem="sZP-VT-BAQ" secondAttribute="width" constant="-40" id="Zeo-HO-Ezf"/>
+                                    <constraint firstAttribute="trailing" secondItem="LKk-pi-seR" secondAttribute="trailing" constant="20" id="fXN-ki-dhE"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="QYO-WJ-y2R"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="mpQ-b9-nkL"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sZP-VT-BAQ" firstAttribute="top" secondItem="TpW-vO-nRi" secondAttribute="top" id="IS3-nx-mKV"/>
+                            <constraint firstItem="sZP-VT-BAQ" firstAttribute="bottom" secondItem="TpW-vO-nRi" secondAttribute="bottom" id="RXB-xO-4KH"/>
+                            <constraint firstItem="sZP-VT-BAQ" firstAttribute="leading" secondItem="TpW-vO-nRi" secondAttribute="leading" id="dkn-je-bJf"/>
+                            <constraint firstItem="sZP-VT-BAQ" firstAttribute="width" secondItem="TpW-vO-nRi" secondAttribute="width" id="fjP-tb-JkP"/>
+                            <constraint firstItem="sZP-VT-BAQ" firstAttribute="trailing" secondItem="TpW-vO-nRi" secondAttribute="trailing" id="m1s-t1-ekS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TpW-vO-nRi"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s8h-0q-FrL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVC-0y-ry8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2344.8000000000002" y="4018.7406296851577"/>
         </scene>
         <!--Shop View Controller-->
         <scene sceneID="Pko-Xq-plj">

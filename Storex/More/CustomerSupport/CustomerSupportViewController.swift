@@ -41,7 +41,7 @@ extension CustomerSupportViewController: UITableViewDelegate, UITableViewDataSou
         case .Contact:
             if let VC = storyboard?.instantiateViewController(withIdentifier: "ContactViewController") { vc = VC }
         case .CustomerService:
-            if let VC = storyboard?.instantiateViewController(withIdentifier: "CustomerSupportViewController") as? CustomerSupportViewController { vc = VC }
+            if let VC = storyboard?.instantiateViewController(withIdentifier: "CustomerServiceTableVC") as? CustomerServiceTableVC { vc = VC }
         }
         navigationController?.pushViewController(vc, animated: true)
     }
