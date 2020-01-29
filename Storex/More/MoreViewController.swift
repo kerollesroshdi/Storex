@@ -48,7 +48,7 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
         var vc = UIViewController()
         switch option {
         case .MyAccount:
-            if let VC = storyboard?.instantiateViewController(withIdentifier: "MyAccountViewController") { vc = VC }
+            if let VC = storyboard?.instantiateViewController(withIdentifier: "MyAccountViewController") as? MyAccountViewController { vc = VC }
         case .CustomerSupport:
             if let VC = storyboard?.instantiateViewController(withIdentifier: "CustomerSupportViewController") as? CustomerSupportViewController { vc = VC }
         }
