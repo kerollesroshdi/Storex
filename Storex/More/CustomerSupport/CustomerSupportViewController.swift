@@ -29,8 +29,7 @@ extension CustomerSupportViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let option = CustomerSupportOption.allCases[indexPath.row]
         let cell = tableView.dequeue() as OptionCell
-        cell.titleLabel.text = option.title
-        cell.subtitleLabel.text = option.subtitle
+        cell.viewModel = OptionCellViewModel(title: option.title, subtitle: option.subtitle)
         return cell
     }
     

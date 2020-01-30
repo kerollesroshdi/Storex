@@ -38,8 +38,7 @@ extension MoreViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let option = MoreOption.allCases[indexPath.row]
         let cell = tableView.dequeue() as OptionCell
-        cell.titleLabel.text = option.title
-        cell.subtitleLabel.isHidden = true
+        cell.viewModel = OptionCellViewModel(title: option.title)
         return cell
     }
     

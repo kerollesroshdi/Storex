@@ -23,6 +23,7 @@ class SendQuestionTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
          fields = [nameTextField, emailTextField, phoneTextField, subjectTextField, messageTextView]
         

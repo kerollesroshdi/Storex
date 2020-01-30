@@ -11,16 +11,11 @@ import Moya
 
 enum OrderService {
     case order(cardID: String, shippingID: Int, taxID: Int)
+    case getOrders
 }
 
-extension OrderService: TargetType, AccessTokenAuthorizable {
-    var authorizationType: AuthorizationType {
-        switch self {
-        case .order:
-            return .bearer
-        }
-    }
-    
+extension OrderService: TargetType {
+
     var baseURL: URL {
         return URL(string: "https://backendapi.turing.com/orders")!
     }
@@ -29,6 +24,8 @@ extension OrderService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .order:
             return ""
+        case .getOrders:
+            return "/inCustomer"
         }
     }
     
@@ -36,6 +33,8 @@ extension OrderService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .order:
             return .post
+        case .getOrders:
+            return .get
         }
     }
     
@@ -47,6 +46,8 @@ extension OrderService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .order(let cardID, let shippingID, let taxID):
             return .requestParameters(parameters: ["cart_id" : cardID , "shipping_id" : shippingID, "tax_id" : taxID], encoding: JSONEncoding.default)
+        case .getOrders:
+            return .requestPlain
         }
     }
     

@@ -17,11 +17,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="lgc-8m-KsM">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lgc-8m-KsM">
                         <rect key="frame" x="15" y="20" width="285" height="43"/>
                         <subviews>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-payment" translatesAutoresizingMaskIntoConstraints="NO" id="VKR-OU-KXN">
+                                <rect key="frame" x="-21" y="11" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="9de-6f-Lrb"/>
+                                    <constraint firstAttribute="height" constant="21" id="GLO-cs-jgT"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="p6t-Ar-04w">
-                                <rect key="frame" x="0.0" y="0.0" width="176" height="43"/>
+                                <rect key="frame" x="0.0" y="10" width="249" height="23.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0rP-go-7ZB">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="23.5"/>
@@ -29,8 +36,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ and company policies." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCg-XM-0jB">
-                                        <rect key="frame" x="0.0" y="23.5" width="172.5" height="19.5"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAQ and company policies." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCg-XM-0jB">
+                                        <rect key="frame" x="0.0" y="23.5" width="172.5" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -66,6 +73,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="iconImageView" destination="VKR-OU-KXN" id="Nh8-09-A7b"/>
                 <outlet property="subtitleLabel" destination="kCg-XM-0jB" id="au7-UH-CME"/>
                 <outlet property="titleLabel" destination="0rP-go-7ZB" id="kHy-vL-WsQ"/>
             </connections>
@@ -74,5 +82,6 @@
     </objects>
     <resources>
         <image name="icon-next" width="18" height="30"/>
+        <image name="icon-payment" width="28" height="32"/>
     </resources>
 </document>

@@ -10,10 +10,10 @@ import Foundation
 
 struct OrderShortDetail: Codable {
     let orderID: Int
-    let totalAmount: Int
+    let totalAmount: String
     let createdOn: String
-    let shippedOn: String
-    let status: String
+    let shippedOn: String?
+    let status: Int
     let name: String
     
     enum CodingKeys: String, CodingKey {

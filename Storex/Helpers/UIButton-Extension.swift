@@ -1,5 +1,5 @@
 //
-//  UIButtonLoadingExtension.swift
+//  UIButton-Extension.swift
 //  Mosand
 //
 //  Created by admin on 8/28/19.
@@ -30,38 +30,6 @@ extension UIButton {
         }
     }
     
-    func centerVertically(padding: CGFloat = 6.0) {
-        guard
-            let imageViewSize = self.imageView?.frame.size,
-            let titleLabelSize = self.titleLabel?.frame.size else {
-                return
-        }
-        
-        let totalHeight = imageViewSize.height + titleLabelSize.height + padding
-        
-        self.imageEdgeInsets = UIEdgeInsets(
-            top: -(totalHeight - imageViewSize.height),
-            left: 0.0,
-            bottom: 0.0,
-            right: -titleLabelSize.width
-        )
-        
-        self.titleEdgeInsets = UIEdgeInsets(
-            top: 0.0,
-            left: -imageViewSize.width,
-            bottom: -(totalHeight - titleLabelSize.height),
-            right: 0.0
-        )
-        
-        self.contentEdgeInsets = UIEdgeInsets(
-            top: 0.0,
-            left: 0.0,
-            bottom: titleLabelSize.height,
-            right: 0.0
-        )
-    }
-    
-    
     func alignImageAndTitleVertically(padding: CGFloat = 6.0) {
         let imageSize = self.imageView!.frame.size
         let titleSize = self.titleLabel!.frame.size
@@ -71,7 +39,7 @@ extension UIButton {
             top: -(totalHeight - imageSize.height),
             left: 0,
             bottom: 0,
-            right: -titleSize.width
+            right: -(titleSize.width + (imageSize.width / 2))
         )
         
         self.titleEdgeInsets = UIEdgeInsets(
