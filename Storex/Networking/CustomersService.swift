@@ -13,21 +13,27 @@ enum CustomersService {
     case login(email: String, password: String)
     case loginWithFb(token: String)
     case register(name: String, email: String, password: String)
+    case getCustomer
+    case updateAddress(address1: String, address2: String?, city: String, region: String, postalCode: String, country: String, shippingRegionID: Int = 2)
 }
 
 extension CustomersService: TargetType {
     var baseURL: URL {
-        return URL(string: "https://backendapi.turing.com/customers")!
+        return URL(string: "https://backendapi.turing.com")!
     }
     
     var path: String {
         switch self {
         case .login:
-            return "/login"
+            return "/customers/login"
         case .loginWithFb:
-            return "/facebook"
+            return "/customers/facebook"
         case .register:
-            return ""
+            return "/customers"
+        case .getCustomer:
+            return "/customer"
+        case .updateAddress:
+            return "/customers/address"
         }
     }
     
@@ -35,6 +41,10 @@ extension CustomersService: TargetType {
         switch self {
         case .login, .loginWithFb, .register:
             return .post
+        case .getCustomer:
+            return .get
+        case .updateAddress:
+            return .put
         }
     }
     
@@ -50,11 +60,29 @@ extension CustomersService: TargetType {
             return .requestParameters(parameters: ["access_token" : token], encoding: JSONEncoding.default)
         case .register(let name, let email, let password):
             return .requestParameters(parameters: ["name" : name, "email" : email, "password" : password], encoding: JSONEncoding.default)
+        case .getCustomer:
+            return .requestPlain
+        case .updateAddress(let address1, let address2, let city, let region, let postalCode, let country, let shippingRegionID):
+            return .requestParameters(parameters:
+                ["address_1" : address1,
+                 "address_2" : address2 ?? NSNull(),
+                 "city" : city,
+                 "region" : region,
+                 "postal_code" : postalCode,
+                 "country" : country,
+                 "shipping_region_id" : shippingRegionID],
+                                      encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
-        return ["Content-type" : "application/json"]
+        switch self {
+        case .getCustomer, .updateAddress:
+            let token = UserDefaults.standard.string(forKey: "token")
+            return ["Content-type": "application/json" , "USER-KEY" : token!]
+        default:
+            return ["Content-type" : "application/json"]
+        }
     }
     
     

@@ -30,6 +30,10 @@
 		843EA984239FACE10092701D /* UITableViewNibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EA983239FACE10092701D /* UITableViewNibExtension.swift */; };
 		843ED9E223E2C29C005D63A6 /* OptionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ED9E123E2C29C005D63A6 /* OptionCellViewModel.swift */; };
 		843ED9E523E2D97E005D63A6 /* MyAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ED9E423E2D97E005D63A6 /* MyAccountViewModel.swift */; };
+		843ED9E723E30422005D63A6 /* UITextField-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ED9E623E30422005D63A6 /* UITextField-Extension.swift */; };
+		843ED9EB23E30901005D63A6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ED9EA23E30901005D63A6 /* SettingsViewController.swift */; };
+		843ED9ED23E30A6C005D63A6 /* SettingsFormTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ED9EC23E30A6C005D63A6 /* SettingsFormTableVC.swift */; };
+		843ED9F023E31436005D63A6 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843ED9EF23E31436005D63A6 /* SettingsViewModel.swift */; };
 		8443073D239FB00700FCBBFB /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443073C239FB00700FCBBFB /* ShopViewModel.swift */; };
 		8443073F239FB02200FCBBFB /* DepartmentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443073E239FB02200FCBBFB /* DepartmentCellViewModel.swift */; };
 		84430741239FB1B000FCBBFB /* DepartmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84430740239FB1B000FCBBFB /* DepartmentsService.swift */; };
@@ -146,6 +150,10 @@
 		843EA983239FACE10092701D /* UITableViewNibExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewNibExtension.swift; sourceTree = "<group>"; };
 		843ED9E123E2C29C005D63A6 /* OptionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCellViewModel.swift; sourceTree = "<group>"; };
 		843ED9E423E2D97E005D63A6 /* MyAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAccountViewModel.swift; sourceTree = "<group>"; };
+		843ED9E623E30422005D63A6 /* UITextField-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField-Extension.swift"; sourceTree = "<group>"; };
+		843ED9EA23E30901005D63A6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		843ED9EC23E30A6C005D63A6 /* SettingsFormTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormTableVC.swift; sourceTree = "<group>"; };
+		843ED9EF23E31436005D63A6 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		8443073C239FB00700FCBBFB /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
 		8443073E239FB02200FCBBFB /* DepartmentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentCellViewModel.swift; sourceTree = "<group>"; };
 		84430740239FB1B000FCBBFB /* DepartmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentsService.swift; sourceTree = "<group>"; };
@@ -334,6 +342,33 @@
 			isa = PBXGroup;
 			children = (
 				843ED9E423E2D97E005D63A6 /* MyAccountViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		843ED9E823E308D4005D63A6 /* MyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				84941F7B23E1CE3B00586271 /* MyAccountViewController.swift */,
+				843ED9E323E2D95F005D63A6 /* ViewModel */,
+			);
+			path = MyAccount;
+			sourceTree = "<group>";
+		};
+		843ED9E923E308E4005D63A6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				843ED9EA23E30901005D63A6 /* SettingsViewController.swift */,
+				843ED9EC23E30A6C005D63A6 /* SettingsFormTableVC.swift */,
+				843ED9EE23E3141D005D63A6 /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		843ED9EE23E3141D005D63A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				843ED9EF23E31436005D63A6 /* SettingsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -583,8 +618,8 @@
 		84941F7A23E1CE1500586271 /* MyAccount */ = {
 			isa = PBXGroup;
 			children = (
-				84941F7B23E1CE3B00586271 /* MyAccountViewController.swift */,
-				843ED9E323E2D95F005D63A6 /* ViewModel */,
+				843ED9E823E308D4005D63A6 /* MyAccount */,
+				843ED9E923E308E4005D63A6 /* Settings */,
 			);
 			path = MyAccount;
 			sourceTree = "<group>";
@@ -720,6 +755,7 @@
 				C5DBEF38229447C200CFA2EF /* UIView-Customize.swift */,
 				C5DBEF3D22944F5900CFA2EF /* KeyboardModifications.swift */,
 				8452DD7F2397F41000B21CC9 /* UIButton-Extension.swift */,
+				843ED9E623E30422005D63A6 /* UITextField-Extension.swift */,
 				8452DD812397F46400B21CC9 /* Validation.swift */,
 				84AB36B02399150D00E5C099 /* NotificationBannerManager.swift */,
 				843EA983239FACE10092701D /* UITableViewNibExtension.swift */,
@@ -984,6 +1020,7 @@
 				84734DE723DF278300210FA1 /* StoreDetailsViewModel.swift in Sources */,
 				8446A8C123DDB34700131758 /* OrderService.swift in Sources */,
 				8468201323A61B80008289BD /* AttributesService.swift in Sources */,
+				843ED9EB23E30901005D63A6 /* SettingsViewController.swift in Sources */,
 				84941F7623E1B38300586271 /* CustomerServiceTableVC.swift in Sources */,
 				84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */,
 				844FA9AD23A8D46E007E3C6D /* ShippingRegion.swift in Sources */,
@@ -992,6 +1029,7 @@
 				843EA984239FACE10092701D /* UITableViewNibExtension.swift in Sources */,
 				844FA9BB23A8DE82007E3C6D /* TaxService.swift in Sources */,
 				C5FE31F2228CB0DF00A3E0DC /* BagViewController.swift in Sources */,
+				843ED9E723E30422005D63A6 /* UITextField-Extension.swift in Sources */,
 				84EBB9CF23AA4C68008E344C /* CartProductCellViewModel.swift in Sources */,
 				8439C24F23A0EC5A0051FB60 /* CategoryCell.swift in Sources */,
 				8439C24223A0D5B10051FB60 /* CategoriesService.swift in Sources */,
@@ -1001,12 +1039,14 @@
 				8468201923A6275B008289BD /* ColorCellViewModel.swift in Sources */,
 				8446375D23A26DD5002825C2 /* ProductImageCellViewModel.swift in Sources */,
 				8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */,
+				843ED9ED23E30A6C005D63A6 /* SettingsFormTableVC.swift in Sources */,
 				843EA97B239F8BF00092701D /* Products.swift in Sources */,
 				8468201123A61AC3008289BD /* Attribute.swift in Sources */,
 				8446375423A261D0002825C2 /* ProductDetailsViewModel.swift in Sources */,
 				8439C24923A0DAAF0051FB60 /* CategoryCellViewModel.swift in Sources */,
 				8439C25223A0EEE70051FB60 /* UICollectionViewNibExtension.swift in Sources */,
 				843ED9E223E2C29C005D63A6 /* OptionCellViewModel.swift in Sources */,
+				843ED9F023E31436005D63A6 /* SettingsViewModel.swift in Sources */,
 				844FA9A723A8D1B6007E3C6D /* CartProduct.swift in Sources */,
 				842DBC4023D9E1160087D779 /* EditItemViewModel.swift in Sources */,
 				8443073D239FB00700FCBBFB /* ShopViewModel.swift in Sources */,

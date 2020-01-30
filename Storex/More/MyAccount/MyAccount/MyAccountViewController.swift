@@ -124,6 +124,17 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let option = MyAccountOption.allCases[indexPath.row]
+        var vc = UIViewController()
+        switch option {
+        case .payment:
+            if let VC = storyboard?.instantiateViewController(withIdentifier: "MyAccountViewController") as? MyAccountViewController { vc = VC }
+        case .settings:
+            if let VC = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController { vc = VC }
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     enum MyAccountOption: CaseIterable {
         case payment
