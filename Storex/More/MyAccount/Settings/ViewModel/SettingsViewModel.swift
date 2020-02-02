@@ -13,7 +13,9 @@ import RxSwift
 class SettingsViewModel {
     
     let state: PublishSubject<State> = PublishSubject()
+    let updateState: PublishSubject<State> = PublishSubject()
     let errorMessage: PublishSubject<String> = PublishSubject()
+    let message: PublishSubject<String> = PublishSubject()
     let customer: PublishSubject<Customer> = PublishSubject()
     
     let customerProvider: MoyaProvider<CustomersService>
@@ -56,12 +58,21 @@ class SettingsViewModel {
     }
     
     func updateAddress(address1: String, address2: String?, city: String, region: String, postalCode: String, country: String, shippingRegionID: Int = 2) {
-        customerProvider.request(.updateAddress(address1: address1, address2: address2, city: city, region: region, postalCode: postalCode, country: country)) { (result) in
+        updateState.onNext(.loading)
+        customerProvider.request(.updateAddress(address1: address1, address2: address2, city: city, region: region, postalCode: postalCode, country: country)) { [weak self] (result) in
+            guard let self = self else { return }
             switch result {
             case .success(let response):
-                print("update address response code : \(response.statusCode)")
+                if response.statusCode == 200 {
+                    self.updateState.onNext(.success)
+                    self.message.onNext("Settings saved successfully")
+                } else {
+                    self.updateState.onNext(.error)
+                    self.errorMessage.onNext("connection failed")
+                }
             case .failure(let error):
-                print("update address error : \(error.localizedDescription)")
+                self.updateState.onNext(.error)
+                self.errorMessage.onNext(error.localizedDescription)
             }
         }
     }

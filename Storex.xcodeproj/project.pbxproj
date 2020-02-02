@@ -98,6 +98,8 @@
 		84AB36B423993D1F00E5C099 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */; };
 		84AB36B623993D4B00E5C099 /* OnBoardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */; };
 		84AB36B823993D7600E5C099 /* OnBoardingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */; };
+		84B2625923E6C6A600818D51 /* SettingsFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2625823E6C6A600818D51 /* SettingsFormViewModel.swift */; };
+		84B2625B23E6D3DA00818D51 /* Rx - Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2625A23E6D3DA00818D51 /* Rx - Extension.swift */; };
 		84C3D9F923E0714500408D54 /* CustomerSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3D9F823E0714500408D54 /* CustomerSupportViewController.swift */; };
 		84C3D9FD23E0739500408D54 /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C3D9FB23E0739500408D54 /* OptionCell.swift */; };
 		84C3D9FE23E0739500408D54 /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C3D9FC23E0739500408D54 /* OptionCell.xib */; };
@@ -218,6 +220,8 @@
 		84AB36B323993D1F00E5C099 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
 		84AB36B523993D4B00E5C099 /* OnBoardingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageVC.swift; sourceTree = "<group>"; };
 		84AB36B723993D7600E5C099 /* OnBoardingScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreenVC.swift; sourceTree = "<group>"; };
+		84B2625823E6C6A600818D51 /* SettingsFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormViewModel.swift; sourceTree = "<group>"; };
+		84B2625A23E6D3DA00818D51 /* Rx - Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rx - Extension.swift"; sourceTree = "<group>"; };
 		84C3D9F823E0714500408D54 /* CustomerSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSupportViewController.swift; sourceTree = "<group>"; };
 		84C3D9FB23E0739500408D54 /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		84C3D9FC23E0739500408D54 /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
@@ -369,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				843ED9EF23E31436005D63A6 /* SettingsViewModel.swift */,
+				84B2625823E6C6A600818D51 /* SettingsFormViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -763,6 +768,7 @@
 				8468201A23A62A03008289BD /* StorexColors.swift */,
 				842DBC3D23D9BDE40087D779 /* UIViewController-Extension.swift */,
 				84734DE423DF0E3C00210FA1 /* MKMapView-Extension.swift */,
+				84B2625A23E6D3DA00818D51 /* Rx - Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1013,6 +1019,7 @@
 				8439C25423A11C830051FB60 /* ProductsService.swift in Sources */,
 				8468201523A62575008289BD /* CustomizeViewModel.swift in Sources */,
 				842DBC3E23D9BDE40087D779 /* UIViewController-Extension.swift in Sources */,
+				84B2625B23E6D3DA00818D51 /* Rx - Extension.swift in Sources */,
 				84734DE123DEDE5500210FA1 /* StoreLocationCellViewModel.swift in Sources */,
 				84EBB9CC23AA484F008E344C /* CartProductCell.swift in Sources */,
 				C5DBEF4722946A9200CFA2EF /* Customer.swift in Sources */,
@@ -1036,6 +1043,7 @@
 				8468201723A62717008289BD /* SizeCellViewModel.swift in Sources */,
 				C5DBEF39229447C200CFA2EF /* UIView-Customize.swift in Sources */,
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
+				84B2625923E6C6A600818D51 /* SettingsFormViewModel.swift in Sources */,
 				8468201923A6275B008289BD /* ColorCellViewModel.swift in Sources */,
 				8446375D23A26DD5002825C2 /* ProductImageCellViewModel.swift in Sources */,
 				8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */,

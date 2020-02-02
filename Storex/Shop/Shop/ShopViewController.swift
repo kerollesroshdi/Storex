@@ -15,6 +15,8 @@ class ShopViewController: UIViewController {
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var retryView: UIView!
+    @IBOutlet weak var retryButton: UIButton!
     
     lazy var viewModel: ShopViewModel = {
         return ShopViewModel()
@@ -54,6 +56,14 @@ class ShopViewController: UIViewController {
                 self.present(menu, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        retryButton.rx.tap
+            .throttle(.seconds(5), scheduler: MainScheduler.instance)
+            .subscribe(onNext:{ [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.initFetch()
+            })
+            .disposed(by: disposeBag)
     }
     
     func initVM() {
@@ -71,17 +81,20 @@ class ShopViewController: UIViewController {
                 switch state {
                 case .loading:
                     // tableview loading ...
+                    self.retryView.isHidden = true
                     self.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.tableview.alpha = 0.0
                     }
                 case .error:
+                    self.retryView.isHidden = false
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.tableview.alpha = 0.0
                     }
                 case .success:
                     // tableview loaded
+                    self.retryView.isHidden = true
                     self.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2) {
                         self.tableview.alpha = 1.0

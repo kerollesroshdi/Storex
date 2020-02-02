@@ -13,6 +13,7 @@ import RxCocoa
 class SettingsViewController: UIViewController {
     @IBOutlet weak var formContainerView: UIView!
     @IBOutlet weak var saveSettingsButton: UIButton!
+    @IBOutlet weak var loadingView: UIView!
     
     private var settingsFormTableVC: SettingsFormTableVC?
     
@@ -29,42 +30,92 @@ class SettingsViewController: UIViewController {
         }
         settingsFormTableVC = settingsform
         
-//        settingsFormTableVC?.nameTextField.text = "Casper"
-        
         initView()
         initVM()
     }
     
     private func initView() {
         
-        #warning("get data from text fields ... ")
+        settingsFormTableVC?.viewModel.allValid
+            .bind(to: saveSettingsButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        settingsFormTableVC?.viewModel.allValid
+            .map{ $0 == true ? 1 : 0.5 }
+            .bind(to: saveSettingsButton.rx.alpha)
+            .disposed(by: disposeBag)
+        
         
         saveSettingsButton.rx.tap
             .throttle(.seconds(5), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.viewModel.updateAddress(address1: "12 Faisal st.", address2: nil, city: "Talbia", region: "Giza", postalCode: "17432", country: "Egypt")
+                guard let viewModel = self.settingsFormTableVC?.viewModel else { return }
+                guard let address1 = try? viewModel.address1.value(),
+                    let address2 = try? viewModel.address2.value(),
+                    let city = try? viewModel.city.value(),
+                    let region = try? viewModel.region.value(),
+                    let postalcode = try? viewModel.postalcode.value(),
+                    let country = try? viewModel.country.value()
+                    else { return }
+                self.viewModel.updateAddress(address1: address1, address2: address2, city: city, region: region, postalCode: postalcode, country: country)
             })
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
     }
     
     private func initVM() {
         
         viewModel.errorMessage
-        .observeOn(MainScheduler.instance)
-        .subscribe(onNext:{ message in
-            NotificationBannerManager.show(title: "Network Error!", message: message, style: .warning)
-        })
-        .disposed(by: disposeBag)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{ message in
+                NotificationBannerManager.show(title: "Network Error!", message: message, style: .warning)
+            })
+            .disposed(by: disposeBag)
         
+        viewModel.message
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext:{ message in
+                NotificationBannerManager.show(title: message, message: "", style: .success)
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.state
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    self.loadingView.isHidden = false
+                case .error:
+                    self.loadingView.isHidden = true
+                case .success:
+                    self.loadingView.isHidden = true
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.updateState
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] state in
+                guard let self = self else { return }
+                switch state {
+                case .loading:
+                    self.saveSettingsButton.loadingIndicator(true)
+                case .error:
+                    self.saveSettingsButton.loadingIndicator(false)
+                case .success:
+                    self.saveSettingsButton.loadingIndicator(false)
+                }
+            })
+            .disposed(by: disposeBag)
         
         viewModel.customer
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] customer in
                 guard let self = self else { return }
                 print("customer: ", customer)
-                self.settingsFormTableVC?.customer = customer
+                self.settingsFormTableVC?.viewModel.customer = customer
             })
             .disposed(by: disposeBag)
         

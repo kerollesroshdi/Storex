@@ -861,13 +861,31 @@
                                     <segue destination="lmx-Fm-26P" kind="embed" id="JHs-ob-N2z"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WsD-Lc-qW8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="499"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="62e-5Q-gmf">
+                                        <rect key="frame" x="177.5" y="239.5" width="20" height="20"/>
+                                        <color key="color" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="62e-5Q-gmf" firstAttribute="centerX" secondItem="WsD-Lc-qW8" secondAttribute="centerX" id="0t4-oZ-CDx"/>
+                                    <constraint firstItem="62e-5Q-gmf" firstAttribute="centerY" secondItem="WsD-Lc-qW8" secondAttribute="centerY" id="XTf-9x-Jkf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6xA-dl-h1o" firstAttribute="leading" secondItem="WBP-Zs-OqK" secondAttribute="leading" id="0eI-0g-uQT"/>
                             <constraint firstItem="WBP-Zs-OqK" firstAttribute="trailing" secondItem="6xA-dl-h1o" secondAttribute="trailing" id="AhG-oe-xEd"/>
                             <constraint firstItem="gb7-ax-2Hh" firstAttribute="bottom" secondItem="WBP-Zs-OqK" secondAttribute="bottom" id="Okw-GH-FG3"/>
+                            <constraint firstItem="gb7-ax-2Hh" firstAttribute="top" secondItem="WsD-Lc-qW8" secondAttribute="bottom" id="eEK-Uf-knO"/>
+                            <constraint firstItem="WsD-Lc-qW8" firstAttribute="top" secondItem="WBP-Zs-OqK" secondAttribute="top" id="gUi-Iu-VYq"/>
+                            <constraint firstItem="WsD-Lc-qW8" firstAttribute="leading" secondItem="WBP-Zs-OqK" secondAttribute="leading" id="h4C-PM-oTk"/>
                             <constraint firstItem="gb7-ax-2Hh" firstAttribute="leading" secondItem="WBP-Zs-OqK" secondAttribute="leading" id="hqh-jJ-JHg"/>
+                            <constraint firstItem="WBP-Zs-OqK" firstAttribute="trailing" secondItem="WsD-Lc-qW8" secondAttribute="trailing" id="kGj-S1-hVr"/>
                             <constraint firstItem="gb7-ax-2Hh" firstAttribute="top" secondItem="6xA-dl-h1o" secondAttribute="bottom" id="kyK-rX-Wxb"/>
                             <constraint firstItem="6xA-dl-h1o" firstAttribute="top" secondItem="WBP-Zs-OqK" secondAttribute="top" id="vIe-VO-xSZ"/>
                             <constraint firstItem="gb7-ax-2Hh" firstAttribute="trailing" secondItem="WBP-Zs-OqK" secondAttribute="trailing" id="zgE-dz-beh"/>
@@ -877,6 +895,7 @@
                     <navigationItem key="navigationItem" title="SETTINGS" id="7b1-Kd-AlB"/>
                     <connections>
                         <outlet property="formContainerView" destination="6xA-dl-h1o" id="KUp-Mi-okW"/>
+                        <outlet property="loadingView" destination="WsD-Lc-qW8" id="FXe-rn-1sm"/>
                         <outlet property="saveSettingsButton" destination="gb7-ax-2Hh" id="Npi-em-YV1"/>
                     </connections>
                 </viewController>
@@ -1814,15 +1833,54 @@ Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ul
                                 <rect key="frame" x="0.0" y="44" width="375" height="574"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IN0-bm-bn1">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4qJ-XX-1hE">
+                                        <rect key="frame" x="20" y="147.5" width="335" height="279.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conncetionfailed" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-HO-ZVG">
+                                                <rect key="frame" x="0.0" y="0.0" width="335.00000000000011" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="azI-2R-1eA"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="connection failed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-h3-Upb">
+                                                <rect key="frame" x="102" y="210" width="131" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" red="0.40000000000000002" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBY-qi-ma9">
+                                                <rect key="frame" x="147" y="243.5" width="41" height="36"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                <state key="normal" title="Retry">
+                                                    <color key="titleColor" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="4qJ-XX-1hE" firstAttribute="leading" secondItem="IN0-bm-bn1" secondAttribute="leading" constant="20" id="Dbv-2N-jtv"/>
+                                    <constraint firstAttribute="trailing" secondItem="4qJ-XX-1hE" secondAttribute="trailing" constant="20" id="UHj-dW-PVu"/>
+                                    <constraint firstItem="4qJ-XX-1hE" firstAttribute="centerY" secondItem="IN0-bm-bn1" secondAttribute="centerY" id="YJ7-lC-OsM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="top" secondItem="XTl-rd-fYB" secondAttribute="top" id="6fu-Rg-zbr"/>
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="bottom" secondItem="XTl-rd-fYB" secondAttribute="bottom" id="8t9-Od-SBn"/>
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="leading" secondItem="XTl-rd-fYB" secondAttribute="leading" id="AWV-IU-faj"/>
+                            <constraint firstItem="XTl-rd-fYB" firstAttribute="trailing" secondItem="IN0-bm-bn1" secondAttribute="trailing" id="FTt-sl-304"/>
+                            <constraint firstItem="IN0-bm-bn1" firstAttribute="top" secondItem="XTl-rd-fYB" secondAttribute="top" id="L7S-dB-Tbw"/>
+                            <constraint firstItem="IN0-bm-bn1" firstAttribute="leading" secondItem="XTl-rd-fYB" secondAttribute="leading" id="MbC-Ya-4kH"/>
                             <constraint firstItem="tcY-Cv-0Kh" firstAttribute="trailing" secondItem="XTl-rd-fYB" secondAttribute="trailing" id="gfG-jK-zEi"/>
                             <constraint firstItem="31i-eE-eEw" firstAttribute="centerX" secondItem="HFF-6F-DT4" secondAttribute="centerX" id="h9M-xc-WA3"/>
                             <constraint firstItem="31i-eE-eEw" firstAttribute="centerY" secondItem="HFF-6F-DT4" secondAttribute="centerY" id="mcX-mf-SU8"/>
+                            <constraint firstItem="XTl-rd-fYB" firstAttribute="bottom" secondItem="IN0-bm-bn1" secondAttribute="bottom" id="zlY-v5-0LY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XTl-rd-fYB"/>
                     </view>
@@ -1833,6 +1891,8 @@ Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ul
                     <connections>
                         <outlet property="activityIndicator" destination="31i-eE-eEw" id="fAH-Rh-Htt"/>
                         <outlet property="menuButton" destination="zQi-zu-bX8" id="mX5-0W-LLX"/>
+                        <outlet property="retryButton" destination="iBY-qi-ma9" id="lax-Va-o8I"/>
+                        <outlet property="retryView" destination="IN0-bm-bn1" id="g0K-1R-hhg"/>
                         <outlet property="tableview" destination="tcY-Cv-0Kh" id="0P4-K0-rCp"/>
                         <segue destination="LYX-aT-2Bz" kind="show" identifier="toDepartmentViewController" id="zFW-aG-rtT"/>
                     </connections>
@@ -3425,6 +3485,7 @@ New York, NY 10017</string>
         <image name="bag-sideMenu" width="50" height="52"/>
         <image name="box" width="552" height="294"/>
         <image name="button-large" width="402" height="402"/>
+        <image name="conncetionfailed" width="474" height="240"/>
         <image name="facebook-follow" width="15" height="32"/>
         <image name="followButtonBG" width="116" height="134"/>
         <image name="icon-Bag" width="50" height="52"/>
