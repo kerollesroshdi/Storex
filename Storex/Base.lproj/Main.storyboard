@@ -830,11 +830,129 @@
                         <outlet property="retryButton" destination="81V-l3-y1T" id="BXp-FS-IzM"/>
                         <outlet property="tableView" destination="GB6-3x-9TP" id="d9C-nA-vgT"/>
                         <segue destination="VqQ-Qd-RZa" kind="show" id="lcm-kE-fA8"/>
+                        <segue destination="5yV-PV-92e" kind="show" id="Lfr-T0-KZq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84K-M1-vcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2344.8000000000002" y="2558.7706146926539"/>
+        </scene>
+        <!--PAYMENT INFORMATION-->
+        <scene sceneID="sHM-uI-cMI">
+            <objects>
+                <viewController storyboardIdentifier="PaymentViewController" id="5yV-PV-92e" customClass="PaymentViewController" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7OD-WO-X38">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asg-ys-YwG">
+                                <rect key="frame" x="0.0" y="543" width="375" height="75"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Qvi-3f-fvU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="SAVE INFORMATION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vfD-UE-uM9">
+                                <rect key="frame" x="20" y="69" width="335" height="114"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d8e-Th-clG">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARD DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho6-RP-5UY">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="23.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your debit or credit card number." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2q-PY-cfu">
+                                                <rect key="frame" x="0.0" y="23.5" width="335" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                                <color key="textColor" white="0.19602597029999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJ2-0K-Nld">
+                                        <rect key="frame" x="0.0" y="59" width="335" height="55"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gtf-in-cbq">
+                                                <rect key="frame" x="8" y="2.5" width="319" height="50"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCp-eo-gHL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card No:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-QW-x71">
+                                                                <rect key="frame" x="5" y="14" width="66.5" height="22"/>
+                                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                                <color key="textColor" white="0.19602597029999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.76862745099999996" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstItem="0uw-QW-x71" firstAttribute="centerY" secondItem="kCp-eo-gHL" secondAttribute="centerY" id="K8n-HW-xU0"/>
+                                                            <constraint firstAttribute="width" constant="80" id="hYM-VO-vum"/>
+                                                            <constraint firstItem="0uw-QW-x71" firstAttribute="leading" secondItem="kCp-eo-gHL" secondAttribute="leading" constant="5" id="kDv-Gl-Zy0"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="XXXX XXXX XXXX XXXX" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LET-pC-bLM">
+                                                        <rect key="frame" x="100" y="13" width="219" height="24"/>
+                                                        <color key="tintColor" red="0.93725490199999995" green="0.72549019609999998" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="cc-number"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="5yV-PV-92e" id="2At-Dl-hpO"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gtf-in-cbq" firstAttribute="leading" secondItem="DJ2-0K-Nld" secondAttribute="leading" constant="8" id="6WV-WV-Vzd"/>
+                                            <constraint firstItem="gtf-in-cbq" firstAttribute="centerY" secondItem="DJ2-0K-Nld" secondAttribute="centerY" id="Bhh-kM-A4k"/>
+                                            <constraint firstAttribute="height" constant="55" id="PaY-af-MJN"/>
+                                            <constraint firstAttribute="trailing" secondItem="gtf-in-cbq" secondAttribute="trailing" constant="8" id="nbO-3P-ia8"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Asg-ys-YwG" firstAttribute="leading" secondItem="hjO-nv-DRd" secondAttribute="leading" id="2u3-f3-4jy"/>
+                            <constraint firstItem="vfD-UE-uM9" firstAttribute="top" secondItem="hjO-nv-DRd" secondAttribute="top" constant="25" id="PCy-g0-Bic"/>
+                            <constraint firstItem="vfD-UE-uM9" firstAttribute="leading" secondItem="hjO-nv-DRd" secondAttribute="leading" constant="20" id="WSS-tG-OfX"/>
+                            <constraint firstItem="hjO-nv-DRd" firstAttribute="trailing" secondItem="vfD-UE-uM9" secondAttribute="trailing" constant="20" id="Wwo-TI-1lq"/>
+                            <constraint firstItem="Asg-ys-YwG" firstAttribute="bottom" secondItem="hjO-nv-DRd" secondAttribute="bottom" id="enL-mw-jy4"/>
+                            <constraint firstItem="Asg-ys-YwG" firstAttribute="trailing" secondItem="hjO-nv-DRd" secondAttribute="trailing" id="lzw-GK-GSd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hjO-nv-DRd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="PAYMENT INFORMATION" id="UDt-1Z-S0I"/>
+                    <connections>
+                        <outlet property="cardTextField" destination="LET-pC-bLM" id="oja-1N-SnP"/>
+                        <outlet property="saveInfoButton" destination="Asg-ys-YwG" id="ewi-oE-cUh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doM-E1-kzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3168.8000000000002" y="1860.7196401799101"/>
         </scene>
         <!--Settings-->
         <scene sceneID="3Jn-Zr-7no">
@@ -1840,7 +1958,7 @@ Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ul
                                         <rect key="frame" x="20" y="147.5" width="335" height="279.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="conncetionfailed" translatesAutoresizingMaskIntoConstraints="NO" id="6gd-HO-ZVG">
-                                                <rect key="frame" x="0.0" y="0.0" width="335.00000000000011" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="azI-2R-1eA"/>
                                                 </constraints>

@@ -129,7 +129,7 @@ extension MyAccountViewController: UITableViewDelegate, UITableViewDataSource {
         var vc = UIViewController()
         switch option {
         case .payment:
-            if let VC = storyboard?.instantiateViewController(withIdentifier: "MyAccountViewController") as? MyAccountViewController { vc = VC }
+            if let VC = storyboard?.instantiateViewController(withIdentifier: "PaymentViewController") as? PaymentViewController { vc = VC }
         case .settings:
             if let VC = storyboard?.instantiateViewController(withIdentifier: "SettingsViewController") as? SettingsViewController { vc = VC }
         }

@@ -15,6 +15,7 @@ enum CustomersService {
     case register(name: String, email: String, password: String)
     case getCustomer
     case updateAddress(address1: String, address2: String?, city: String, region: String, postalCode: String, country: String, shippingRegionID: Int = 2)
+    case updateCreditCard(creditCard: String)
 }
 
 extension CustomersService: TargetType {
@@ -34,6 +35,8 @@ extension CustomersService: TargetType {
             return "/customer"
         case .updateAddress:
             return "/customers/address"
+        case .updateCreditCard:
+            return "/customers/creditCard"
         }
     }
     
@@ -43,7 +46,7 @@ extension CustomersService: TargetType {
             return .post
         case .getCustomer:
             return .get
-        case .updateAddress:
+        case .updateAddress, .updateCreditCard:
             return .put
         }
     }
@@ -72,12 +75,14 @@ extension CustomersService: TargetType {
                  "country" : country,
                  "shipping_region_id" : shippingRegionID],
                                       encoding: JSONEncoding.default)
+        case .updateCreditCard(let creditCard):
+            return .requestParameters(parameters: ["credit_card" : creditCard], encoding: JSONEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .getCustomer, .updateAddress:
+        case .getCustomer, .updateAddress, .updateCreditCard:
             let token = UserDefaults.standard.string(forKey: "token")
             return ["Content-type": "application/json" , "USER-KEY" : token!]
         default:
