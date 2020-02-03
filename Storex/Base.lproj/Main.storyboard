@@ -831,6 +831,7 @@
                         <outlet property="tableView" destination="GB6-3x-9TP" id="d9C-nA-vgT"/>
                         <segue destination="VqQ-Qd-RZa" kind="show" id="lcm-kE-fA8"/>
                         <segue destination="5yV-PV-92e" kind="show" id="Lfr-T0-KZq"/>
+                        <segue destination="EUf-gu-fem" kind="show" id="b0L-3G-gPb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="84K-M1-vcM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -952,7 +953,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doM-E1-kzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3168.8000000000002" y="1860.7196401799101"/>
+            <point key="canvasLocation" x="3169" y="1790"/>
         </scene>
         <!--Settings-->
         <scene sceneID="3Jn-Zr-7no">
@@ -1513,6 +1514,35 @@ New York, NY 10017</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJJ-VS-chV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2346" y="3294"/>
+        </scene>
+        <!--ORDER STATUS-->
+        <scene sceneID="U3n-TY-2Oa">
+            <objects>
+                <tableViewController storyboardIdentifier="OrderStatusTableVC" id="EUf-gu-fem" customClass="OrderStatusTableVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MrD-5C-pNZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vya-6H-lSj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vya-6H-lSj" id="GNT-PU-N2G">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EUf-gu-fem" id="iUB-yV-1ZX"/>
+                            <outlet property="delegate" destination="EUf-gu-fem" id="ApA-5a-c6k"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="ORDER STATUS" id="Kyw-M6-W6u"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EJk-d7-jX1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3169" y="3294"/>
         </scene>
         <!--OrderComplete-->
         <scene sceneID="Np4-vJ-i5Y">

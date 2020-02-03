@@ -37,6 +37,15 @@ class MyAccountViewController: UIViewController {
     
     private func initView() {
         
+        ordersProgressButton.rx.tap
+            .throttle(.seconds(5), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                if let orderStatusTableVC = self.storyboard?.instantiateViewController(withIdentifier: "OrderStatusTableVC") as? OrderStatusTableVC {
+                    self.navigationController?.pushViewController(orderStatusTableVC, animated: true)
+                }
+            })
+            .disposed(by: disposeBag)
+        
         retryButton.rx.tap
             .throttle(.seconds(10), scheduler: MainScheduler.instance)
             .subscribe(onNext: { _ in
@@ -87,6 +96,9 @@ class MyAccountViewController: UIViewController {
                 guard let self = self else { return }
                 let buttonTitle = ordersCount > 1 ? "\(ordersCount) Orders in Progress" : "\(ordersCount) Order in Progress"
                 self.ordersProgressButton.setTitle(buttonTitle, for: .normal)
+                if ordersCount < 1 {
+                    self.ordersProgressButton.isEnabled = false
+                }
             })
             .disposed(by: disposeBag)
         
