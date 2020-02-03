@@ -7,24 +7,33 @@
 //
 
 import UIKit
+import SideMenu
 
 class InspirationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setNavigationTitleImage()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        let menu = self.storyboard?.instantiateViewController(withIdentifier: "LeftSideMenu") as! UISideMenuNavigationController
+        menu.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.menuPresentMode = .viewSlideInOut
+        SideMenuManager.default.menuAnimationBackgroundColor = UIColor.clear
+        self.present(menu, animated: true)
     }
-    */
-
+    @IBAction func lifePressed(_ sender: Any) {
+        if let lifeVC = storyboard?.instantiateViewController(withIdentifier: "LifeViewController") {
+            navigationController?.present(lifeVC, animated: true, completion: nil)
+        }
+    }
+    @IBAction func fashionPressed(_ sender: Any) {
+        
+    }
+    @IBAction func videosPressed(_ sender: Any) {
+        
+    }
+    
 }

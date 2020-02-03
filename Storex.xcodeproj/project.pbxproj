@@ -43,6 +43,9 @@
 		8443489A23E8061E00BCC2ED /* OrderStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8443489823E8061E00BCC2ED /* OrderStatusCell.xib */; };
 		8443489D23E8261B00BCC2ED /* OrderStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443489C23E8261B00BCC2ED /* OrderStatusViewModel.swift */; };
 		8443489F23E8281900BCC2ED /* OrderStatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443489E23E8281900BCC2ED /* OrderStatusCellViewModel.swift */; };
+		844348A223E8660E00BCC2ED /* LifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844348A123E8660E00BCC2ED /* LifeViewController.swift */; };
+		844348A623E8668500BCC2ED /* LifeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844348A423E8668500BCC2ED /* LifeCell.swift */; };
+		844348A723E8668500BCC2ED /* LifeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844348A523E8668500BCC2ED /* LifeCell.xib */; };
 		8446375123A24E94002825C2 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446375023A24E94002825C2 /* ProductDetailsViewController.swift */; };
 		8446375423A261D0002825C2 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446375323A261D0002825C2 /* ProductDetailsViewModel.swift */; };
 		8446375623A262A9002825C2 /* ProductDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446375523A262A9002825C2 /* ProductDetails.swift */; };
@@ -172,6 +175,9 @@
 		8443489823E8061E00BCC2ED /* OrderStatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderStatusCell.xib; sourceTree = "<group>"; };
 		8443489C23E8261B00BCC2ED /* OrderStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusViewModel.swift; sourceTree = "<group>"; };
 		8443489E23E8281900BCC2ED /* OrderStatusCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatusCellViewModel.swift; sourceTree = "<group>"; };
+		844348A123E8660E00BCC2ED /* LifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeViewController.swift; sourceTree = "<group>"; };
+		844348A423E8668500BCC2ED /* LifeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCell.swift; sourceTree = "<group>"; };
+		844348A523E8668500BCC2ED /* LifeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeCell.xib; sourceTree = "<group>"; };
 		8446375023A24E94002825C2 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		8446375323A261D0002825C2 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		8446375523A262A9002825C2 /* ProductDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetails.swift; sourceTree = "<group>"; };
@@ -448,6 +454,24 @@
 				8443489E23E8281900BCC2ED /* OrderStatusCellViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		844348A023E865E800BCC2ED /* Life */ = {
+			isa = PBXGroup;
+			children = (
+				844348A123E8660E00BCC2ED /* LifeViewController.swift */,
+				844348A323E8663200BCC2ED /* LifeCell */,
+			);
+			path = Life;
+			sourceTree = "<group>";
+		};
+		844348A323E8663200BCC2ED /* LifeCell */ = {
+			isa = PBXGroup;
+			children = (
+				844348A423E8668500BCC2ED /* LifeCell.swift */,
+				844348A523E8668500BCC2ED /* LifeCell.xib */,
+			);
+			path = LifeCell;
 			sourceTree = "<group>";
 		};
 		8446374F23A24E4F002825C2 /* ProductDetails */ = {
@@ -781,6 +805,7 @@
 			isa = PBXGroup;
 			children = (
 				C5AA00362291DF52008B2E6B /* InspirationViewController.swift */,
+				844348A023E865E800BCC2ED /* Life */,
 			);
 			path = Inspiration;
 			sourceTree = "<group>";
@@ -1002,6 +1027,7 @@
 				C5FE31F7228CB0E000A3E0DC /* Assets.xcassets in Resources */,
 				8439C25923A127B30051FB60 /* ProductCell.xib in Resources */,
 				C5FE31F5228CB0DF00A3E0DC /* Main.storyboard in Resources */,
+				844348A723E8668500BCC2ED /* LifeCell.xib in Resources */,
 				84EBB9CD23AA484F008E344C /* CartProductCell.xib in Resources */,
 				8468200B23A6176B008289BD /* SizeCell.xib in Resources */,
 				843EA982239FAB410092701D /* DepartmentCell.xib in Resources */,
@@ -1081,6 +1107,7 @@
 				8446A8B823DD8E2600131758 /* SelectRegionViewController.swift in Sources */,
 				8439C25423A11C830051FB60 /* ProductsService.swift in Sources */,
 				8468201523A62575008289BD /* CustomizeViewModel.swift in Sources */,
+				844348A623E8668500BCC2ED /* LifeCell.swift in Sources */,
 				84B2625E23E7012500818D51 /* PaymentViewController.swift in Sources */,
 				8443489D23E8261B00BCC2ED /* OrderStatusViewModel.swift in Sources */,
 				842DBC3E23D9BDE40087D779 /* UIViewController-Extension.swift in Sources */,
@@ -1113,6 +1140,7 @@
 				8468201923A6275B008289BD /* ColorCellViewModel.swift in Sources */,
 				8446375D23A26DD5002825C2 /* ProductImageCellViewModel.swift in Sources */,
 				8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */,
+				844348A223E8660E00BCC2ED /* LifeViewController.swift in Sources */,
 				843ED9ED23E30A6C005D63A6 /* SettingsFormTableVC.swift in Sources */,
 				843EA97B239F8BF00092701D /* Products.swift in Sources */,
 				8468201123A61AC3008289BD /* Attribute.swift in Sources */,
