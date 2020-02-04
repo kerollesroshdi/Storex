@@ -41,6 +41,7 @@ PODS:
   - SDWebImage/Core (5.1.0)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
+  - YoutubePlayer-in-WKWebView (0.3.1)
 
 DEPENDENCIES:
   - FacebookCore
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - RxSwift (~> 5)
   - SDWebImage (~> 5.0)
   - SideMenu
+  - YoutubePlayer-in-WKWebView (~> 0.3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -72,6 +74,7 @@ SPEC REPOS:
     - SDWebImage
     - SideMenu
     - SnapKit
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -91,7 +94,8 @@ SPEC CHECKSUMS:
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  YoutubePlayer-in-WKWebView: 86f6b4c04797296071585b92724f3904d0273f12
 
-PODFILE CHECKSUM: fdcfafaa80dd8b0385e72f9700715a3220b7b2e1
+PODFILE CHECKSUM: 74da5f4ca63cee03eb8958fa98f9f03f129d0887
 
 COCOAPODS: 1.7.5

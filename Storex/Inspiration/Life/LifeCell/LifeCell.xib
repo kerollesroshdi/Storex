@@ -11,46 +11,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LifeCell" customModule="Storex" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="235" height="329"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="480"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="235" height="329"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="480"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5T3-hK-Hxd">
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5T3-hK-Hxd">
                         <rect key="frame" x="37" y="30" width="170" height="318"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="X3Q-2f-KkQ">
-                                <rect key="frame" x="56" y="0.0" width="113" height="61.5"/>
+                                <rect key="frame" x="52.5" y="0.0" width="175.5" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEC, 12 2014" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZS-qW-9cX">
-                                        <rect key="frame" x="16" y="0.0" width="81" height="18"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="13"/>
+                                        <rect key="frame" x="31.5" y="0.0" width="112.5" height="25"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-xp-7qk">
-                                        <rect key="frame" x="0.0" y="18" width="113" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="25" width="175.5" height="67"/>
                                         <string key="text">WHAT ABOUT
 STYLE?</string>
-                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pbx-cC-bHY">
-                                <rect key="frame" x="42.5" y="98" width="140" height="140"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="model-photo" translatesAutoresizingMaskIntoConstraints="NO" id="Pbx-cC-bHY">
+                                <rect key="frame" x="0.0" y="112" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="78G-g9-X0A"/>
-                                    <constraint firstAttribute="height" constant="140" id="Xme-Jj-oPO"/>
+                                    <constraint firstAttribute="width" constant="280" id="78G-g9-X0A"/>
+                                    <constraint firstAttribute="height" constant="280" id="Xme-Jj-oPO"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rjb-b4-wEQ">
-                                <rect key="frame" x="52.5" y="274" width="120" height="35"/>
+                                <rect key="frame" x="65" y="412" width="150" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="MMD-cw-Yri"/>
+                                    <constraint firstAttribute="width" constant="150" id="MMD-cw-Yri"/>
                                     <constraint firstAttribute="height" constant="35" id="T4u-f6-Fgx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
@@ -68,14 +68,20 @@ STYLE?</string>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="5T3-hK-Hxd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="2As-29-Id0"/>
-                <constraint firstItem="5T3-hK-Hxd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="GeI-po-jLi"/>
-                <constraint firstAttribute="bottom" secondItem="5T3-hK-Hxd" secondAttribute="bottom" constant="10" id="NgL-1z-Esp"/>
-                <constraint firstAttribute="trailing" secondItem="5T3-hK-Hxd" secondAttribute="trailing" constant="5" id="nSr-YN-Aex"/>
+                <constraint firstItem="5T3-hK-Hxd" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="8Pa-Cg-tf7"/>
+                <constraint firstItem="5T3-hK-Hxd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="gDc-0n-pnh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="235" height="329"/>
-            <point key="canvasLocation" x="202.17391304347828" y="209.93303571428569"/>
+            <size key="customSize" width="380" height="480"/>
+            <connections>
+                <outlet property="dateLabel" destination="FZS-qW-9cX" id="FMA-g4-wzx"/>
+                <outlet property="hexagonImage" destination="Pbx-cC-bHY" id="8cc-8O-YmQ"/>
+                <outlet property="titleLabel" destination="0A0-xp-7qk" id="psz-l7-72a"/>
+            </connections>
+            <point key="canvasLocation" x="307.24637681159425" y="260.49107142857144"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="model-photo" width="1280" height="1600"/>
+    </resources>
 </document>

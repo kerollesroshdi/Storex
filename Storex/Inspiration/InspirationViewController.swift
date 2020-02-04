@@ -29,11 +29,15 @@ class InspirationViewController: UIViewController {
             navigationController?.present(lifeVC, animated: true, completion: nil)
         }
     }
+    
     @IBAction func fashionPressed(_ sender: Any) {
         
     }
+    
     @IBAction func videosPressed(_ sender: Any) {
-        
+        if let videosVC = storyboard?.instantiateViewController(withIdentifier: "VideosViewController") {
+            navigationController?.present(videosVC, animated: true, completion: nil)
+        }
     }
     
 }

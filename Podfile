@@ -16,4 +16,6 @@ target 'Storex' do
     pod 'FacebookCore'
     pod 'FacebookLogin'
     pod 'FacebookShare'
+    
+    pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
 end
