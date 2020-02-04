@@ -31,7 +31,9 @@ class InspirationViewController: UIViewController {
     }
     
     @IBAction func fashionPressed(_ sender: Any) {
-        
+        if let fashionVC = storyboard?.instantiateViewController(withIdentifier: "FashionViewController") {
+            navigationController?.present(fashionVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func videosPressed(_ sender: Any) {

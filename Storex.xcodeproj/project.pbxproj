@@ -58,6 +58,12 @@
 		84465F5423E9716E00646505 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465F5323E9716E00646505 /* VideosViewController.swift */; };
 		84465F5823E972CD00646505 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465F5623E972CD00646505 /* VideoCell.swift */; };
 		84465F5923E972CD00646505 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84465F5723E972CD00646505 /* VideoCell.xib */; };
+		84465F5C23E97ECE00646505 /* FashionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465F5B23E97ECE00646505 /* FashionViewController.swift */; };
+		84465F6023E97F0500646505 /* FashionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465F5E23E97F0500646505 /* FashionCell.swift */; };
+		84465F6123E97F0500646505 /* FashionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84465F5F23E97F0500646505 /* FashionCell.xib */; };
+		84465F6423E9831E00646505 /* FashionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465F6323E9831E00646505 /* FashionCollectionViewController.swift */; };
+		84465F6823E9869B00646505 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84465F6623E9869B00646505 /* ImageCell.swift */; };
+		84465F6923E9869B00646505 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84465F6723E9869B00646505 /* ImageCell.xib */; };
 		8446A8B823DD8E2600131758 /* SelectRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A8B723DD8E2600131758 /* SelectRegionViewController.swift */; };
 		8446A8BA23DD8F1E00131758 /* SelectRegionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A8B923DD8F1E00131758 /* SelectRegionViewModel.swift */; };
 		8446A8BD23DDA2CC00131758 /* SelectShippingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446A8BC23DDA2CC00131758 /* SelectShippingViewController.swift */; };
@@ -194,6 +200,12 @@
 		84465F5323E9716E00646505 /* VideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
 		84465F5623E972CD00646505 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		84465F5723E972CD00646505 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		84465F5B23E97ECE00646505 /* FashionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionViewController.swift; sourceTree = "<group>"; };
+		84465F5E23E97F0500646505 /* FashionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCell.swift; sourceTree = "<group>"; };
+		84465F5F23E97F0500646505 /* FashionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FashionCell.xib; sourceTree = "<group>"; };
+		84465F6323E9831E00646505 /* FashionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCollectionViewController.swift; sourceTree = "<group>"; };
+		84465F6623E9869B00646505 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		84465F6723E9869B00646505 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		8446A8B723DD8E2600131758 /* SelectRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewController.swift; sourceTree = "<group>"; };
 		8446A8B923DD8F1E00131758 /* SelectRegionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRegionViewModel.swift; sourceTree = "<group>"; };
 		8446A8BC23DDA2CC00131758 /* SelectShippingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectShippingViewController.swift; sourceTree = "<group>"; };
@@ -469,7 +481,6 @@
 			children = (
 				844348A123E8660E00BCC2ED /* LifeViewController.swift */,
 				844348A323E8663200BCC2ED /* LifeCell */,
-				84465F4F23E9672B00646505 /* LifeArticle */,
 			);
 			path = Life;
 			sourceTree = "<group>";
@@ -550,6 +561,42 @@
 				84465F5723E972CD00646505 /* VideoCell.xib */,
 			);
 			path = VideoCell;
+			sourceTree = "<group>";
+		};
+		84465F5A23E97EA500646505 /* Fashion */ = {
+			isa = PBXGroup;
+			children = (
+				84465F5B23E97ECE00646505 /* FashionViewController.swift */,
+				84465F5D23E97ED600646505 /* FashionCell */,
+			);
+			path = Fashion;
+			sourceTree = "<group>";
+		};
+		84465F5D23E97ED600646505 /* FashionCell */ = {
+			isa = PBXGroup;
+			children = (
+				84465F5E23E97F0500646505 /* FashionCell.swift */,
+				84465F5F23E97F0500646505 /* FashionCell.xib */,
+			);
+			path = FashionCell;
+			sourceTree = "<group>";
+		};
+		84465F6223E982DC00646505 /* FashionCollection */ = {
+			isa = PBXGroup;
+			children = (
+				84465F6323E9831E00646505 /* FashionCollectionViewController.swift */,
+				84465F6523E9867F00646505 /* ImageCell */,
+			);
+			path = FashionCollection;
+			sourceTree = "<group>";
+		};
+		84465F6523E9867F00646505 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				84465F6623E9869B00646505 /* ImageCell.swift */,
+				84465F6723E9869B00646505 /* ImageCell.xib */,
+			);
+			path = ImageCell;
 			sourceTree = "<group>";
 		};
 		8446A8B523DD8DF000131758 /* Checkout */ = {
@@ -841,6 +888,9 @@
 			children = (
 				C5AA00362291DF52008B2E6B /* InspirationViewController.swift */,
 				844348A023E865E800BCC2ED /* Life */,
+				84465F4F23E9672B00646505 /* LifeArticle */,
+				84465F5A23E97EA500646505 /* Fashion */,
+				84465F6223E982DC00646505 /* FashionCollection */,
 				84465F5223E9714F00646505 /* videos */,
 			);
 			path = Inspiration;
@@ -1066,6 +1116,8 @@
 				C5FE31F5228CB0DF00A3E0DC /* Main.storyboard in Resources */,
 				844348A723E8668500BCC2ED /* LifeCell.xib in Resources */,
 				84EBB9CD23AA484F008E344C /* CartProductCell.xib in Resources */,
+				84465F6123E97F0500646505 /* FashionCell.xib in Resources */,
+				84465F6923E9869B00646505 /* ImageCell.xib in Resources */,
 				8468200B23A6176B008289BD /* SizeCell.xib in Resources */,
 				843EA982239FAB410092701D /* DepartmentCell.xib in Resources */,
 			);
@@ -1139,6 +1191,7 @@
 				8452DD7B2397E46300B21CC9 /* SignInViewModel.swift in Sources */,
 				84AB36AF2399122100E5C099 /* SignUpViewModel.swift in Sources */,
 				8452DD792397DA3400B21CC9 /* CustomersService.swift in Sources */,
+				84465F6823E9869B00646505 /* ImageCell.swift in Sources */,
 				8465115E239E7B4F00FDAB31 /* OnBoardingNavigation.swift in Sources */,
 				8468200A23A6176B008289BD /* SizeCell.swift in Sources */,
 				8446A8B823DD8E2600131758 /* SelectRegionViewController.swift in Sources */,
@@ -1173,9 +1226,11 @@
 				8468201723A62717008289BD /* SizeCellViewModel.swift in Sources */,
 				C5DBEF39229447C200CFA2EF /* UIView-Customize.swift in Sources */,
 				C5DBEF3E22944F5900CFA2EF /* KeyboardModifications.swift in Sources */,
+				84465F6423E9831E00646505 /* FashionCollectionViewController.swift in Sources */,
 				84B2625923E6C6A600818D51 /* SettingsFormViewModel.swift in Sources */,
 				8443489923E8061E00BCC2ED /* OrderStatusCell.swift in Sources */,
 				8468201923A6275B008289BD /* ColorCellViewModel.swift in Sources */,
+				84465F6023E97F0500646505 /* FashionCell.swift in Sources */,
 				8446375D23A26DD5002825C2 /* ProductImageCellViewModel.swift in Sources */,
 				8449DCFF239D364D00C3C7A1 /* SignInWithFBViewModel.swift in Sources */,
 				844348A223E8660E00BCC2ED /* LifeViewController.swift in Sources */,
@@ -1185,6 +1240,7 @@
 				8446375423A261D0002825C2 /* ProductDetailsViewModel.swift in Sources */,
 				84B2626123E7079500818D51 /* PaymentViewModel.swift in Sources */,
 				8439C24923A0DAAF0051FB60 /* CategoryCellViewModel.swift in Sources */,
+				84465F5C23E97ECE00646505 /* FashionViewController.swift in Sources */,
 				8439C25223A0EEE70051FB60 /* UICollectionViewNibExtension.swift in Sources */,
 				843ED9E223E2C29C005D63A6 /* OptionCellViewModel.swift in Sources */,
 				843ED9F023E31436005D63A6 /* SettingsViewModel.swift in Sources */,
