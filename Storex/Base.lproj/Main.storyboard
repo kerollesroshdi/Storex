@@ -36,7 +36,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Life" translatesAutoresizingMaskIntoConstraints="NO" id="DWP-ae-zoC">
-                                                <rect key="frame" x="24" y="267" width="77" height="40"/>
+                                                <rect key="frame" x="-14.5" y="267" width="154" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="VUz-P2-hzQ"/>
                                                 </constraints>
@@ -435,7 +435,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Life" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-JD-Mm2">
-                                            <rect key="frame" x="149" y="50" width="77" height="45"/>
+                                            <rect key="frame" x="110.5" y="50" width="154" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="SWM-NV-3sa"/>
                                             </constraints>
@@ -2626,7 +2626,11 @@ Donec finibus molestie sapien sit amet tincidunt. Nunc ultrices nisl ante, ac ul
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6O-IO-FB2">
-                                <rect key="frame" x="15" y="20" width="12" height="22"/>
+                                <rect key="frame" x="15" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2WW-52-lZJ"/>
+                                    <constraint firstAttribute="width" constant="30" id="ebX-m4-XsS"/>
+                                </constraints>
                                 <state key="normal" image="icon-back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="s0J-pF-zP1" eventType="touchUpInside" id="vRa-hX-zkR"/>
@@ -2733,7 +2737,7 @@ I'm not often drawn to brown but the 70's feel of this jacket seemed like an eas
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Videos" translatesAutoresizingMaskIntoConstraints="NO" id="92A-3O-h71">
-                                            <rect key="frame" x="114" y="50" width="147" height="45"/>
+                                            <rect key="frame" x="40.5" y="50" width="294" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="mn1-ao-gQR"/>
                                             </constraints>
@@ -2812,7 +2816,7 @@ I'm not often drawn to brown but the 70's feel of this jacket seemed like an eas
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fashion" translatesAutoresizingMaskIntoConstraints="NO" id="gtr-eS-T54">
-                                            <rect key="frame" x="102.5" y="50" width="170" height="45"/>
+                                            <rect key="frame" x="17.5" y="50" width="340" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="bzR-hK-xyv"/>
                                             </constraints>
@@ -2898,7 +2902,11 @@ I'm not often drawn to brown but the 70's feel of this jacket seemed like an eas
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myH-eL-vFq">
-                                <rect key="frame" x="15" y="20" width="12" height="22"/>
+                                <rect key="frame" x="15" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="ezr-k6-KXY"/>
+                                    <constraint firstAttribute="height" constant="30" id="rzF-vQ-Rn3"/>
+                                </constraints>
                                 <state key="normal" image="icon-back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="DPM-jg-ve0" eventType="touchUpInside" id="Ns7-Fh-lx2"/>
@@ -3136,7 +3144,7 @@ New York, NY 10017</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjG-Gq-7DK">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="535"/>
                                 <connections>
                                     <segue destination="G3b-W1-YUV" kind="embed" identifier="toOnBoardingPageVC" id="gQb-Zn-s2P"/>
                                 </connections>
@@ -3154,21 +3162,21 @@ New York, NY 10017</string>
                                 </state>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gZv-iT-JFI">
-                                <rect key="frame" x="151" y="571" width="73" height="21"/>
+                                <rect key="frame" x="119.5" y="550" width="136" height="42"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Polygon_default" translatesAutoresizingMaskIntoConstraints="NO" id="d1o-2A-hkJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="21" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Polygon_default" translatesAutoresizingMaskIntoConstraints="NO" id="U0o-9j-z4I">
-                                        <rect key="frame" x="26" y="0.0" width="21" height="21"/>
+                                        <rect key="frame" x="47" y="0.0" width="42" height="42"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Polygon_default" translatesAutoresizingMaskIntoConstraints="NO" id="F8S-wL-V0b">
-                                        <rect key="frame" x="52" y="0.0" width="21" height="21"/>
+                                        <rect key="frame" x="94" y="0.0" width="42" height="42"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Polygon_selected" translatesAutoresizingMaskIntoConstraints="NO" id="Sae-Pd-fL1">
-                                <rect key="frame" x="151" y="571" width="21" height="21"/>
+                                <rect key="frame" x="119.5" y="550" width="42" height="42"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -3622,7 +3630,7 @@ New York, NY 10017</string>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="WJI-SL-EX8">
-                                <rect key="frame" x="103.5" y="30" width="168" height="50"/>
+                                <rect key="frame" x="19.5" y="30" width="336" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lO4-Sy-Kft"/>
                                 </constraints>
@@ -3683,7 +3691,7 @@ New York, NY 10017</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5EZ-fW-ep2">
-                                <rect key="frame" x="103.5" y="30" width="168" height="50"/>
+                                <rect key="frame" x="19.5" y="30" width="336" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="loo-aR-Ovv"/>
                                 </constraints>
@@ -3881,7 +3889,7 @@ New York, NY 10017</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yb6-0t-MPu">
-                                <rect key="frame" x="103.5" y="30" width="168" height="50"/>
+                                <rect key="frame" x="19.5" y="30" width="336" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tQ6-05-4WH"/>
                                 </constraints>
