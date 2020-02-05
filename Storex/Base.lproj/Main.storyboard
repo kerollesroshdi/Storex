@@ -2657,7 +2657,7 @@ STYLE?</string>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="model-photo" translatesAutoresizingMaskIntoConstraints="NO" id="meW-Gp-iEv">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="model-photo" translatesAutoresizingMaskIntoConstraints="NO" id="meW-Gp-iEv">
                                                 <rect key="frame" x="42.5" y="117" width="250" height="250"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="76X-CI-mXS"/>
