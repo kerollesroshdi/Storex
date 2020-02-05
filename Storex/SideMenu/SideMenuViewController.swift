@@ -37,7 +37,7 @@ class SideMenuViewController: UIViewController {
         initView()
     }
     
-    func initView() {
+    private func initView() {
         
         // MARK:- tap on shop :
         
@@ -81,6 +81,24 @@ class SideMenuViewController: UIViewController {
         
         // MARK:- buttons handling :
         
+        myAccountButton.rx.tap
+            .throttle(.seconds(3), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.navigateFormMoreTo(MyAccountViewController.self)
+                self.switchTabBarTo(4)
+            })
+            .disposed(by: disposeBag)
+        
+        customerSupportButton.rx.tap
+            .throttle(.seconds(3), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.navigateFormMoreTo(CustomerSupportViewController.self)
+                self.switchTabBarTo(4)
+            })
+            .disposed(by: disposeBag)
+        
         logoutButton.rx.tap
             .throttle(.seconds(3), scheduler: MainScheduler.instance)
             .subscribe(onNext: { _ in
@@ -91,9 +109,20 @@ class SideMenuViewController: UIViewController {
     }
     
     
+    // MARK: - TabBar navigation :
+    
     private func switchTabBarTo(_ index: Int) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         self.dismiss(animated: true)
         appDelegate.mainTabBar?.selectedIndex = index
+    }
+    
+    private func navigateFormMoreTo(_ viewController: UIViewController.Type) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        if let moreNavigationController = appDelegate.mainTabBar?.viewControllers?.last as? UINavigationController {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: String(describing: viewController.self)) {
+                moreNavigationController.pushViewController(vc, animated: true)
+            }
+        }
     }
 }

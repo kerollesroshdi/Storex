@@ -42,7 +42,7 @@ class SignInVC: UIViewController {
         initVMfb()
     }
     
-    func initView() {
+    private func initView() {
         
         let emailValid = emailTextField.rx.text.orEmpty
             .map { isValidEmail(testStr: $0) }
@@ -123,7 +123,7 @@ class SignInVC: UIViewController {
         
     }
     
-    func initVM() {
+    private func initVM() {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { message in
@@ -156,7 +156,7 @@ class SignInVC: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func initVMfb() {
+    private func initVMfb() {
         viewModelFb.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { message in

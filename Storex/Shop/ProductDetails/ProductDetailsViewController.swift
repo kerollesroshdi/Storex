@@ -47,7 +47,7 @@ class ProductDetailsViewController: UIViewController {
         customizeView.viewModel.getAttributesInProduct(productID)
     }
     
-    func initView() {
+    private func initView() {
         
         closeButton.rx.tap
             .subscribe(onNext: { _ in
@@ -55,7 +55,6 @@ class ProductDetailsViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        #warning ("//TODO: request add to bag")
         addToCartButton.rx.tap
             .throttle(.seconds(30), scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self ] _ in
@@ -91,7 +90,7 @@ class ProductDetailsViewController: UIViewController {
         
     }
     
-    func initVM() {
+    private func initVM() {
         
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)

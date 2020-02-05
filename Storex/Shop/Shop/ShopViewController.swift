@@ -36,7 +36,7 @@ class ShopViewController: UIViewController {
         initVM()
     }
     
-    func initView() {
+    private func initView() {
         tableview.rx.modelSelected(DepartmentCellViewModel.self)
             .subscribe(onNext: { [weak self] model in
                 guard let self = self else { return }
@@ -66,7 +66,7 @@ class ShopViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func initVM() {
+    private func initVM() {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{ message in

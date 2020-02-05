@@ -49,7 +49,7 @@ class CustomizeView: UIView {
         initVM()
     }
     
-    func initView() {
+    private func initView() {
         sizeCollectionView.registerCellNib(cellClass: SizeCell.self)
         colorCollectionView.registerCellNib(cellClass: ColorCell.self)
         
@@ -68,7 +68,7 @@ class CustomizeView: UIView {
             .disposed(by: disposeBag)
     }
     
-    func initVM() {
+    private func initVM() {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{ message in

@@ -39,7 +39,7 @@ class DepartmentViewController: UIViewController {
         initVM()
     }
     
-    func initView() {
+    private func initView() {
         
         if let color = departmentCellViewModel?.color {
            departmentView.backgroundColor = UIColor(red: color.red/255, green: color.green/255, blue: color.blue/255, alpha: 1)
@@ -70,7 +70,7 @@ class DepartmentViewController: UIViewController {
         
     }
     
-    func initVM() {
+    private func initVM() {
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
             .subscribe(onNext:{ message in

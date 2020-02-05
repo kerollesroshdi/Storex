@@ -47,7 +47,7 @@ class BagViewController: UIViewController {
         initVM()
     }
     
-    func initView() {
+    private func initView() {
         
         menuButton.rx.tap
             .subscribe(onNext: { [weak self] _ in
@@ -87,7 +87,7 @@ class BagViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-    func initVM() {
+    private func initVM() {
         
         viewModel.errorMessage
         .observeOn(MainScheduler.instance)

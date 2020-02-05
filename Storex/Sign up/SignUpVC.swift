@@ -37,7 +37,7 @@ class SignUpVC: UIViewController {
         initVM()
     }
     
-    func initView() {
+    private func initView() {
         
         let nameValid = nameTextField.rx.text.orEmpty
             .map { $0.count >= 6}
@@ -118,7 +118,7 @@ class SignUpVC: UIViewController {
         
     }
     
-    func initVM() {
+    private func initVM() {
         
         viewModel.errorMessage
             .observeOn(MainScheduler.instance)
