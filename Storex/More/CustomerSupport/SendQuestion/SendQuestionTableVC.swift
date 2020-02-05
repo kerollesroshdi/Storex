@@ -27,10 +27,10 @@ class SendQuestionTableVC: UITableViewController {
 
          fields = [nameTextField, emailTextField, phoneTextField, subjectTextField, messageTextView]
         
-        nameTextField.rightView = errorLabel(withText: "please enter a name")
-        emailTextField.rightView = errorLabel(withText: "invalid email!")
-        phoneTextField.rightView = errorLabel(withText: "invalid phone!")
-        subjectTextField.rightView = errorLabel(withText: "plase enter a subject")
+        nameTextField.errorLabel(withText: "please enter a name")
+        emailTextField.errorLabel(withText: "invalid email!")
+        phoneTextField.errorLabel(withText: "invalid phone!")
+        subjectTextField.errorLabel(withText: "plase enter a subject")
         
         initView()
     }
@@ -136,12 +136,4 @@ func isvalidPhone(value: String) -> Bool {
     let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
     let result =  phoneTest.evaluate(with: value)
     return result
-}
-
-private func errorLabel(withText text: String) -> UILabel {
-    let errorLabel = UILabel()
-    errorLabel.text = text
-    errorLabel.font = UIFont(name: "Avenir", size: 14)
-    errorLabel.textColor = UIColor.red
-    return errorLabel
 }

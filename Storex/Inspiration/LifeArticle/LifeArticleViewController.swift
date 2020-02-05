@@ -14,12 +14,18 @@ class LifeArticleViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var articleLabel: UILabel!
     
+    var lifeArticle: LifeArticle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let mask = UIImageView(image: #imageLiteral(resourceName: "Shape"))
         mask.contentMode = .scaleAspectFit
         mask.frame = image.bounds
         image.mask = mask
+        
+        dateLabel.text = lifeArticle?.date.uppercased()
+        titleLabel.text = lifeArticle?.title.uppercased()
+        image.image = lifeArticle?.image
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

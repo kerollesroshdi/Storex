@@ -27,8 +27,12 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        print("Trying to sign up ...")
-        // Do any additional setup after loading the view.
+        
+        nameTextField.errorLabel(withText: "invalid name")
+        emailTextField.errorLabel(withText: "invalid email")
+        passwordTextField.errorLabel(withText: "too weak")
+        confirmPasswordTextField.errorLabel(withText: "mismatching password")
+        
         initView()
         initVM()
     }
@@ -39,18 +43,47 @@ class SignUpVC: UIViewController {
             .map { $0.count >= 6}
             .share(replay: 1)
         
+        nameValid
+            .skip(2)
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                self.nameTextField.rightViewMode = value ? .never : .unlessEditing
+            }).disposed(by: disposeBag)
+        
+        
         let emailValid = emailTextField.rx.text.orEmpty
             .map { isValidEmail(testStr: $0) }
             .share(replay: 1)
+        
+        emailValid
+            .skip(2)
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                self.emailTextField.rightViewMode = value ? .never : .unlessEditing
+            }).disposed(by: disposeBag)
         
         let passwordValid = passwordTextField.rx.text.orEmpty
             .map { $0.count >= 8 }
             .share(replay: 1)
         
+        passwordValid
+            .skip(2)
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                self.passwordTextField.rightViewMode = value ? .never : .unlessEditing
+            }).disposed(by: disposeBag)
+        
         let passwordConfirm = Observable.combineLatest(passwordTextField.rx.text.orEmpty, confirmPasswordTextField.rx.text.orEmpty) { (password, confirm) -> Bool in
             return password == confirm
             }
             .share(replay: 1)
+        
+        passwordConfirm
+            .skip(2)
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                self.confirmPasswordTextField.rightViewMode = value ? .never : .unlessEditing
+            }).disposed(by: disposeBag)
         
         let termsAgreed = termsAgreeSwitch.rx.value
             .share(replay: 1)

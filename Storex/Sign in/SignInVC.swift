@@ -33,8 +33,9 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        print("Trying to sign in ...")
-        // Do any additional setup after loading the view.
+        
+        emailTextField.errorLabel(withText: "invalid email")
+        passwordTextField.errorLabel(withText: "too short")
         
         initView()
         initVM()
@@ -47,9 +48,23 @@ class SignInVC: UIViewController {
             .map { isValidEmail(testStr: $0) }
             .share(replay: 1)
         
+        emailValid
+            .skip(2)
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                self.emailTextField.rightViewMode = value ? .never : .unlessEditing
+            }).disposed(by: disposeBag)
+        
         let passwordValid = passwordTextField.rx.text.orEmpty
             .map { $0.count >= 8 }
             .share(replay: 1)
+        
+        passwordValid
+            .skip(2)
+            .distinctUntilChanged()
+            .subscribe(onNext: { value in
+                self.passwordTextField.rightViewMode = value ? .never : .unlessEditing
+            }).disposed(by: disposeBag)
         
         let allValid = Observable.combineLatest(emailValid, passwordValid) { $0 && $1 }
             .share(replay: 1)

@@ -12,11 +12,15 @@ class FashionCollectionViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var fashionArticle: FashionArticle?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // register nibs:
         collectionView.registerCellNib(cellClass: ImageCell.self)
+        
+        titleLabel.text = fashionArticle?.title.uppercased()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

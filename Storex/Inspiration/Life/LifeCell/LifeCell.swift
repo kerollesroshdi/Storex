@@ -13,6 +13,14 @@ class LifeCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var hexagonImage: UIImageView!
     
+    var lifeArticle: LifeArticle? {
+        didSet {
+            dateLabel.text = lifeArticle?.date.uppercased()
+            titleLabel.text = lifeArticle?.title.uppercased()
+            hexagonImage.image = lifeArticle?.image
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

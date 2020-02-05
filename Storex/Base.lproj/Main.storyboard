@@ -3642,11 +3642,16 @@ New York, NY 10017</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shape" translatesAutoresizingMaskIntoConstraints="NO" id="n0Y-Y5-ZYE">
-                                <rect key="frame" x="16" y="197" width="343" height="380"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fashion-model-1" translatesAutoresizingMaskIntoConstraints="NO" id="n0Y-Y5-ZYE" customClass="MaskedUIImageView" customModule="Storex" customModuleProvider="target">
+                                <rect key="frame" x="-2.5" y="197" width="380" height="380"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="380" id="kPG-3p-i1x"/>
                                     <constraint firstAttribute="height" constant="380" id="uCG-p4-oyP"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="maskImage" value="Shape"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3654,13 +3659,12 @@ New York, NY 10017</string>
                             <constraint firstItem="0XZ-Wn-VyW" firstAttribute="bottom" secondItem="k5r-sQ-Yaz" secondAttribute="bottom" id="3zg-y8-4oh"/>
                             <constraint firstItem="WJI-SL-EX8" firstAttribute="centerX" secondItem="hXJ-PQ-srZ" secondAttribute="centerX" id="ANF-sM-zIG"/>
                             <constraint firstItem="12C-DR-XbS" firstAttribute="top" secondItem="WJI-SL-EX8" secondAttribute="bottom" constant="30" id="HvD-YF-7dD"/>
-                            <constraint firstItem="k5r-sQ-Yaz" firstAttribute="trailing" secondItem="n0Y-Y5-ZYE" secondAttribute="trailing" constant="16" id="M7L-M3-RxD"/>
                             <constraint firstItem="0XZ-Wn-VyW" firstAttribute="top" secondItem="n0Y-Y5-ZYE" secondAttribute="bottom" constant="30" id="MTR-4Z-SUb"/>
                             <constraint firstItem="0XZ-Wn-VyW" firstAttribute="leading" secondItem="k5r-sQ-Yaz" secondAttribute="leading" id="QVu-MZ-1AF"/>
                             <constraint firstItem="WJI-SL-EX8" firstAttribute="top" secondItem="k5r-sQ-Yaz" secondAttribute="top" constant="30" id="WH2-Z7-CoC"/>
                             <constraint firstItem="0XZ-Wn-VyW" firstAttribute="trailing" secondItem="k5r-sQ-Yaz" secondAttribute="trailing" id="Xfc-hr-zph"/>
                             <constraint firstItem="12C-DR-XbS" firstAttribute="centerX" secondItem="hXJ-PQ-srZ" secondAttribute="centerX" id="dyl-b0-d4x"/>
-                            <constraint firstItem="n0Y-Y5-ZYE" firstAttribute="leading" secondItem="k5r-sQ-Yaz" secondAttribute="leading" constant="16" id="gXy-VC-TWm"/>
+                            <constraint firstItem="n0Y-Y5-ZYE" firstAttribute="centerX" secondItem="hXJ-PQ-srZ" secondAttribute="centerX" id="gMp-fq-Uvt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k5r-sQ-Yaz"/>
                     </view>
@@ -3673,9 +3677,9 @@ New York, NY 10017</string>
         <!--Signin-->
         <scene sceneID="DZ4-i0-k9n">
             <objects>
-                <viewController storyboardIdentifier="SignInVC" title="Signin" id="HNs-GZ-qE1" customClass="SignInVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" title="Signin" modalPresentationStyle="fullScreen" id="HNs-GZ-qE1" customClass="SignInVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mdm-4t-xPR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5EZ-fW-ep2">
@@ -3761,10 +3765,10 @@ New York, NY 10017</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUa-Hu-Pzg">
-                                <rect key="frame" x="0.0" y="326" width="375" height="321"/>
+                                <rect key="frame" x="0.0" y="326" width="375" height="341"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWe-TI-RJh">
-                                        <rect key="frame" x="90" y="275" width="195" height="36"/>
+                                        <rect key="frame" x="90" y="295" width="195" height="36"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                         <state key="normal" title="Not a member? SIGN UP">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3871,7 +3875,7 @@ New York, NY 10017</string>
         <!--Signup-->
         <scene sceneID="4sL-N4-koo">
             <objects>
-                <viewController storyboardIdentifier="SignUpVC" title="Signup" id="Yl9-vg-NYa" customClass="SignUpVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" title="Signup" modalPresentationStyle="fullScreen" id="Yl9-vg-NYa" customClass="SignUpVC" customModule="Storex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y3W-Wk-Mz4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4211,6 +4215,7 @@ New York, NY 10017</string>
         <image name="button-large" width="402" height="402"/>
         <image name="conncetionfailed" width="474" height="240"/>
         <image name="facebook-follow" width="15" height="32"/>
+        <image name="fashion-model-1" width="640" height="438"/>
         <image name="followButtonBG" width="116" height="134"/>
         <image name="icon-Bag" width="50" height="52"/>
         <image name="icon-back" width="12" height="20"/>

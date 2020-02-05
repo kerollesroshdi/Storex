@@ -18,4 +18,12 @@ extension UITextField {
         layer.addSublayer(bottomLine)
     }
     
+    func errorLabel(withText text: String) {
+        let errorLabel = UILabel()
+        errorLabel.text = text
+        errorLabel.font = UIFont(name: "Avenir", size: 14)
+        errorLabel.textColor = UIColor.red
+        rightView = errorLabel
+    }
+    
 }

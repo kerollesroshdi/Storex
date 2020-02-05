@@ -12,6 +12,13 @@ class FashionCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var fashionArticle: FashionArticle? {
+        didSet {
+            image.image = fashionArticle?.image
+            titleLabel.text = fashionArticle?.title.uppercased()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
