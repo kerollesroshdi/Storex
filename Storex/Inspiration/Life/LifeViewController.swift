@@ -28,6 +28,7 @@ class LifeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.decelerationRate = .fast
         // register nibs:
         collectionView.registerCellNib(cellClass: LifeCell.self)
     }
@@ -59,6 +60,33 @@ extension LifeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let inset = collectionView.bounds.width / 4 - 30
         return UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
     }
+    
+//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+//
+//        let cellWidth = collectionView.bounds.width / 2 + 60
+//        let page: CGFloat
+//        let snapPoint: CGFloat = 0.5
+//        let snapDelta: CGFloat = 1 - snapPoint
+//        let proposedPage = targetContentOffset.pointee.x / max(1, cellWidth)
+//
+//        if floor(proposedPage + snapDelta) == floor(proposedPage)
+//          && scrollView.contentOffset.x <= targetContentOffset.pointee.x {
+//          page = floor(proposedPage)
+//        }
+//        else {
+//          page = floor(proposedPage + 1)
+//        }
+//        
+//        print("page: \(page)")
+//        
+//        targetContentOffset.pointee = CGPoint(
+//          x: cellWidth * page,
+//          y: targetContentOffset.pointee.y
+//        )
+//        
+//    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let lifeArticleVC = storyboard?.instantiateViewController(withIdentifier: "LifeArticleViewController") as? LifeArticleViewController {
