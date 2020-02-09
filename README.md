@@ -22,6 +22,7 @@ an e-commerce iOS app that consume Turing e-commerce API
 
 ### Screenshots:
 <img src="MockedUp/Mockup.jpg">
-<img src="MockedUp/onboarding1.png" width="250"> <img src="MockedUp/signin1.png" width="250">
+
+<img src="MockedUp/onboarding1.png" width="200"> <img src="MockedUp/signin1.png" width="200"> <img src="MockedUp/signin2.png" width="200"> <img src="MockedUp/signininvalid.png" width="200">
 
 > images used from pexel.com 
