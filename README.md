@@ -4,7 +4,7 @@
 
 An E-Commerce iOS app that consume Turing E-Commerce API 
 
-## using
+ ### using:
  - [Moya](https://github.com/Moya/Moya)
  - [RxSwift](https://github.com/ReactiveX/RxSwift)
  - [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa)
@@ -12,10 +12,15 @@ An E-Commerce iOS app that consume Turing E-Commerce API
  - [SDWebImage](https://github.com/SDWebImage/SDWebImage)
  - [SideMenu](https://github.com/jonkykong/SideMenu)
  
- ## API:
+ ### API:
  https://mobilebackend.turing.com/docs - has SSL Certificate Problem :( 
  
  https://backendapi.turing.com/docs/#/
  
- ## UI/UX
+ ### UI/UX:
  https://github.com/zandoan/turing-uiux
+
+### Screenshots:
+<img src="Screenshots/home1.png" width="250">
+
+> images used from Pexel.com 
