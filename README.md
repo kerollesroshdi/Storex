@@ -21,6 +21,6 @@ An E-Commerce iOS app that consume Turing E-Commerce API
  https://github.com/zandoan/turing-uiux
 
 ### Screenshots:
-<img src="Screenshots/home1.png" width="250">
+<img src="MockedUp/Mockup.jpg" width="250">
 
-> images used from Pexel.com 
+> images used from pexel.com 
