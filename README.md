@@ -2,7 +2,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kerollesroshdi/Storex) ![GitHub repo size](https://img.shields.io/github/repo-size/kerollesroshdi/Storex)
 ![GitHub last commit](https://img.shields.io/github/last-commit/kerollesroshdi/Storex) ![](https://img.shields.io/badge/Platform-iOS-orange) [![Twitter Follow](https://img.shields.io/twitter/follow/kerollesroshdi?style=social)](https://twitter.com/intent/follow?screen_name=kerollesroshdi)
 
-An E-Commerce iOS app that consume Turing E-Commerce API 
+an e-commerce iOS app that consume Turing e-commerce API 
 
  ### using:
  - [Moya](https://github.com/Moya/Moya)
@@ -22,6 +22,6 @@ An E-Commerce iOS app that consume Turing E-Commerce API
 
 ### Screenshots:
 <img src="MockedUp/Mockup.jpg">
-<img src="MockedUp/onboarding1.jpg" width="250">
+<img src="MockedUp/onboarding1.png" width="250"> <img src="MockedUp/signin1.png" width="250">
 
 > images used from pexel.com 
