@@ -4,6 +4,11 @@
 
 an e-commerce iOS app that consumes Turing e-commerce API 
 
+ #### Todo List:
+ - [x] MVVM
+ - [ ] Unit Testing
+ - [ ] Coordinator pattern 
+
  ### using:
  - [Moya](https://github.com/Moya/Moya)
  - [RxSwift](https://github.com/ReactiveX/RxSwift)
